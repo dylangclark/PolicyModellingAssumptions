@@ -1,0 +1,31 @@
+# Python
+.venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ruff_cache/
+*.egg-info/
+
+# Secrets
+.env
+*.pem
+*.key
+
+# Runtime state and raw source files
+state/*.sqlite
+state/*.sqlite-*
+state/review_queue.json
+data/raw/**
+!data/raw/.gitkeep
+data/cache/**
+!data/cache/.gitkeep
+
+# Generated exports are intentionally committed by the Raspberry Pi.
+# Uncomment these lines for a private/local-only deployment.
+# data/export/**
+# site/data/**
+
+# OS/editor
+.DS_Store
+.vscode/
+.idea/

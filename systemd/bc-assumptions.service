@@ -1,0 +1,23 @@
+[Unit]
+Description=Update the BC assumptions evidence registry
+Wants=network-online.target
+After=network-online.target
+
+[Service]
+Type=oneshot
+User=bcassumptions
+Group=bcassumptions
+WorkingDirectory=/opt/bc-assumptions-registry
+EnvironmentFile=-/etc/bc-assumptions.env
+ExecStart=/opt/bc-assumptions-registry/scripts/run_weekly.sh
+Nice=10
+IOSchedulingClass=best-effort
+IOSchedulingPriority=6
+UMask=0027
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=full
+ReadWritePaths=/opt/bc-assumptions-registry
+
+[Install]
+WantedBy=multi-user.target

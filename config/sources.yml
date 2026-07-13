@@ -1,0 +1,314 @@
+schema_version: 0.1.0
+sources:
+- id: bank_of_canada_valet
+  name: Bank of Canada Valet API
+  publisher: Bank of Canada
+  authority_tier: 1
+  adapter: boc_valet
+  enabled: true
+  optional: false
+  publish_enabled: true
+  base_url: https://www.bankofcanada.ca/valet
+  update_cadence: business_daily
+  source_url: https://www.bankofcanada.ca/valet/docs
+  license_name: Bank of Canada terms of use
+  raw_redistribution_allowed: review_terms
+  start_date: '2000-01-01'
+  series:
+  - source_series_id: V39079
+    variable_id: economic.interest_rate.target_overnight_pct
+    frequency: daily
+    geography_id: CA
+    unit_original: percent
+    unit_canonical: percent
+  - source_series_id: BD.CDN.10YR.DQ.YLD
+    variable_id: economic.interest_rate.goc_10y_yield_pct
+    frequency: daily
+    geography_id: CA
+    unit_original: percent
+    unit_canonical: percent
+  - source_series_id: FXUSDCAD
+    variable_id: economic.exchange_rate.cad_per_usd
+    frequency: daily
+    geography_id: CA
+    unit_original: CAD_per_USD
+    unit_canonical: CAD_per_USD
+  required: true
+  collection_stale_after_days: 14
+  stale_after_days: 10
+- id: statistics_canada_wds
+  name: Statistics Canada Web Data Service
+  publisher: Statistics Canada
+  authority_tier: 1
+  adapter: statcan_wds
+  enabled: true
+  optional: false
+  publish_enabled: true
+  base_url: https://www150.statcan.gc.ca/t1/wds/rest
+  update_cadence: release_dependent
+  source_url: https://www.statcan.gc.ca/en/developers/wds
+  license_name: Statistics Canada Open Licence
+  raw_redistribution_allowed: true
+  revision_lookback_years: 4
+  datasets:
+  - dataset_id: population_quarterly
+    product_id: '17100009'
+    table_number: 17-10-0009-01
+    frequency: quarterly
+    geography_id: CA-BC
+    start_date: '2000-01-01'
+    selectors:
+    - dimension: ^(Geography|GEO)$
+      member: ^British Columbia$
+    outputs:
+    - output_id: level
+      variable_id: economic.population.level
+      transform: level
+      unit_original: persons
+      unit_canonical: persons
+    - output_id: yoy
+      variable_id: economic.population.growth_yoy_pct
+      transform: yoy_pct
+      unit_original: percent
+      unit_canonical: percent
+    stale_after_days: 180
+  - dataset_id: labour_force
+    product_id: '14100287'
+    table_number: 14-10-0287-01
+    frequency: monthly
+    geography_id: CA-BC
+    start_date: '2000-01-01'
+    common_selectors:
+    - dimension: ^(Geography|GEO)$
+      member: ^British Columbia$
+    - dimension: ^(Data type|Seasonal adjustment)$
+      member: ^Seasonally adjusted$
+    - dimension: ^(Sex|Gender)$
+      member: ^(Both sexes|Total, gender|Total - Gender)$
+    - dimension: ^Age group$
+      member: ^(15 years and over|15 years and older)$
+    - dimension: ^Statistics$
+      member: ^Estimate$
+    series:
+    - source_series_key: employment
+      selectors:
+      - dimension: ^Labour force characteristics$
+        member: ^Employment$
+      outputs:
+      - output_id: level
+        variable_id: economic.employment.level
+        transform: level
+        unit_original: thousand_persons
+        unit_canonical: persons
+      - output_id: yoy
+        variable_id: economic.employment.growth_yoy_pct
+        transform: yoy_pct
+        unit_original: percent
+        unit_canonical: percent
+    - source_series_key: labour_force
+      selectors:
+      - dimension: ^Labour force characteristics$
+        member: ^Labour force$
+      outputs:
+      - output_id: level
+        variable_id: economic.labour_force.level
+        transform: level
+        unit_original: thousand_persons
+        unit_canonical: persons
+      - output_id: yoy
+        variable_id: economic.labour_force.growth_yoy_pct
+        transform: yoy_pct
+        unit_original: percent
+        unit_canonical: percent
+    stale_after_days: 75
+  - dataset_id: cpi_all_items
+    product_id: '18100004'
+    table_number: 18-10-0004-01
+    frequency: monthly
+    geography_id: CA-BC
+    start_date: '2000-01-01'
+    selectors:
+    - dimension: ^(Geography|GEO)$
+      member: ^British Columbia$
+    - dimension: ^(Products and product groups|Product group)$
+      member: ^All-items$
+    outputs:
+    - output_id: index
+      variable_id: economic.cpi.all_items_index
+      transform: level
+      unit_original: index
+      unit_canonical: index
+    - output_id: yoy
+      variable_id: economic.cpi.all_items_yoy_pct
+      transform: yoy_pct
+      unit_original: percent
+      unit_canonical: percent
+    stale_after_days: 75
+  - dataset_id: building_construction_price
+    product_id: '18100289'
+    table_number: 18-10-0289-01
+    frequency: quarterly
+    geography_id: CA-BC-VAN
+    start_date: '2000-01-01'
+    selectors:
+    - dimension: ^(Geography|GEO)$
+      member: ^Vancouver(, British Columbia)?$
+    - dimension: ^(Type of building|Building type)$
+      member: '(?i)^Non-residential building(?: construction)?s?$'
+    - dimension: ^(Division|Construction division|Construction divisions)$
+      member: (?i)^(Total(?:\b|,|\s).*|Division composite)$
+    outputs:
+    - output_id: index
+      variable_id: economic.construction_price.vancouver_nonresidential_index
+      transform: level
+      unit_original: index
+      unit_canonical: index
+    - output_id: yoy
+      variable_id: economic.construction_inflation.vancouver_nonresidential_yoy_pct
+      transform: yoy_pct
+      unit_original: percent
+      unit_canonical: percent
+    replaces_product_ids:
+    - '18100276'
+    stale_after_days: 200
+  required: true
+  collection_stale_after_days: 14
+- id: cmhc_via_statistics_canada
+  name: CMHC housing starts via Statistics Canada table 34-10-0158-01
+  publisher: Canada Mortgage and Housing Corporation
+  authority_tier: 1
+  adapter: statcan_wds
+  enabled: true
+  optional: false
+  publish_enabled: false
+  base_url: https://www150.statcan.gc.ca/t1/wds/rest
+  update_cadence: monthly
+  source_url: https://www150.statcan.gc.ca/n1/en/catalogue/3410015801
+  license_name: CMHC Licence Agreement for the Use of Data
+  raw_redistribution_allowed: false
+  notes: Collection is enabled for internal analysis. Public export remains disabled
+    until the CMHC licence is reviewed.
+  revision_lookback_years: 4
+  datasets:
+  - dataset_id: housing_starts_saar
+    product_id: '34100158'
+    table_number: 34-10-0158-01
+    frequency: monthly
+    geography_id: CA-BC
+    start_date: '2000-01-01'
+    selectors:
+    - dimension: ^(Geography|GEO)$
+      member: ^British Columbia$
+    outputs:
+    - output_id: level
+      variable_id: economic.housing_starts.level
+      transform: level
+      unit_original: dwelling_units_saar
+      unit_canonical: dwelling_units_saar
+      metadata:
+        seasonal_adjustment: seasonally_adjusted_annual_rate
+    stale_after_days: 75
+  required: true
+  collection_stale_after_days: 14
+- id: eia_open_data
+  name: U.S. Energy Information Administration Open Data API
+  publisher: U.S. Energy Information Administration
+  authority_tier: 1
+  adapter: eia_v2
+  enabled: true
+  optional: false
+  publish_enabled: true
+  api_key_env: EIA_API_KEY
+  base_url: https://api.eia.gov/v2
+  update_cadence: release_dependent
+  source_url: https://www.eia.gov/opendata/
+  license_name: U.S. government public data; confirm dataset-specific terms
+  raw_redistribution_allowed: true
+  start_date: 1997-01
+  series:
+  - source_series_id: RNGWHHD
+    route: natural-gas/pri/fut/data/
+    frequency: monthly
+    variable_id: commodity.natural_gas.henry_hub_usd_per_mmbtu
+    geography_id: US
+    unit_original: dollars_per_mmbtu
+    unit_canonical: USD_per_MMBtu
+  - source_series_id: RWTC
+    route: petroleum/pri/spt/data/
+    frequency: monthly
+    variable_id: commodity.oil.wti_usd_per_bbl
+    geography_id: US
+    unit_original: dollars_per_barrel
+    unit_canonical: USD_per_barrel
+  - source_series_id: RBRTE
+    route: petroleum/pri/spt/data/
+    frequency: monthly
+    variable_id: commodity.oil.brent_usd_per_bbl
+    geography_id: GLOBAL
+    unit_original: dollars_per_barrel
+    unit_canonical: USD_per_barrel
+  required: true
+  collection_stale_after_days: 14
+  stale_after_days: 120
+- id: world_bank_pink_sheet
+  name: World Bank Commodity Price Data (Pink Sheet)
+  publisher: World Bank
+  authority_tier: 1
+  adapter: world_bank_pink_sheet
+  enabled: true
+  optional: false
+  publish_enabled: true
+  update_cadence: monthly
+  source_url: https://www.worldbank.org/en/research/commodity-markets
+  download_url: https://thedocs.worldbank.org/en/doc/74e8be41ceb20fa0da750cda2f6b9e4e-0050012026/related/CMO-Historical-Data-Monthly.xlsx
+  license_name: World Bank dataset terms
+  raw_redistribution_allowed: review_terms
+  start_date: '2000-01-01'
+  sheet_regex: ^Monthly Prices$
+  series:
+  - source_series_id: Copper
+    aliases:
+    - ^Copper$
+    variable_id: commodity.copper.usd_per_tonne
+    geography_id: GLOBAL
+    unit_original: USD_per_metric_tonne
+    unit_canonical: USD_per_metric_tonne
+  - source_series_id: LNG_Japan_proxy
+    aliases:
+    - ^LNG,? Japan$
+    - ^Liquefied natural gas,? Japan$
+    variable_id: commodity.lng.japan_proxy_usd_per_mmbtu
+    geography_id: JP
+    unit_original: USD_per_MMBtu
+    unit_canonical: USD_per_MMBtu
+    quality_flags:
+    - proxy_series
+    - not_jkm
+  required: true
+  collection_stale_after_days: 14
+  stale_after_days: 120
+- id: bc_data_catalogue_households
+  name: B.C. household estimates and projections
+  publisher: Government of British Columbia
+  authority_tier: 1
+  adapter: linked_dataset
+  enabled: false
+  optional: true
+  publish_enabled: true
+  source_url: https://catalogue.data.gov.bc.ca/dataset/household-estimates-and-projections
+  license_name: Open Government Licence - British Columbia
+  notes: Registered for the next authoritative-source adapter.
+  required: false
+  collection_stale_after_days: 30
+- id: cer_electricity_trade
+  name: Canada Energy Regulator electricity trade summary
+  publisher: Canada Energy Regulator
+  authority_tier: 1
+  adapter: linked_workbook
+  enabled: false
+  optional: true
+  publish_enabled: true
+  source_url: https://www.cer-rec.gc.ca/en/data-analysis/energy-commodities/electricity/statistics/electricity-trade-summary/
+  notes: Registered for import availability and import-cost observations.
+  required: false
+  collection_stale_after_days: 30

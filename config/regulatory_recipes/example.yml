@@ -1,0 +1,21 @@
+# Copy this file and replace the placeholders for a specific filing.
+# Nothing extracted by this engine is public until it is manually approved.
+recipe_id: example_cost_of_debt
+source_id: example_regulatory_source
+
+defaults:
+  record_kind: model_parameter
+  geography_id: CA-BC
+  reference_period_start: '2026-01-01'
+  reference_period_end: '2026-12-31'
+  scenario_original: filed
+
+extractors:
+  - id: cost_of_debt
+    variable_id: financial.cost_of_debt_pct
+    page_range: [1, 200]
+    pattern: 'cost of debt[^0-9]{0,80}(?P<value>[0-9]+(?:\.[0-9]+)?)\s*%'
+    value_group: value
+    unit_original: percent
+    unit_canonical: percent
+    confidence: 0.8

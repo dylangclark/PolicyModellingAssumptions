@@ -1,0 +1,11 @@
+[Unit]
+Description=Run the BC assumptions registry weekly
+
+[Timer]
+OnCalendar=Sun *-*-* 03:15:00 America/Vancouver
+RandomizedDelaySec=45m
+Persistent=true
+Unit=bc-assumptions.service
+
+[Install]
+WantedBy=timers.target

@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>B.C. Assumptions Registry</title>
+  <meta name="description" content="Versioned evidence registry for economic and energy-policy assumptions used in British Columbia.">
+  <link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="container header-row">
+      <div>
+        <p class="eyebrow">Evidence registry</p>
+        <h1>B.C. Assumptions Registry</h1>
+        <p class="subtitle">Authoritative observations and, in later phases, versioned assumptions from regulatory and policy filings.</p>
+      </div>
+      <nav aria-label="Primary navigation">
+        <a aria-current="page" href="index.html">Registry</a>
+        <a href="methodology.html">Methodology</a>
+        <a href="data/records.csv">CSV</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="status-banner" id="status-banner" aria-live="polite">
+      Loading registry data.
+    </section>
+
+    <section aria-labelledby="summary-title">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">Coverage</p>
+          <h2 id="summary-title">Registry status</h2>
+        </div>
+        <p id="generated-at" class="muted"></p>
+      </div>
+      <div id="summary-cards" class="card-grid"></div>
+    </section>
+
+    <section aria-labelledby="source-title">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">Acquisition</p>
+          <h2 id="source-title">Source health</h2>
+        </div>
+      </div>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Source</th><th>Publisher</th><th>Collection</th><th>Release role</th><th>Public data</th><th>Latest run</th><th>Status</th></tr></thead>
+          <tbody id="source-table"></tbody>
+        </table>
+      </div>
+    </section>
+
+    <section aria-labelledby="explorer-title">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">Data explorer</p>
+          <h2 id="explorer-title">Time series</h2>
+        </div>
+      </div>
+      <div class="filters">
+        <label>Variable
+          <select id="variable-filter"></select>
+        </label>
+        <label>Source
+          <select id="source-filter"><option value="">All public sources</option></select>
+        </label>
+        <label>Search records
+          <input id="record-search" type="search" placeholder="Period, source, scenario…">
+        </label>
+      </div>
+      <div class="chart-panel">
+        <div class="chart-header">
+          <div>
+            <h3 id="chart-title">Select a variable</h3>
+            <p id="chart-subtitle" class="muted"></p>
+          </div>
+          <div id="chart-legend" class="legend"></div>
+        </div>
+        <svg id="series-chart" viewBox="0 0 1000 420" role="img" aria-label="Selected time series"></svg>
+        <p id="chart-empty" class="empty-state" hidden>No public observations are available for this selection.</p>
+      </div>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Period</th><th>Variable</th><th>Value</th><th>Source</th><th>Kind</th><th>Vintage</th><th>Flags</th></tr></thead>
+          <tbody id="record-table"></tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="note-panel">
+      <h2>Interpretation</h2>
+      <p>Observed values, published forecasts, policy targets, model parameters and sensitivities are distinct record types. Cross-source ranges will be labelled as planning envelopes unless they are calibrated using historical forecast errors. They are not automatically statistical confidence intervals.</p>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-row">
+      <p>All records retain source, period, vintage and document provenance. Source-specific licences control public redistribution.</p>
+      <a href="methodology.html">Read the methodology</a>
+    </div>
+  </footer>
+  <script src="assets/app.js" defer></script>
+</body>
+</html>

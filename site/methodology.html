@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Methodology — B.C. Assumptions Registry</title>
+  <link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+  <header class="topbar compact">
+    <div class="container header-row">
+      <div><p class="eyebrow">B.C. Assumptions Registry</p><h1>Methodology</h1></div>
+      <nav aria-label="Primary navigation"><a href="index.html">Registry</a><a aria-current="page" href="methodology.html">Methodology</a></nav>
+    </div>
+  </header>
+  <main class="container article">
+    <section>
+      <p class="eyebrow">Principle</p>
+      <h2>Preserve evidence before aggregation</h2>
+      <p>The registry stores each observation or assumption with a stable variable definition, source series, geography, reference period, target period where applicable, publication vintage, units and document evidence. Publisher revisions create a new record version rather than silently replacing history.</p>
+    </section>
+    <section>
+      <h2>Record types</h2>
+      <dl class="definition-list">
+        <div><dt>Observation</dt><dd>A measured historical or current value, such as CPI, population or a market price.</dd></div>
+        <div><dt>Forecast</dt><dd>A source’s projected value for a future period.</dd></div>
+        <div><dt>Policy target</dt><dd>A stated objective or legal requirement; not treated as a forecast.</dd></div>
+        <div><dt>Scenario or sensitivity</dt><dd>A deliberately varied model input or outcome.</dd></div>
+        <div><dt>Model parameter</dt><dd>An input such as WACC, ELCC, reserve margin or technology cost.</dd></div>
+      </dl>
+    </section>
+    <section>
+      <h2>Uncertainty products</h2>
+      <p><strong>Source scenario range</strong> retains low, reference and high cases from one source. <strong>Cross-source planning envelope</strong> summarizes comparable values from independent source families after standardizing units, geography, target period and dollar basis. <strong>Historical predictive interval</strong> is calculated from past forecast errors and is the only range normally described with statistical coverage language.</p>
+    </section>
+    <section>
+      <h2>Publication controls</h2>
+      <p>Collection and public release are separate controls. A source can be ingested for internal analysis while its records remain excluded from the public site pending licence review. Before publication, every required source must have a recent successful run and every configured output must pass a reference-period freshness check. Raw source files are stored by content hash on the collection machine and are not automatically committed to GitHub.</p>
+    </section>
+    <section>
+      <h2>Regulatory filings</h2>
+      <p>The next engine registers each filing by hash, extracts page-level evidence into a review queue, and requires approval before values enter the public registry. Automated language-model extraction may propose candidates, but it does not bypass deterministic validation or human review.</p>
+    </section>
+  </main>
+  <footer><div class="container footer-row"><p>Schema version 0.1.0</p><a href="index.html">Return to registry</a></div></footer>
+</body>
+</html>

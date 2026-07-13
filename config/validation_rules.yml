@@ -1,0 +1,10 @@
+publication:
+  allowed_statuses: [validated, approved]
+  exclude_record_kinds: [qualitative_assumption]
+
+quality_flags:
+  statcan_nonzero_status: warning
+  statcan_nonzero_symbol: warning
+  outside_expected_range: review
+  missing_publication_date: warning
+  proxy_series: information

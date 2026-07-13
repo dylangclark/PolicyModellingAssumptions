@@ -1,0 +1,35 @@
+roadmap:
+  authoritative_structured_next:
+    - variable: carbon_price
+      likely_sources: [Government of British Columbia, Environment and Climate Change Canada]
+      mode: official_schedule_and_policy_history
+    - variable: AECO_gas_price
+      likely_sources: [CER, Alberta market data, licensed benchmark provider]
+      mode: licence_review_or_public_proxy
+    - variable: electricity_import_cost_and_availability
+      likely_sources: [Canada Energy Regulator, BC Hydro system data]
+      mode: structured_download_plus_filing_assumptions
+    - variable: EV_stock_growth
+      likely_sources: [ICBC, Statistics Canada]
+      mode: official_table_or_download
+    - variable: snowpack_and_reservoir_inflows
+      likely_sources: [BC River Forecast Centre, BC Hydro]
+      mode: official_bulletin_and_hydrology_data
+
+  regulatory_engine_priority:
+    - source_family: BC Hydro integrated resource plans and responses
+      variables: [load_forecast, ELCC, reserve_margin, import_availability, LRMC, hydrology]
+    - source_family: BCUC revenue requirements and cost of capital proceedings
+      variables: [cost_of_debt, cost_of_equity, WACC, discount_rates]
+    - source_family: FortisBC filings
+      variables: [financial_assumptions, construction_costs, service_extension_parameters]
+    - source_family: issuer and environmental assessment filings
+      variables: [LNG_realization, mining_realization, data_centre_realization, lead_times]
+
+  later:
+    - heat_pump_adoption_and_cost
+    - building_electrification_rate
+    - battery_wind_solar_hydrogen_cost_curves
+    - transformer_and_construction_lead_times
+    - critical_mineral_demand
+    - AI_compute_growth_and_data_centre_power_intensity

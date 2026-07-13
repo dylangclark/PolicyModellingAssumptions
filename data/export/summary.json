@@ -1,0 +1,27 @@
+{
+  "schema_version": "0.1.0",
+  "generated_at": "2026-07-13T21:42:49Z",
+  "configured_variable_count": 55,
+  "configured_source_count": 7,
+  "enabled_source_count": 5,
+  "required_source_count": 5,
+  "current_record_count": 0,
+  "history_record_count": 0,
+  "variable_count": 0,
+  "source_count": 0,
+  "document_count": 0,
+  "latest_successful_run": null,
+  "failed_sources": [],
+  "classes": [
+    "Climate",
+    "Commodity",
+    "Demand",
+    "Economic",
+    "Electrification",
+    "Financial",
+    "Industrial",
+    "Infrastructure",
+    "Reliability",
+    "Technology"
+  ]
+}
