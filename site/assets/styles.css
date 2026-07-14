@@ -79,3 +79,23 @@ footer a { color: white; }
   .definition-list div { grid-template-columns: 1fr; gap: 3px; }
   .container { width: min(100% - 24px, 1180px); }
 }
+
+/* Pipeline monitor */
+.inline-control { min-width: 190px; }
+.inline-control select { margin-top: 4px; }
+.metric-card.success { border-top: 4px solid var(--success); }
+.metric-card.warning { border-top: 4px solid var(--warning); }
+.metric-card.danger { border-top: 4px solid var(--danger); }
+.compact-panel { padding-bottom: 12px; }
+.run-strip { display: flex; align-items: stretch; gap: 5px; min-height: 42px; overflow-x: auto; padding: 4px 1px 8px; }
+.run-block { flex: 1 0 14px; min-width: 14px; max-width: 36px; height: 34px; border-radius: 4px; background: #cbd3d8; border: 1px solid rgba(23,32,42,.12); }
+.run-block.success { background: #70b58d; }
+.run-block.warning { background: #e1b54c; }
+.run-block.danger { background: #d27676; }
+.attention-row td:first-child { box-shadow: inset 4px 0 0 var(--warning); }
+.message-cell { max-width: 420px; white-space: normal; }
+.small-text { font-size: .86rem; margin: 4px 0 0; }
+@media (max-width: 780px) {
+  .inline-control { min-width: 0; width: 100%; }
+  .run-block { flex-basis: 12px; min-width: 12px; }
+}

@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Pipeline Monitor — B.C. Assumptions Registry</title>
+  <meta name="description" content="Collection health, freshness, and run history for the B.C. Assumptions Registry.">
+  <link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+  <header class="topbar compact">
+    <div class="container header-row">
+      <div>
+        <p class="eyebrow">B.C. Assumptions Registry</p>
+        <h1>Pipeline monitor</h1>
+        <p class="subtitle">Collection status, source freshness, publication eligibility, and recent run history.</p>
+      </div>
+      <nav aria-label="Primary navigation">
+        <a href="index.html">Registry</a>
+        <a aria-current="page" href="pipeline.html">Pipeline</a>
+        <a href="methodology.html">Methodology</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section id="pipeline-banner" class="status-banner" aria-live="polite">Loading pipeline data.</section>
+
+    <section aria-labelledby="pipeline-summary-title">
+      <div class="section-heading">
+        <div><p class="eyebrow">Release health</p><h2 id="pipeline-summary-title">Current status</h2></div>
+        <p id="pipeline-generated-at" class="muted"></p>
+      </div>
+      <div id="pipeline-summary-cards" class="card-grid"></div>
+    </section>
+
+    <section aria-labelledby="source-monitor-title">
+      <div class="section-heading">
+        <div><p class="eyebrow">Source-level controls</p><h2 id="source-monitor-title">Source monitor</h2></div>
+        <label class="inline-control">Show
+          <select id="source-status-filter">
+            <option value="all">All sources</option>
+            <option value="enabled">Enabled only</option>
+            <option value="attention">Needs attention</option>
+          </select>
+        </label>
+      </div>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr><th>Source</th><th>Role</th><th>Latest run</th><th>Duration</th><th>Records</th><th>Freshness</th><th>Publication</th><th>Status</th></tr>
+          </thead>
+          <tbody id="pipeline-source-table"></tbody>
+        </table>
+      </div>
+    </section>
+
+    <section aria-labelledby="history-title">
+      <div class="section-heading">
+        <div><p class="eyebrow">Audit trail</p><h2 id="history-title">Recent runs</h2></div>
+        <label class="inline-control">Source
+          <select id="run-source-filter"><option value="">All sources</option></select>
+        </label>
+      </div>
+      <div class="chart-panel compact-panel">
+        <div class="run-strip" id="run-strip" aria-label="Recent pipeline run outcomes"></div>
+        <p class="muted small-text">Each block represents one source run. Select a source to isolate its history.</p>
+      </div>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Started</th><th>Source</th><th>Status</th><th>Duration</th><th>Seen</th><th>Inserted</th><th>Revised</th><th>Rejected</th><th>Message</th></tr></thead>
+          <tbody id="run-history-table"></tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="note-panel">
+      <h2>How to read this page</h2>
+      <p>A successful collection does not by itself prove that the data are current or publishable. The monitor separately reports source enablement, required-source status, collection recency, licence/publication controls, and the latest run result. Detailed series-level freshness remains enforced by the release gate before exports are published.</p>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-row">
+      <p>Generated from the same public release files used by the registry.</p>
+      <a href="index.html">Open the variable explorer</a>
+    </div>
+  </footer>
+  <script src="assets/pipeline.js" defer></script>
+</body>
+</html>
