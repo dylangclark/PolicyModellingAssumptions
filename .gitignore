@@ -29,3 +29,4 @@ data/cache/**
 .DS_Store
 .vscode/
 .idea/
+state/weekly.lock
