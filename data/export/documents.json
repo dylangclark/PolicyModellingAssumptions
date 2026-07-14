@@ -5,7 +5,7 @@
     "source_url": "https://www150.statcan.gc.ca/t1/wds/rest/getDataFromVectorByReferencePeriodRange?vectorIds=%223%22&startRefPeriod=2022-03-29&endReferencePeriod=2026-07-14",
     "local_path": "statistics_canada_wds/a8/vector-3-a86c49f192ee8777.json",
     "content_type": "application/json",
-    "retrieved_at": "2026-07-14T15:19:25Z",
+    "retrieved_at": "2026-07-14T18:58:32Z",
     "sha256": "a86c49f192ee877721b20f14b8ee008eb76762ec62fd4b5cda28372383d17e7f",
     "size_bytes": 4107,
     "request_method": "GET",
@@ -28,7 +28,7 @@
     },
     "response_headers": {
       "Content-Type": "application/json",
-      "Date": "Tue, 14 Jul 2026 15:19:25 GMT"
+      "Date": "Tue, 14 Jul 2026 18:58:32 GMT"
     }
   },
   {
@@ -93,7 +93,7 @@
     "source_url": "https://www.bankofcanada.ca/valet/observations/V39079,BD.CDN.10YR.DQ.YLD,FXUSDCAD/json?start_date=2026-05-29",
     "local_path": "bank_of_canada_valet/06/observations-06a8bdc6eae1d3b6.json",
     "content_type": "application/json",
-    "retrieved_at": "2026-07-14T15:19:23Z",
+    "retrieved_at": "2026-07-14T18:58:30Z",
     "sha256": "06a8bdc6eae1d3b6b2f91bd61109a9940517ac05542ef09f29023473e4e7ecf6",
     "size_bytes": 9550,
     "request_method": "GET",
@@ -108,7 +108,7 @@
     },
     "response_headers": {
       "Content-Type": "application/json; charset=utf-8",
-      "Date": "Tue, 14 Jul 2026 15:19:23 GMT"
+      "Date": "Tue, 14 Jul 2026 18:58:30 GMT"
     }
   },
   {
@@ -117,7 +117,7 @@
     "source_url": "https://api.eia.gov/v2/petroleum/pri/spt/data/?api_key=REDACTED&frequency=monthly&data%5B0%5D=value&facets%5Bseries%5D%5B%5D=RBRTE&start=2026-03&sort%5B0%5D%5Bcolumn%5D=period&sort%5B0%5D%5Bdirection%5D=asc&offset=0&length=5000",
     "local_path": "eia_open_data/8a/RBRTE-8a80a234d920343e.json",
     "content_type": "application/json",
-    "retrieved_at": "2026-07-14T15:19:34Z",
+    "retrieved_at": "2026-07-14T18:58:40Z",
     "sha256": "8a80a234d920343e219229fe74eb50bf35066c5ee6888f114321d08e4a25b3b5",
     "size_bytes": 1541,
     "request_method": "GET",
@@ -164,7 +164,7 @@
     },
     "response_headers": {
       "Content-Type": "application/json",
-      "Date": "Tue, 14 Jul 2026 15:19:33 GMT"
+      "Date": "Tue, 14 Jul 2026 18:58:40 GMT"
     }
   },
   {
@@ -193,7 +193,7 @@
     "source_url": "https://api.eia.gov/v2/natural-gas/pri/fut/data/?api_key=REDACTED&frequency=monthly&data%5B0%5D=value&facets%5Bseries%5D%5B%5D=RNGWHHD&start=2026-03&sort%5B0%5D%5Bcolumn%5D=period&sort%5B0%5D%5Bdirection%5D=asc&offset=0&length=5000",
     "local_path": "eia_open_data/ec/RNGWHHD-ec763da6e4868b51.json",
     "content_type": "application/json",
-    "retrieved_at": "2026-07-14T15:19:33Z",
+    "retrieved_at": "2026-07-14T18:58:39Z",
     "sha256": "ec763da6e4868b51a61e9962d5f73413dcdc3ade7b32b903a121741091d6d5ae",
     "size_bytes": 1535,
     "request_method": "GET",
@@ -240,7 +240,7 @@
     },
     "response_headers": {
       "Content-Type": "application/json",
-      "Date": "Tue, 14 Jul 2026 15:19:33 GMT"
+      "Date": "Tue, 14 Jul 2026 18:58:39 GMT"
     }
   },
   {
@@ -276,12 +276,52 @@
     }
   },
   {
+    "document_id": "doc_7d033572fc62f108b6945c76",
+    "source_id": "cer_electricity_trade",
+    "source_url": "https://www.cer-rec.gc.ca/en/data-analysis/energy-commodities/electricity/statistics/electricity-trade-summary/electricity-trades-summary-resume-echanges-commerciaux-electricite.xlsx",
+    "local_path": "cer_electricity_trade/53/electricity-trade-summary-537c3915227b5834.xlsx",
+    "content_type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+    "retrieved_at": "2026-07-14T18:58:49Z",
+    "sha256": "537c3915227b58345a73fde4516e0b3880f9b6dac77dc714dca2c3e87a834618",
+    "size_bytes": 110203,
+    "request_method": "GET",
+    "request_metadata": {
+      "json_body_sha256": null,
+      "params": []
+    },
+    "response_headers": {
+      "Content-Type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+      "Date": "Tue, 14 Jul 2026 18:58:49 GMT",
+      "ETag": "\"744e7b5b5dffdc1:0\"",
+      "Last-Modified": "Thu, 18 Jun 2026 20:02:14 GMT"
+    }
+  },
+  {
+    "document_id": "doc_879b16dbd0491609b4c01661",
+    "source_id": "nrcan_energy_use_database",
+    "source_url": "https://oee.nrcan.gc.ca/corporate/statistics/neud/dpa/showTable.cfm?juris=bc&page=0&rn=21&sector=res&type=CP&year=2023",
+    "local_path": "nrcan_energy_use_database/da/residential_bc_heating_system_stock_21-da856189a2105032.cfm",
+    "content_type": "text/html",
+    "retrieved_at": "2026-07-14T18:58:48Z",
+    "sha256": "da856189a21050321c898c287f2bd5af13c1c0e41f1974e0c5795c3c61ea343a",
+    "size_bytes": 36383,
+    "request_method": "GET",
+    "request_metadata": {
+      "json_body_sha256": null,
+      "params": []
+    },
+    "response_headers": {
+      "Content-Type": "text/html;charset=UTF-8",
+      "Date": "Tue, 14 Jul 2026 18:58:48 GMT"
+    }
+  },
+  {
     "document_id": "doc_8d0e722098f74256eae1313c",
     "source_id": "statistics_canada_wds",
     "source_url": "https://www150.statcan.gc.ca/t1/wds/rest/getDataFromVectorByReferencePeriodRange?vectorIds=%222064701%22&startRefPeriod=2022-05-29&endReferencePeriod=2026-07-14",
     "local_path": "statistics_canada_wds/fd/vector-2064701-fd220616f4a18e38.json",
     "content_type": "application/json",
-    "retrieved_at": "2026-07-14T15:19:25Z",
+    "retrieved_at": "2026-07-14T18:58:32Z",
     "sha256": "fd220616f4a18e385b5fd047146b401cce24c6d270137aea05cd2c7104c2f6ea",
     "size_bytes": 11422,
     "request_method": "GET",
@@ -304,7 +344,7 @@
     },
     "response_headers": {
       "Content-Type": "application/json",
-      "Date": "Tue, 14 Jul 2026 15:19:25 GMT"
+      "Date": "Tue, 14 Jul 2026 18:58:32 GMT"
     }
   },
   {
@@ -364,6 +404,27 @@
     }
   },
   {
+    "document_id": "doc_a34009304aa028874fefa433",
+    "source_id": "bc_budget_economic_forecasts",
+    "source_url": "https://www.bcbudget.gov.bc.ca/2026/pdf/2026_Budget_and_Fiscal_Plan.pdf",
+    "local_path": "bc_budget_economic_forecasts/5b/bc_budget_2026-5b5194bf1e292dcb.pdf",
+    "content_type": "application/pdf",
+    "retrieved_at": "2026-07-14T18:58:47Z",
+    "sha256": "5b5194bf1e292dcb6d440796e4808c00a5726318692597e6db0285b9d248407d",
+    "size_bytes": 2687246,
+    "request_method": "GET",
+    "request_metadata": {
+      "json_body_sha256": null,
+      "params": []
+    },
+    "response_headers": {
+      "Content-Type": "application/pdf",
+      "Date": "Tue, 14 Jul 2026 18:58:46 GMT",
+      "ETag": "\"93f3b0ea5dc0dc1:0\"",
+      "Last-Modified": "Mon, 30 Mar 2026 15:57:31 GMT"
+    }
+  },
+  {
     "document_id": "doc_a66f7c3cc95cda753e6c6652",
     "source_id": "statistics_canada_wds",
     "source_url": "https://www150.statcan.gc.ca/t1/wds/rest/getDataFromVectorByReferencePeriodRange?vectorIds=%221617916980%22&startRefPeriod=2000-01-01&endReferencePeriod=2026-07-14",
@@ -401,7 +462,7 @@
     "source_url": "https://api.eia.gov/v2/petroleum/pri/spt/data/?api_key=REDACTED&frequency=monthly&data%5B0%5D=value&facets%5Bseries%5D%5B%5D=RWTC&start=2026-03&sort%5B0%5D%5Bcolumn%5D=period&sort%5B0%5D%5Bdirection%5D=asc&offset=0&length=5000",
     "local_path": "eia_open_data/84/RWTC-841ff8ae421cab16.json",
     "content_type": "application/json",
-    "retrieved_at": "2026-07-14T15:19:33Z",
+    "retrieved_at": "2026-07-14T18:58:40Z",
     "sha256": "841ff8ae421cab168ef83a82c2376cb29e4e014b53240788663836cca40157a7",
     "size_bytes": 1528,
     "request_method": "GET",
@@ -448,7 +509,7 @@
     },
     "response_headers": {
       "Content-Type": "application/json",
-      "Date": "Tue, 14 Jul 2026 15:19:33 GMT"
+      "Date": "Tue, 14 Jul 2026 18:58:40 GMT"
     }
   },
   {
@@ -577,7 +638,7 @@
     "source_url": "https://www150.statcan.gc.ca/t1/wds/rest/getDataFromVectorByReferencePeriodRange?vectorIds=%222064700%22&startRefPeriod=2022-05-29&endReferencePeriod=2026-07-14",
     "local_path": "statistics_canada_wds/3e/vector-2064700-3e8f7cfbe211c2e3.json",
     "content_type": "application/json",
-    "retrieved_at": "2026-07-14T15:19:25Z",
+    "retrieved_at": "2026-07-14T18:58:32Z",
     "sha256": "3e8f7cfbe211c2e39a0600fda98ae029136d68ee458b42377baefb41243bfb1d",
     "size_bytes": 11422,
     "request_method": "GET",
@@ -600,7 +661,7 @@
     },
     "response_headers": {
       "Content-Type": "application/json",
-      "Date": "Tue, 14 Jul 2026 15:19:25 GMT"
+      "Date": "Tue, 14 Jul 2026 18:58:32 GMT"
     }
   },
   {
@@ -660,12 +721,64 @@
     }
   },
   {
+    "document_id": "doc_d6cbc779cc445835dd5662c7",
+    "source_id": "cmhc_via_statistics_canada",
+    "source_url": "https://www150.statcan.gc.ca/t1/wds/rest/getDataFromVectorByReferencePeriodRange?vectorIds=%2252300169%22&startRefPeriod=2022-04-28&endReferencePeriod=2026-07-14",
+    "local_path": "cmhc_via_statistics_canada/a9/vector-52300169-a9f193fdad9c5907.json",
+    "content_type": "application/json",
+    "retrieved_at": "2026-07-14T18:58:38Z",
+    "sha256": "a9f193fdad9c5907d0a6c3f4cedecaa1a4f4932ec61c802e3687e6418f33a0ac",
+    "size_bytes": 11419,
+    "request_method": "GET",
+    "request_metadata": {
+      "json_body_sha256": null,
+      "params": [
+        [
+          "vectorIds",
+          "\"52300169\""
+        ],
+        [
+          "startRefPeriod",
+          "2022-04-28"
+        ],
+        [
+          "endReferencePeriod",
+          "2026-07-14"
+        ]
+      ]
+    },
+    "response_headers": {
+      "Content-Type": "application/json",
+      "Date": "Tue, 14 Jul 2026 18:58:38 GMT"
+    }
+  },
+  {
+    "document_id": "doc_e3a465863db741030d1be633",
+    "source_id": "world_bank_pink_sheet",
+    "source_url": "https://www.worldbank.org/content/dam/Worldbank/GEP/GEPcommodities/CMO-Historical-Data-Monthly.xlsx",
+    "local_path": "world_bank_pink_sheet/21/monthly-prices-21e8d2eaf71b35b8.xlsx",
+    "content_type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+    "retrieved_at": "2026-07-14T18:58:40Z",
+    "sha256": "21e8d2eaf71b35b861bdb07a3688aeae64bcd3ad02f03dc33980a6f2c74e12c1",
+    "size_bytes": 681972,
+    "request_method": "GET",
+    "request_metadata": {
+      "json_body_sha256": null,
+      "params": []
+    },
+    "response_headers": {
+      "Content-Type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+      "Date": "Tue, 14 Jul 2026 18:58:40 GMT",
+      "Last-Modified": "Sun, 16 Oct 2016 20:45:19 GMT"
+    }
+  },
+  {
     "document_id": "doc_e48b186f60d6667a4cc19fb0",
     "source_id": "statistics_canada_wds",
     "source_url": "https://www150.statcan.gc.ca/t1/wds/rest/getDataFromVectorByReferencePeriodRange?vectorIds=%221617916980%22&startRefPeriod=2021-12-29&endReferencePeriod=2026-07-14",
     "local_path": "statistics_canada_wds/4e/vector-1617916980-4e74afd1d243f4f0.json",
     "content_type": "application/json",
-    "retrieved_at": "2026-07-14T15:19:26Z",
+    "retrieved_at": "2026-07-14T18:58:33Z",
     "sha256": "4e74afd1d243f4f05cc78bf188d8ae001bdc5a257e0f5e4516cc2c77e3428bc3",
     "size_bytes": 4042,
     "request_method": "GET",
@@ -688,7 +801,7 @@
     },
     "response_headers": {
       "Content-Type": "application/json",
-      "Date": "Tue, 14 Jul 2026 15:19:26 GMT"
+      "Date": "Tue, 14 Jul 2026 18:58:32 GMT"
     }
   },
   {
@@ -697,7 +810,7 @@
     "source_url": "https://www150.statcan.gc.ca/t1/wds/rest/getDataFromVectorByReferencePeriodRange?vectorIds=%2241692462%22&startRefPeriod=2022-04-28&endReferencePeriod=2026-07-14",
     "local_path": "statistics_canada_wds/a7/vector-41692462-a73a6f87bc580d66.json",
     "content_type": "application/json",
-    "retrieved_at": "2026-07-14T15:19:25Z",
+    "retrieved_at": "2026-07-14T18:58:32Z",
     "sha256": "a73a6f87bc580d66c279feeb235cfa7eb3520a86f7c5da3c18c7ba84ca9816c0",
     "size_bytes": 11374,
     "request_method": "GET",
@@ -720,7 +833,39 @@
     },
     "response_headers": {
       "Content-Type": "application/json",
-      "Date": "Tue, 14 Jul 2026 15:19:25 GMT"
+      "Date": "Tue, 14 Jul 2026 18:58:32 GMT"
+    }
+  },
+  {
+    "document_id": "doc_f692a37867a18761df1ac9f8",
+    "source_id": "cmhc_via_statistics_canada",
+    "source_url": "https://www150.statcan.gc.ca/t1/wds/rest/getDataFromVectorByReferencePeriodRange?vectorIds=%2252300169%22&startRefPeriod=2000-01-01&endReferencePeriod=2026-07-14",
+    "local_path": "cmhc_via_statistics_canada/ea/vector-52300169-ea3e967fa08a17cd.json",
+    "content_type": "application/json",
+    "retrieved_at": "2026-07-14T18:42:39Z",
+    "sha256": "ea3e967fa08a17cd5257ba89ce506615f10ac9b95b45397ed74f81010b425784",
+    "size_bytes": 73029,
+    "request_method": "GET",
+    "request_metadata": {
+      "json_body_sha256": null,
+      "params": [
+        [
+          "vectorIds",
+          "\"52300169\""
+        ],
+        [
+          "startRefPeriod",
+          "2000-01-01"
+        ],
+        [
+          "endReferencePeriod",
+          "2026-07-14"
+        ]
+      ]
+    },
+    "response_headers": {
+      "Content-Type": "application/json",
+      "Date": "Tue, 14 Jul 2026 18:42:39 GMT"
     }
   }
 ]
