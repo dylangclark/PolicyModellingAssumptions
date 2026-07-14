@@ -272,7 +272,7 @@ sources:
   publish_enabled: true
   update_cadence: monthly
   source_url: https://www.worldbank.org/en/research/commodity-markets
-  download_url: https://www.worldbank.org/content/dam/Worldbank/GEP/GEPcommodities/CMO-Historical-Data-Monthly.xlsx
+  download_url: https://thedocs.worldbank.org/en/doc/74e8be41ceb20fa0da750cda2f6b9e4e-0050012026/related/CMO-Historical-Data-Monthly.xlsx
   license_name: World Bank dataset terms
   raw_redistribution_allowed: review_terms
   start_date: '2000-01-01'
