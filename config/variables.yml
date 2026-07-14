@@ -55,6 +55,17 @@ variables:
   phase: 1
   expected_min: 0
   expected_max: 200000
+- id: economic.housing_starts.growth_yoy_pct
+  class: Economic
+  name: Housing starts growth (SAAR)
+  description: Percentage change in British Columbia total housing starts at a seasonally
+    adjusted annual rate from the same month one year earlier.
+  canonical_unit: percent
+  geography_id: CA-BC
+  status: ready
+  phase: 1
+  expected_min: -80
+  expected_max: 200
 - id: economic.employment.level
   class: Economic
   name: Employment
@@ -530,3 +541,103 @@ variables:
   geography_id: BC Hydro service area
   status: regulatory_filing
   phase: 3
+- id: reliability.electricity_trade.canada_imports_mwh
+  class: Reliability
+  name: Canadian electricity imports
+  description: Monthly international electricity imports to Canada reported by the Canada Energy Regulator.
+  canonical_unit: MWh
+  geography_id: CA
+  status: ready
+  phase: 1
+  expected_min: 0
+  expected_max: 20000000
+- id: reliability.electricity_trade.canada_exports_mwh
+  class: Reliability
+  name: Canadian electricity exports
+  description: Monthly international electricity exports from Canada reported by the Canada Energy Regulator.
+  canonical_unit: MWh
+  geography_id: CA
+  status: ready
+  phase: 1
+  expected_min: 0
+  expected_max: 20000000
+- id: reliability.electricity_trade.canada_import_value_cad
+  class: Reliability
+  name: Canadian electricity import value
+  description: Monthly value of international electricity imports to Canada, including capacity charges where reported.
+  canonical_unit: CAD
+  geography_id: CA
+  status: ready
+  phase: 1
+  expected_min: 0
+  expected_max: 2000000000
+- id: reliability.electricity_trade.canada_export_value_cad
+  class: Reliability
+  name: Canadian electricity export value
+  description: Monthly value of international electricity exports from Canada, including capacity charges where reported.
+  canonical_unit: CAD
+  geography_id: CA
+  status: ready
+  phase: 1
+  expected_min: 0
+  expected_max: 2000000000
+- id: reliability.electricity_trade.west_import_price_cad_per_mwh
+  class: Reliability
+  name: Western Canada electricity import price
+  description: CER monthly weighted-average international electricity import price for the western region, which includes B.C., Alberta, Saskatchewan, and Manitoba.
+  canonical_unit: CAD_per_MWh
+  geography_id: CA-WEST
+  status: ready
+  phase: 1
+  expected_min: -500
+  expected_max: 5000
+- id: reliability.electricity_trade.west_export_price_cad_per_mwh
+  class: Reliability
+  name: Western Canada electricity export price
+  description: CER monthly weighted-average international electricity export price for the western region, which includes B.C., Alberta, Saskatchewan, and Manitoba.
+  canonical_unit: CAD_per_MWh
+  geography_id: CA-WEST
+  status: ready
+  phase: 1
+  expected_min: -500
+  expected_max: 5000
+- id: electrification.residential_heating_systems.heat_pump_stock
+  class: Electrification
+  name: Residential heat-pump heating-system stock
+  description: NRCan estimate of residential heat-pump heating systems in British Columbia.
+  canonical_unit: systems
+  geography_id: CA-BC
+  status: ready
+  phase: 1
+  expected_min: 0
+  expected_max: 5000000
+- id: electrification.residential_heating_systems.heat_pump_share_pct
+  class: Electrification
+  name: Residential heat-pump share
+  description: NRCan estimate of heat pumps as a share of residential heating-system stock in British Columbia.
+  canonical_unit: percent
+  geography_id: CA-BC
+  status: ready
+  phase: 1
+  expected_min: 0
+  expected_max: 100
+- id: electrification.residential_heating_systems.electric_stock
+  class: Electrification
+  name: Residential electric heating-system stock
+  description: NRCan estimate of electric residential heating systems in British Columbia, excluding the separately identified heat-pump category.
+  canonical_unit: systems
+  geography_id: CA-BC
+  status: ready
+  phase: 1
+  expected_min: 0
+  expected_max: 5000000
+- id: electrification.residential_heating_systems.natural_gas_stock
+  class: Electrification
+  name: Residential natural-gas heating-system stock
+  description: Combined NRCan estimate of medium- and high-efficiency natural-gas residential heating systems in British Columbia.
+  canonical_unit: systems
+  geography_id: CA-BC
+  status: ready
+  phase: 1
+  expected_min: 0
+  expected_max: 5000000

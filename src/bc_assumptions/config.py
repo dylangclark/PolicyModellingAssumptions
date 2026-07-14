@@ -238,3 +238,9 @@ def iter_source_outputs(source: dict[str, Any]) -> Iterator[dict[str, Any]]:
         yield from dataset.get("outputs", [])
         for series in dataset.get("series", []):
             yield from series.get("outputs", [])
+    for key in ("monthly_trade_series", "monthly_price_series"):
+        yield from source.get(key, [])
+    for table in source.get("tables", []):
+        yield from table.get("series", [])
+    for document in source.get("documents", []):
+        yield from document.get("series", [])

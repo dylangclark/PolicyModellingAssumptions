@@ -84,7 +84,7 @@ sources:
     - dimension: ^(Data type|Seasonal adjustment)$
       member: ^Seasonally adjusted$
     - dimension: ^(Sex|Gender)$
-      member: ^(Both sexes|Total, gender|Total - Gender)$
+      member: ^(Both sexes|Total, gender)$
     - dimension: ^Age group$
       member: ^(15 years and over|15 years and older)$
     - dimension: ^Statistics$
@@ -156,7 +156,7 @@ sources:
     - dimension: ^(Type of building|Building type)$
       member: '(?i)^Non-residential building(?: construction)?s?$'
     - dimension: ^(Division|Construction division|Construction divisions)$
-      member: (?i)^(Total(?:\b|,|\s).*|Division composite)$
+      member: (?i)^Total(?:\b|,|\s).*
     outputs:
     - output_id: index
       variable_id: economic.construction_price.vancouver_nonresidential_index
@@ -180,14 +180,15 @@ sources:
   adapter: statcan_wds
   enabled: true
   optional: false
-  publish_enabled: false
+  publish_enabled: true
   base_url: https://www150.statcan.gc.ca/t1/wds/rest
   update_cadence: monthly
   source_url: https://www150.statcan.gc.ca/n1/en/catalogue/3410015801
-  license_name: CMHC Licence Agreement for the Use of Data
-  raw_redistribution_allowed: false
-  notes: Collection is enabled for internal analysis. Public export remains disabled
-    until the CMHC licence is reviewed.
+  license_name: Statistics Canada Open Licence
+  raw_redistribution_allowed: true
+  attribution_required: true
+  notes: Published from Statistics Canada table 34-10-0158-01 with CMHC identified
+    as the underlying data producer. Preserve the original SAAR measure and attribution.
   revision_lookback_years: 4
   datasets:
   - dataset_id: housing_starts_saar
@@ -207,6 +208,17 @@ sources:
       unit_canonical: dwelling_units_saar
       metadata:
         seasonal_adjustment: seasonally_adjusted_annual_rate
+        dwelling_scope: total
+        underlying_producer: Canada Mortgage and Housing Corporation
+    - output_id: yoy
+      variable_id: economic.housing_starts.growth_yoy_pct
+      transform: yoy_pct
+      unit_original: percent
+      unit_canonical: percent
+      metadata:
+        based_on: monthly_SAAR
+        dwelling_scope: total
+        underlying_producer: Canada Mortgage and Housing Corporation
     stale_after_days: 75
   required: true
   collection_stale_after_days: 14
@@ -260,7 +272,7 @@ sources:
   publish_enabled: true
   update_cadence: monthly
   source_url: https://www.worldbank.org/en/research/commodity-markets
-  download_url: https://thedocs.worldbank.org/en/doc/74e8be41ceb20fa0da750cda2f6b9e4e-0050012026/related/CMO-Historical-Data-Monthly.xlsx
+  download_url: https://www.worldbank.org/content/dam/Worldbank/GEP/GEPcommodities/CMO-Historical-Data-Monthly.xlsx
   license_name: World Bank dataset terms
   raw_redistribution_allowed: review_terms
   start_date: '2000-01-01'
@@ -287,6 +299,204 @@ sources:
   required: true
   collection_stale_after_days: 14
   stale_after_days: 120
+- id: bc_budget_economic_forecasts
+  name: B.C. Budget economic forecast assumptions
+  publisher: Government of British Columbia
+  authority_tier: 1
+  adapter: bc_budget_forecast
+  enabled: true
+  optional: true
+  required: false
+  publish_enabled: true
+  update_cadence: annual_and_fiscal_updates
+  source_url: https://www.bcbudget.gov.bc.ca/
+  license_name: Open Government Licence - British Columbia
+  raw_redistribution_allowed: true
+  collection_stale_after_days: 450
+  timeout_seconds: 240
+  documents:
+  - document_id: bc_budget_2026
+    edition: Budget 2026
+    title: Budget and Fiscal Plan 2026/27 to 2028/29
+    publication_date: '2026-02-17'
+    url: https://www.bcbudget.gov.bc.ca/2026/pdf/2026_Budget_and_Fiscal_Plan.pdf
+    series:
+    - source_series_id: budget2026_real_gdp_growth
+      variable_id: economic.real_gdp_growth_pct
+      pages: [14]
+      target_years: [2025, 2026, 2027]
+      pattern: 'economy expanded by\s+([0-9.]+)\s*per cent in 2025.*?forecast to grow\s+by\s+([0-9.]+)\s*per cent in 2026.*?increasing to\s+([0-9.]+)\s*per cent in 2027'
+      unit_original: percent
+      unit_canonical: percent
+      geography_id: CA-BC
+      evidence_table: Budget 2026 Economic Forecast
+    - source_series_id: budget2026_overnight_rate
+      variable_id: economic.interest_rate.target_overnight_pct
+      pages: [122]
+      target_years: [2026, 2027]
+      pattern: 'overnight target rate will average\s+([0-9.]+)\s*per cent in 2026 and\s+([0-9.]+)\s*per cent in 2027'
+      unit_original: percent
+      unit_canonical: percent
+      geography_id: CA
+      evidence_table: Financial Markets - Interest Rates
+    - source_series_id: budget2026_goc_10y_rate
+      variable_id: economic.interest_rate.goc_10y_yield_pct
+      pages: [122]
+      target_years: [2026, 2027]
+      pattern: '10-year Government of Canada bond rate is assumed to be\s+([0-9.]+)\s*per cent in 2026 and\s+([0-9.]+)\s*per cent in 2027'
+      unit_original: percent
+      unit_canonical: percent
+      geography_id: CA
+      evidence_table: Table 3.4
+    - source_series_id: budget2026_cad_per_usd
+      variable_id: economic.exchange_rate.cad_per_usd
+      pages: [123]
+      target_years: [2026, 2027]
+      pattern: 'Canadian dollar will average\s+([0-9.]+)\s*US cents in 2026 and\s+([0-9.]+)\s*US cents in 2027'
+      multiplier: 0.01
+      invert: true
+      unit_original: US_cents_per_CAD
+      unit_canonical: CAD_per_USD
+      geography_id: CA
+      evidence_table: Table 3.5
+- id: bc_energy_regulator_production
+  name: B.C. Energy Regulator production data
+  publisher: B.C. Energy Regulator
+  authority_tier: 1
+  adapter: linked_dataset
+  enabled: false
+  optional: true
+  publish_enabled: true
+  update_cadence: monthly
+  source_url: https://www.bc-er.ca/data-reports/data-centre/
+  license_name: Review dataset-specific B.C. Energy Regulator terms
+  raw_redistribution_allowed: review_terms
+  notes: Priority structured source for raw and marketable natural-gas production,
+    condensate, natural-gas liquids, producing wells, basins, and operators.
+  required: false
+  collection_stale_after_days: 45
+- id: nrcan_energy_use_database
+  name: NRCan National and Comprehensive Energy Use Databases
+  publisher: Natural Resources Canada
+  authority_tier: 1
+  adapter: nrcan_neud
+  enabled: true
+  optional: true
+  required: false
+  publish_enabled: true
+  update_cadence: annual
+  source_url: https://oee.nrcan.gc.ca/corporate/statistics/neud/dpa/data_e/databases.cfm
+  license_name: Open Government Licence - Canada
+  raw_redistribution_allowed: true
+  collection_stale_after_days: 500
+  stale_after_days: 500
+  tables:
+  - table_id: residential_bc_heating_system_stock_21
+    title: Residential Sector British Columbia Table 21 - Heating System Stock
+    url: https://oee.nrcan.gc.ca/corporate/statistics/neud/dpa/showTable.cfm?juris=bc&page=0&rn=21&sector=res&type=CP&year=2023
+    geography_id: CA-BC
+    source_year_parameter: 2023
+    series:
+    - source_series_id: heat_pump_stock
+      variable_id: electrification.residential_heating_systems.heat_pump_stock
+      row_pattern: '^Heat Pump$'
+      occurrence: 1
+      multiplier: 1000
+      unit_original: thousand_systems
+      unit_canonical: systems
+    - source_series_id: heat_pump_share_pct
+      variable_id: electrification.residential_heating_systems.heat_pump_share_pct
+      row_pattern: '^Heat Pump$'
+      occurrence: 2
+      unit_original: percent
+      unit_canonical: percent
+    - source_series_id: electric_stock
+      variable_id: electrification.residential_heating_systems.electric_stock
+      row_pattern: '^Electric$'
+      occurrence: 1
+      multiplier: 1000
+      unit_original: thousand_systems
+      unit_canonical: systems
+- id: icbc_vehicle_population
+  name: ICBC vehicle population and registration statistics
+  publisher: Insurance Corporation of British Columbia
+  authority_tier: 1
+  adapter: linked_dataset
+  enabled: false
+  optional: true
+  publish_enabled: false
+  update_cadence: annual_or_release_dependent
+  source_url: https://www.icbc.com/about-icbc/newsroom/Statistics
+  license_name: ICBC data licence - review required
+  raw_redistribution_allowed: review_terms
+  notes: Collect internally first. Enable public export only after confirming redistribution
+    terms for vehicle stock and propulsion-type data.
+  required: false
+  collection_stale_after_days: 450
+- id: bc_hydro_recurring_planning
+  name: BC Hydro recurring planning and corporate reporting
+  publisher: BC Hydro
+  authority_tier: 1
+  adapter: pdf_table
+  enabled: false
+  optional: true
+  publish_enabled: true
+  update_cadence: annual_and_filing_dependent
+  source_url: https://www.bchydro.com/toolbar/about/strategies-plans-regulatory.html
+  license_name: BC Hydro website and document terms
+  raw_redistribution_allowed: review_terms
+  notes: Begin with stable annual-report, service-plan, and IRP tables for sales, peak
+    demand, sector load, generation, imports, DSM, surplus margins, and capital timing.
+  required: false
+  collection_stale_after_days: 120
+- id: bc_zero_carbon_step_code
+  name: B.C. Zero Carbon Step Code adoption and requirements
+  publisher: Government of British Columbia
+  authority_tier: 1
+  adapter: html_table
+  enabled: false
+  optional: true
+  publish_enabled: true
+  update_cadence: monthly_change_check
+  source_url: https://energystepcode.ca/zero-carbon-step-code/
+  license_name: Open Government Licence - British Columbia where applicable
+  raw_redistribution_allowed: review_terms
+  notes: Track jurisdiction, effective date, emissions level, building types, and estimated
+    population or construction coverage.
+  required: false
+  collection_stale_after_days: 60
+- id: bc_lng_project_inventory
+  name: B.C. LNG project capacity and regulatory status inventory
+  publisher: Government of British Columbia and relevant regulators
+  authority_tier: 1
+  adapter: linked_dataset
+  enabled: false
+  optional: true
+  publish_enabled: true
+  update_cadence: monthly_change_check
+  source_url: https://www2.gov.bc.ca/gov/content/industry/natural-gas-oil/lng/lng-projects
+  license_name: Source-specific government and regulatory terms
+  raw_redistribution_allowed: review_terms
+  notes: Dedicated LNG inventory only; do not use the general Major Projects Inventory.
+    Track capacity, feed-gas requirement, status, expected operation, and published load.
+  required: false
+  collection_stale_after_days: 60
+- id: bc_mining_electricity_assumptions
+  name: B.C. mining electricity-demand assumptions
+  publisher: BC Hydro, regulators, proponents, and industry sources
+  authority_tier: 2
+  adapter: regulatory_recipe
+  enabled: false
+  optional: true
+  publish_enabled: true
+  update_cadence: filing_dependent
+  source_url: https://www.bcuc.com/OurWork/Proceedings
+  license_name: Source-specific filing terms
+  raw_redistribution_allowed: review_terms
+  notes: Reviewed assumptions only. Distinguish operating, contracted, development-stage,
+    moderate-growth, and high-growth mining load.
+  required: false
+  collection_stale_after_days: 120
 - id: bc_data_catalogue_households
   name: B.C. household estimates and projections
   publisher: Government of British Columbia
@@ -304,11 +514,58 @@ sources:
   name: Canada Energy Regulator electricity trade summary
   publisher: Canada Energy Regulator
   authority_tier: 1
-  adapter: linked_workbook
-  enabled: false
+  adapter: cer_electricity_trade
+  enabled: true
   optional: true
-  publish_enabled: true
-  source_url: https://www.cer-rec.gc.ca/en/data-analysis/energy-commodities/electricity/statistics/electricity-trade-summary/
-  notes: Registered for import availability and import-cost observations.
   required: false
-  collection_stale_after_days: 30
+  publish_enabled: true
+  update_cadence: monthly
+  source_url: https://www.cer-rec.gc.ca/en/data-analysis/energy-commodities/electricity/statistics/electricity-trade-summary/
+  download_url: https://www.cer-rec.gc.ca/en/data-analysis/energy-commodities/electricity/statistics/electricity-trade-summary/electricity-trades-summary-resume-echanges-commerciaux-electricite.xlsx
+  license_name: Open Government Licence - Canada
+  raw_redistribution_allowed: true
+  start_date: '2010-01-01'
+  collection_stale_after_days: 45
+  stale_after_days: 120
+  monthly_trade_series:
+  - source_series_id: canada_exports_mwh
+    variable_id: reliability.electricity_trade.canada_exports_mwh
+    header_patterns: ['^Exports.*MW\.h']
+    unit_original: MWh
+    unit_canonical: MWh
+    geography_id: CA
+  - source_series_id: canada_imports_mwh
+    variable_id: reliability.electricity_trade.canada_imports_mwh
+    header_patterns: ['^Imports.*MW\.h']
+    unit_original: MWh
+    unit_canonical: MWh
+    geography_id: CA
+  - source_series_id: canada_export_value_cad
+    variable_id: reliability.electricity_trade.canada_export_value_cad
+    header_patterns: ['^Exports.*\(\$\)']
+    unit_original: CAD
+    unit_canonical: CAD
+    currency: CAD
+    geography_id: CA
+  - source_series_id: canada_import_value_cad
+    variable_id: reliability.electricity_trade.canada_import_value_cad
+    header_patterns: ['^Imports.*\(\$\)']
+    unit_original: CAD
+    unit_canonical: CAD
+    currency: CAD
+    geography_id: CA
+  monthly_price_series:
+  - source_series_id: west_export_price_cad_per_mwh
+    variable_id: reliability.electricity_trade.west_export_price_cad_per_mwh
+    header_patterns: ['Exports from Canada.*West.*\$/MW\.h']
+    unit_original: CAD_per_MWh
+    unit_canonical: CAD_per_MWh
+    currency: CAD
+    geography_id: CA-WEST
+  - source_series_id: west_import_price_cad_per_mwh
+    variable_id: reliability.electricity_trade.west_import_price_cad_per_mwh
+    header_patterns: ['Imports to Canada.*West.*\$/MW\.h']
+    unit_original: CAD_per_MWh
+    unit_canonical: CAD_per_MWh
+    currency: CAD
+    geography_id: CA-WEST
