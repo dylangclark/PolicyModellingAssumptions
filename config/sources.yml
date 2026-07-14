@@ -84,7 +84,7 @@ sources:
     - dimension: ^(Data type|Seasonal adjustment)$
       member: ^Seasonally adjusted$
     - dimension: ^(Sex|Gender)$
-      member: ^(Both sexes|Total, gender)$
+      member: ^(Both sexes|Total[ ,-]+Gender)$
     - dimension: ^Age group$
       member: ^(15 years and over|15 years and older)$
     - dimension: ^Statistics$
@@ -156,7 +156,7 @@ sources:
     - dimension: ^(Type of building|Building type)$
       member: '(?i)^Non-residential building(?: construction)?s?$'
     - dimension: ^(Division|Construction division|Construction divisions)$
-      member: (?i)^Total(?:\b|,|\s).*
+      member: ^Division composite$
     outputs:
     - output_id: index
       variable_id: economic.construction_price.vancouver_nonresidential_index
