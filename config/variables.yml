@@ -254,15 +254,6 @@ variables:
   phase: 1
   expected_min: -100
   expected_max: 500
-- id: policy.carbon_price.cad_per_tco2e
-  class: Commodity
-  name: Carbon price
-  description: Legislated, announced, modelled or observed carbon price, with jurisdiction,
-    instrument and record kind explicitly identified.
-  canonical_unit: CAD_per_tCO2e
-  geography_id: CA-BC
-  status: draft
-  phase: 2
 - id: commodity.critical_mineral_demand.index
   class: Commodity
   name: Critical mineral demand

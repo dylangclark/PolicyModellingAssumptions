@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en-CA">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Source gaps · B.C. Assumptions Registry</title>
+  <link rel="stylesheet" href="assets/styles.css">
+  <style>
+    .gap-controls{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:1rem;margin:1.5rem 0}
+    .gap-controls label{display:grid;gap:.35rem;font-weight:600}.gap-controls select,.gap-controls input{padding:.7rem;border:1px solid #bcc8ce;border-radius:.4rem;background:#fff}
+    .gap-summary{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:1rem;margin:1rem 0}.gap-card{padding:1rem;border:1px solid #d4dde1;border-radius:.55rem;background:#fff}.gap-card strong{display:block;font-size:1.6rem}
+    .gap-table{width:100%;border-collapse:collapse;background:#fff}.gap-table th,.gap-table td{padding:.65rem;border-bottom:1px solid #dfe6e9;vertical-align:top;text-align:left}.gap-table th{position:sticky;top:0;background:#f4f7f8}.gap-table a{word-break:break-word}.status-pill{display:inline-block;padding:.18rem .48rem;border-radius:999px;background:#e8eef1;font-size:.82rem}.status-data_available{background:#dff2e5}.status-document_extraction_required{background:#fff0d2}.status-licence_review{background:#f5e1e1}.muted{color:#52656f}.nowrap{white-space:nowrap}
+  </style>
+</head>
+<body>
+<header class="site-header"><div><p class="eyebrow">Evidence registry</p><h1>B.C. Assumptions Registry</h1><p>Source coverage and acquisition plan for configured variables.</p></div><nav><a href="index.html">Registry</a> <a href="pipeline.html">Pipeline</a> <a aria-current="page" href="gaps.html">Source gaps</a> <a href="methodology.html">Methodology</a></nav></header>
+<main>
+<section><h2>Coverage status</h2><div id="gap-summary" class="gap-summary"></div></section>
+<section><h2>Variable-to-source matrix</h2><div class="gap-controls"><label>Status<select id="status-filter"><option value="">All statuses</option></select></label><label>Priority<select id="priority-filter"><option value="">All priorities</option></select></label><label>Class<select id="class-filter"><option value="">All classes</option></select></label><label>Search<input id="gap-search" type="search" placeholder="Variable, source or note"></label></div><div style="overflow:auto;max-height:72vh"><table class="gap-table"><thead><tr><th>Variable</th><th>Status</th><th>Priority</th><th>Preferred source</th><th>Acquisition</th><th>Gate / definition</th></tr></thead><tbody id="gap-table"></tbody></table></div></section>
+<section><h2>Additional variables proposed for registration</h2><div id="additional-variables"></div></section>
+</main>
+<script src="assets/gaps.js"></script>
+</body>
+</html>

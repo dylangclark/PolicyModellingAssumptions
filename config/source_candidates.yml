@@ -1,0 +1,443 @@
+schema_version: 0.1.0
+generated_for: PolicyModellingAssumptions
+excluded_variables:
+    reason: Removed from scope at user direction.
+workflow_statuses:
+  - data_available
+  - source_identified
+  - collector_registered
+  - licence_review
+  - document_extraction_required
+  - derived_from_project_events
+  - no_suitable_source
+priorities:
+  - priority: 1
+    name: Structured B.C. economic and adoption data
+    rationale: Highest-value official sources with repeatable machine-readable acquisition routes.
+  - priority: 2
+    name: B.C. energy supply and electricity system data
+    rationale: Core inputs for load, supply, trade and industrial-demand modelling.
+  - priority: 3
+    name: Regulatory planning assumptions
+    rationale: Authoritative but document-intensive assumptions requiring evidence extraction and review.
+  - priority: 4
+    name: Technology and adoption assumptions
+    rationale: Scenario and cost inputs that require explicit geography, dollar year and technology scope.
+  - priority: 5
+    name: Project-event derived variables
+    rationale: Realization rates and lead times should be calculated from longitudinal project histories.
+source_families:
+  bc_stats_households:
+    publisher: BC Stats
+    authority_tier: 1
+    source_url: https://www2.gov.bc.ca/gov/content/data/statistics/people-population-community/population/household-projections
+    catalogue_url: https://catalogue.data.gov.bc.ca/dataset/2a8ddf6c-dfb9-4187-a66d-9bb15b15ea83
+    format: downloadable_dataset
+    update_cadence: annual_or_projection_release
+    licence: Open Government Licence - British Columbia
+    collector_pattern: bc_data_catalogue_resource
+    implementation_status: source_identified
+    notes: Use province-level region rows and retain estimate/projection, vintage and scenario fields.
+  icbc_vehicle_population:
+    publisher: Insurance Corporation of British Columbia
+    authority_tier: 1
+    source_url: https://www.icbc.com/about-icbc/newsroom/Statistics
+    format: downloadable_open_data
+    update_cadence: annual_or_release_dependent
+    licence: ICBC Open Data Licence
+    collector_pattern: icbc_vehicle_population_download
+    implementation_status: source_identified
+    notes: Separate BEV, PHEV and hybrid; retain vehicle class, model year, geography and registration year.
+  bc_energy_regulator_production:
+    publisher: BC Energy Regulator
+    authority_tier: 1
+    source_url: https://reports.bc-er.ca/ogc/app001/r/ams_reports/bc_total_production
+    catalogue_url: https://www.bc-er.ca/data-reports/data-centre/
+    format: Oracle_APEX_report_download
+    update_cadence: monthly
+    licence: dataset_specific_terms_review
+    collector_pattern: bcer_apex_csv_export
+    implementation_status: source_identified
+    notes: Aggregate well-level production by production month; distinguish raw gas and marketable gas.
+  cer_electricity_trade:
+    publisher: Canada Energy Regulator
+    authority_tier: 1
+    source_url: https://www.cer-rec.gc.ca/en/data-analysis/energy-commodities/electricity/statistics/electricity-trade-summary/index.html
+    format: XLSX_and_commodity_statistics
+    update_cadence: monthly
+    licence: Open Government Licence - Canada
+    collector_pattern: cer_electricity_trade
+    implementation_status: data_available
+    notes: Current collector provides Canada totals and western prices. Add province-specific volumes only when the source explicitly identifies B.C.
+  bc_hydro_planning:
+    publisher: BC Hydro
+    authority_tier: 1
+    source_url: https://www.bchydro.com/toolbar/about/strategies-plans-regulatory.html
+    format: PDF_XLSX_regulatory_filings
+    update_cadence: annual_and_filing_dependent
+    licence: BC Hydro document terms
+    collector_pattern: regulatory_recipe_and_table_extract
+    implementation_status: document_extraction_required
+    notes: Prioritize annual sales, peak demand, generation, imports, DSM and forecast vintages.
+  bcuc_filings:
+    publisher: British Columbia Utilities Commission and regulated utilities
+    authority_tier: 1
+    source_url: https://www.bcuc.com/OurWork/Proceedings.html
+    format: PDF_XLSX_regulatory_filings
+    update_cadence: proceeding_dependent
+    licence: document_specific_terms
+    collector_pattern: regulatory_recipe_review_queue
+    implementation_status: document_extraction_required
+    notes: Preserve proceeding, exhibit, page, table, scenario and review decision.
+  nrcan_energy_use:
+    publisher: Natural Resources Canada
+    authority_tier: 1
+    source_url: https://oee.nrcan.gc.ca/corporate/statistics/neud/dpa/data_e/databases.cfm
+    format: HTML_tables
+    update_cadence: annual
+    licence: Open Government Licence - Canada
+    collector_pattern: nrcan_neud
+    implementation_status: data_available
+    notes: Existing collector covers B.C. heat-pump and electric heating system stock.
+  nrel_atb:
+    publisher: National Renewable Energy Laboratory
+    authority_tier: 2
+    source_url: https://atb.nrel.gov/
+    format: CSV_XLSX
+    update_cadence: annual
+    licence: United States government public data
+    collector_pattern: nrel_atb_download
+    implementation_status: source_identified
+    notes: Retain technology, scenario, target year, currency conversion and real-dollar basis; do not present as B.C.-observed costs.
+  cer_energy_futures:
+    publisher: Canada Energy Regulator
+    authority_tier: 1
+    source_url: https://www.cer-rec.gc.ca/en/data-analysis/canada-energy-future/
+    format: downloadable_scenario_data
+    update_cadence: periodic
+    licence: Open Government Licence - Canada
+    collector_pattern: cer_energy_futures_download
+    implementation_status: source_identified
+    notes: Suitable for national/provincial scenario variables where exact definitions are available.
+  iea_critical_minerals:
+    publisher: International Energy Agency
+    authority_tier: 2
+    source_url: https://www.iea.org/reports/global-critical-minerals-outlook-2026
+    format: report_and_downloadable_data
+    update_cadence: annual
+    licence: IEA terms; redistribution review required
+    collector_pattern: scenario_dataset_with_licence_gate
+    implementation_status: licence_review
+    notes: Store named mineral, technology demand, scenario, target year and source unit.
+  bc_project_events:
+    publisher: Government of British Columbia, Impact Assessment Agency of Canada and project proponents
+    authority_tier: mixed
+    source_url: https://projects.eao.gov.bc.ca/
+    format: APIs_HTML_documents
+    update_cadence: event_driven
+    licence: mixed_source_terms
+    collector_pattern: longitudinal_project_event_inventory
+    implementation_status: derived_from_project_events
+    notes: Build project-stage histories before calculating realization rates or construction lead times.
+variables:
+  economic.households.level:
+    priority: 1
+    status: source_identified
+    preferred_source: bc_stats_households
+    source_series_scope: Province of B.C.; occupied private households; estimate or projection explicitly identified.
+    collector_difficulty: medium
+    publication_gate: Validate province-level region codes, vintage and estimate/projection distinction.
+  economic.households.growth_yoy_pct:
+    priority: 1
+    status: source_identified
+    preferred_source: bc_stats_households
+    derived_from: economic.households.level
+    formula: (value_t / value_t_minus_1_year - 1) * 100
+    collector_difficulty: medium
+  electrification.ev.stock.level:
+    priority: 1
+    status: source_identified
+    preferred_source: icbc_vehicle_population
+    source_series_scope: Registered in-use vehicles; publish BEV and PHEV separately and optionally a combined plug-in total.
+    collector_difficulty: medium
+    publication_gate: Confirm propulsion and vehicle-class definitions and ICBC licence attribution.
+  electrification.ev.stock_growth_yoy_pct:
+    priority: 1
+    status: source_identified
+    preferred_source: icbc_vehicle_population
+    derived_from: electrification.ev.stock.level
+    formula: (value_t / value_t_minus_1_year - 1) * 100
+    collector_difficulty: low_after_level_collector
+  commodity.natural_gas.aeco_cad_per_gj:
+    priority: 1
+    status: licence_review
+    preferred_source: cer_energy_futures
+    alternative_sources:
+      - Alberta Energy market data
+      - NGX or price administrator data subject to redistribution rights
+    collector_difficulty: medium
+    publication_gate: Do not publish proprietary benchmark values without explicit rights.
+  electrification.heat_pump.adoption_pct:
+    priority: 1
+    status: data_available
+    preferred_source: nrcan_energy_use
+    source_series_scope: Use existing heat-pump share of heating-system stock; label denominator and year.
+    collector_difficulty: low
+  electrification.heat_pump.installed_cost_cad:
+    priority: 4
+    status: source_identified
+    preferred_source: bcuc_filings
+    alternative_sources:
+      - CleanBC program evaluation and rebate application data
+      - NRCan retrofit program evaluations
+    collector_difficulty: high
+    publication_gate: Retain equipment type, building archetype, rebates, electrical upgrades and dollar year.
+  electrification.buildings.rate_pct_per_year:
+    priority: 4
+    status: source_identified
+    preferred_source: nrcan_energy_use
+    alternative_sources:
+      - BC Hydro conservation and electrification filings
+      - CleanBC program reporting
+    collector_difficulty: high
+    publication_gate: Define stock denominator and fuel-switching event; calculate from stock transitions where possible.
+  reliability.import_energy_availability_gwh:
+    priority: 3
+    status: document_extraction_required
+    preferred_source: bc_hydro_planning
+    alternative_sources:
+      - bcuc_filings
+      - cer_electricity_trade
+    collector_difficulty: high
+  reliability.electricity_import_cost_cad_per_mwh:
+    priority: 2
+    status: document_extraction_required
+    preferred_source: bc_hydro_planning
+    alternative_sources:
+      - cer_electricity_trade
+    collector_difficulty: high
+    publication_gate: Distinguish observed trade value per MWh from planning import-price assumptions.
+  reliability.reserve_margin_pct:
+    priority: 3
+    status: document_extraction_required
+    preferred_source: bc_hydro_planning
+    alternative_sources:
+      - bcuc_filings
+    collector_difficulty: high
+  reliability.elcc_pct_nameplate:
+    priority: 3
+    status: document_extraction_required
+    preferred_source: bc_hydro_planning
+    alternative_sources:
+      - bcuc_filings
+      - nrel_atb
+    collector_difficulty: high
+    publication_gate: Require resource, duration, penetration, system, target year and methodology.
+  climate.reservoir_inflows.index:
+    priority: 2
+    status: document_extraction_required
+    preferred_source: bc_hydro_planning
+    alternative_sources:
+      - BC Hydro hydrology reports
+      - Water Survey of Canada station aggregation
+    collector_difficulty: high
+  climate.drought.recurrence_years:
+    priority: 4
+    status: source_identified
+    preferred_source: bc_hydro_planning
+    alternative_sources:
+      - peer-reviewed basin studies
+      - provincial drought and hydrology reports
+    collector_difficulty: high
+    publication_gate: Store event definition and basin; do not mix scenario recurrence with observed return periods.
+  climate.snowpack.percent_of_normal:
+    priority: 2
+    status: source_identified
+    preferred_source: bc_hydro_planning
+    alternative_sources:
+      - B.C. Snow Survey and Water Supply Bulletin
+    collector_difficulty: medium
+    notes: User previously asked not to prioritize River Forecast Centre collection; retain as lower-priority alternative only.
+  technology.battery.installed_cost_cad_per_kwh:
+    priority: 4
+    status: source_identified
+    preferred_source: nrel_atb
+    alternative_sources:
+      - bcuc_filings
+      - cer_energy_futures
+    collector_difficulty: medium
+  technology.wind.capex_cad_per_kw:
+    priority: 4
+    status: source_identified
+    preferred_source: nrel_atb
+    alternative_sources:
+      - bcuc_filings
+      - cer_energy_futures
+    collector_difficulty: medium
+  technology.solar.capex_cad_per_kw:
+    priority: 4
+    status: source_identified
+    preferred_source: nrel_atb
+    alternative_sources:
+      - bcuc_filings
+      - cer_energy_futures
+    collector_difficulty: medium
+  technology.hydrogen.levelized_cost_cad_per_kg:
+    priority: 4
+    status: source_identified
+    preferred_source: cer_energy_futures
+    alternative_sources:
+      - Natural Resources Canada hydrogen studies
+      - U.S. Department of Energy Hydrogen Program
+    collector_difficulty: high
+  commodity.critical_mineral_demand.index:
+    priority: 4
+    status: licence_review
+    preferred_source: iea_critical_minerals
+    alternative_sources:
+      - cer_energy_futures
+    collector_difficulty: medium
+  infrastructure.transformer.lead_time_months:
+    priority: 4
+    status: source_identified
+    preferred_source: bcuc_filings
+    alternative_sources:
+      - U.S. Department of Energy transformer supply-chain reports
+      - NERC reliability assessments
+    collector_difficulty: high
+  financial.cost_of_debt_pct:
+    priority: 3
+    status: document_extraction_required
+    preferred_source: bcuc_filings
+    collector_difficulty: high
+  financial.cost_of_equity_pct:
+    priority: 3
+    status: document_extraction_required
+    preferred_source: bcuc_filings
+    collector_difficulty: high
+  financial.wacc_pct:
+    priority: 3
+    status: document_extraction_required
+    preferred_source: bcuc_filings
+    collector_difficulty: high
+  financial.discount_rate_pct:
+    priority: 3
+    status: document_extraction_required
+    preferred_source: bcuc_filings
+    alternative_sources:
+      - Treasury Board of Canada cost-benefit guidance
+    collector_difficulty: high
+  industrial.lng.realization_rate_pct:
+    priority: 5
+    status: derived_from_project_events
+    preferred_source: bc_project_events
+    collector_difficulty: high
+  industrial.mining.realization_rate_pct:
+    priority: 5
+    status: derived_from_project_events
+    preferred_source: bc_project_events
+    collector_difficulty: high
+  industrial.data_centre.realization_rate_pct:
+    priority: 5
+    status: derived_from_project_events
+    preferred_source: bc_project_events
+    alternative_sources:
+      - BC Hydro connection and call-for-power records where public
+    collector_difficulty: high
+  infrastructure.construction.lead_time_months:
+    priority: 5
+    status: derived_from_project_events
+    preferred_source: bc_project_events
+    collector_difficulty: high
+  industrial.data_centre.power_intensity_mw_per_unit:
+    priority: 4
+    status: source_identified
+    preferred_source: bcuc_filings
+    alternative_sources:
+      - project environmental assessments
+      - company planning filings
+      - international energy agency data-centre analysis
+    collector_difficulty: high
+  industrial.ai.compute_growth_pct_per_year:
+    priority: 4
+    status: source_identified
+    preferred_source: cer_energy_futures
+    alternative_sources:
+      - peer-reviewed compute trend datasets
+      - IEA data-centre analysis
+    collector_difficulty: high
+additional_variables_to_register:
+  - id: economic.unemployment.rate_pct
+    class: Economic
+    canonical_unit: percent
+    geography_id: CA-BC
+    preferred_source: statistics_canada_wds
+    priority: 1
+    rationale: Available from the existing labour-force table and adapter.
+  - id: economic.labour_force.participation_rate_pct
+    class: Economic
+    canonical_unit: percent
+    geography_id: CA-BC
+    preferred_source: statistics_canada_wds
+    priority: 1
+    rationale: Available from the existing labour-force table and adapter.
+  - id: economic.wages.average_hourly_yoy_pct
+    class: Economic
+    canonical_unit: percent
+    geography_id: CA-BC
+    preferred_source: statistics_canada_wds
+    priority: 1
+  - id: economic.housing_completions.level
+    class: Economic
+    canonical_unit: dwelling_units
+    geography_id: CA-BC
+    preferred_source: cmhc_via_statistics_canada
+    priority: 1
+  - id: economic.housing_under_construction.level
+    class: Economic
+    canonical_unit: dwelling_units
+    geography_id: CA-BC
+    preferred_source: cmhc_via_statistics_canada
+    priority: 1
+  - id: energy.natural_gas.bc_marketable_production_e3m3
+    class: Industrial
+    canonical_unit: thousand_cubic_metres
+    geography_id: CA-BC
+    preferred_source: bc_energy_regulator_production
+    priority: 2
+  - id: energy.electricity.bc_sales_gwh
+    class: Demand
+    canonical_unit: GWh
+    geography_id: CA-BC
+    preferred_source: bc_hydro_planning
+    priority: 2
+  - id: energy.electricity.bc_peak_demand_mw
+    class: Demand
+    canonical_unit: MW
+    geography_id: CA-BC
+    preferred_source: bc_hydro_planning
+    priority: 2
+  - id: energy.electricity.bc_generation_gwh
+    class: Reliability
+    canonical_unit: GWh
+    geography_id: CA-BC
+    preferred_source: bc_hydro_planning
+    priority: 2
+  - id: industrial.lng.capacity_mtpa
+    class: Industrial
+    canonical_unit: million_tonnes_per_year
+    geography_id: CA-BC
+    preferred_source: bc_project_events
+    priority: 5
+  - id: industrial.lng.feed_gas_bcf_per_day
+    class: Industrial
+    canonical_unit: Bcf_per_day
+    geography_id: CA-BC
+    preferred_source: bc_project_events
+    priority: 5
+  - id: industrial.mining.expected_electricity_demand_mw
+    class: Industrial
+    canonical_unit: MW
+    geography_id: CA-BC
+    preferred_source: bc_project_events
+    priority: 5

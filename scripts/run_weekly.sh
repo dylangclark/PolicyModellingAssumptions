@@ -24,6 +24,7 @@ git pull --ff-only "$REMOTE" "$BRANCH"
 "$VENV/bin/bc-assumptions" --root "$ROOT" export
 "$VENV/bin/bc-assumptions" --root "$ROOT" validate-public
 
+"$ROOT/.venv/bin/python" "$ROOT/scripts/build_source_gap_report.py" --root "$ROOT"
 git add data/export site/data
 if ! git diff --cached --quiet; then
   git -c user.name="$GIT_NAME" -c user.email="$GIT_EMAIL" \
