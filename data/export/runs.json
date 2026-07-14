@@ -14,6 +14,20 @@
     "warnings": []
   },
   {
+    "run_id": "run_034b8ab4ae814a6ab75ad182b3c9d55b",
+    "source_id": "cmhc_via_statistics_canada",
+    "started_at": "2026-07-14T20:55:48Z",
+    "finished_at": "2026-07-14T20:55:51Z",
+    "status": "success",
+    "records_seen": 86,
+    "records_inserted": 0,
+    "records_revised": 0,
+    "records_unchanged": 86,
+    "records_rejected": 0,
+    "error": null,
+    "warnings": []
+  },
+  {
     "run_id": "run_046a4206772347ffb544839b858e7dfd",
     "source_id": "world_bank_pink_sheet",
     "started_at": "2026-07-14T15:07:12Z",
@@ -135,6 +149,20 @@
     "records_inserted": 0,
     "records_revised": 0,
     "records_unchanged": 24,
+    "records_rejected": 0,
+    "error": null,
+    "warnings": []
+  },
+  {
+    "run_id": "run_242a1aeff1234caba53667e52e974b65",
+    "source_id": "bc_budget_economic_forecasts",
+    "started_at": "2026-07-14T20:56:03Z",
+    "finished_at": "2026-07-14T20:56:04Z",
+    "status": "success",
+    "records_seen": 9,
+    "records_inserted": 0,
+    "records_revised": 0,
+    "records_unchanged": 9,
     "records_rejected": 0,
     "error": null,
     "warnings": []
@@ -322,6 +350,20 @@
     "warnings": []
   },
   {
+    "run_id": "run_62da17db25ae42d8b8262d29497c7370",
+    "source_id": "bank_of_canada_valet",
+    "started_at": "2026-07-14T20:55:35Z",
+    "finished_at": "2026-07-14T20:55:37Z",
+    "status": "success",
+    "records_seen": 95,
+    "records_inserted": 1,
+    "records_revised": 0,
+    "records_unchanged": 94,
+    "records_rejected": 0,
+    "error": null,
+    "warnings": []
+  },
+  {
     "run_id": "run_65720f2499aa486ea5c4af454b6a2d50",
     "source_id": "statistics_canada_wds",
     "started_at": "2026-07-14T15:07:34Z",
@@ -359,6 +401,20 @@
     "records_inserted": 0,
     "records_revised": 0,
     "records_unchanged": 1176,
+    "records_rejected": 0,
+    "error": null,
+    "warnings": []
+  },
+  {
+    "run_id": "run_7f7da03177d341e99e12dd9f8cfdba9a",
+    "source_id": "statistics_canada_wds",
+    "started_at": "2026-07-14T20:55:37Z",
+    "finished_at": "2026-07-14T20:55:48Z",
+    "status": "success",
+    "records_seen": 318,
+    "records_inserted": 0,
+    "records_revised": 0,
+    "records_unchanged": 318,
     "records_rejected": 0,
     "error": null,
     "warnings": []
@@ -420,6 +476,20 @@
     "warnings": []
   },
   {
+    "run_id": "run_95a5b2f2185e472d9f5b52b05f0f0bd3",
+    "source_id": "cer_electricity_trade",
+    "started_at": "2026-07-14T20:56:05Z",
+    "finished_at": "2026-07-14T20:56:24Z",
+    "status": "success",
+    "records_seen": 1176,
+    "records_inserted": 0,
+    "records_revised": 0,
+    "records_unchanged": 1176,
+    "records_rejected": 0,
+    "error": null,
+    "warnings": []
+  },
+  {
     "run_id": "run_9815db14e54b42168ce4f29303c7b185",
     "source_id": "nrcan_energy_use_database",
     "started_at": "2026-07-14T18:45:12Z",
@@ -457,6 +527,20 @@
     "records_inserted": 0,
     "records_revised": 0,
     "records_unchanged": 9,
+    "records_rejected": 0,
+    "error": null,
+    "warnings": []
+  },
+  {
+    "run_id": "run_a495d8f25fce4207bc60ea4b14cbc27d",
+    "source_id": "world_bank_pink_sheet",
+    "started_at": "2026-07-14T20:55:52Z",
+    "finished_at": "2026-07-14T20:56:03Z",
+    "status": "success",
+    "records_seen": 636,
+    "records_inserted": 0,
+    "records_revised": 0,
+    "records_unchanged": 636,
     "records_rejected": 0,
     "error": null,
     "warnings": []
@@ -695,6 +779,34 @@
     "records_inserted": 305,
     "records_revised": 0,
     "records_unchanged": 317,
+    "records_rejected": 0,
+    "error": null,
+    "warnings": []
+  },
+  {
+    "run_id": "run_eb06242757ea4f87b6f1b27273fcad05",
+    "source_id": "nrcan_energy_use_database",
+    "started_at": "2026-07-14T20:56:04Z",
+    "finished_at": "2026-07-14T20:56:05Z",
+    "status": "success",
+    "records_seen": 24,
+    "records_inserted": 0,
+    "records_revised": 0,
+    "records_unchanged": 24,
+    "records_rejected": 0,
+    "error": null,
+    "warnings": []
+  },
+  {
+    "run_id": "run_ebd75d4caf16493c92876447f72dc4f2",
+    "source_id": "eia_open_data",
+    "started_at": "2026-07-14T20:55:51Z",
+    "finished_at": "2026-07-14T20:55:52Z",
+    "status": "success",
+    "records_seen": 12,
+    "records_inserted": 0,
+    "records_revised": 0,
+    "records_unchanged": 12,
     "records_rejected": 0,
     "error": null,
     "warnings": []

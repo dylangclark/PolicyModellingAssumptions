@@ -7,7 +7,7 @@ commodity.lng.japan_proxy_usd_per_mmbtu,Commodity,Japan LNG import price proxy,U
 commodity.oil.wti_usd_per_bbl,Commodity,WTI oil price,USD_per_barrel,US,354,data_available,,,,,,,,,,,,,,
 economic.cpi.all_items_index,Economic,All-items CPI index,index,CA-BC,317,data_available,,,,,,,,,,,,,,
 economic.interest_rate.target_overnight_pct,Economic,Bank of Canada target overnight rate,percent,CA,4483,data_available,,,,,,,,,,,,,,
-economic.exchange_rate.cad_per_usd,Economic,CAD per USD exchange rate,CAD_per_USD,CA,2379,data_available,,,,,,,,,,,,,,
+economic.exchange_rate.cad_per_usd,Economic,CAD per USD exchange rate,CAD_per_USD,CA,2380,data_available,,,,,,,,,,,,,,
 economic.construction_inflation.vancouver_nonresidential_yoy_pct,Economic,Construction inflation,percent,CA-BC-VAN,101,data_available,,,,,,,,,,,,,,
 economic.employment.level,Economic,Employment,persons,CA-BC,318,data_available,,,,,,,,,,,,,,
 economic.employment.growth_yoy_pct,Economic,Employment growth,percent,CA-BC,306,data_available,,,,,,,,,,,,,,

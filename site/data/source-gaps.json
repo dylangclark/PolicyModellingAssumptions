@@ -501,7 +501,7 @@
       "geography_id": "CA",
       "variable_status": "ready",
       "phase": 1,
-      "public_record_count": 2379,
+      "public_record_count": 2380,
       "workflow_status": "data_available",
       "priority": null,
       "collector_difficulty": null,

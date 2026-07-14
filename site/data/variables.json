@@ -612,18 +612,6 @@
     "expected_max": null
   },
   {
-    "variable_id": "policy.carbon_price.cad_per_tco2e",
-    "class_name": "Commodity",
-    "name": "Carbon price",
-    "description": "Legislated, announced, modelled or observed carbon price, with jurisdiction, instrument and record kind explicitly identified.",
-    "canonical_unit": "CAD_per_tCO2e",
-    "geography_id": "CA-BC",
-    "status": "draft",
-    "phase": 2,
-    "expected_min": null,
-    "expected_max": null
-  },
-  {
     "variable_id": "reliability.elcc_pct_nameplate",
     "class_name": "Reliability",
     "name": "ELCC assumption",
