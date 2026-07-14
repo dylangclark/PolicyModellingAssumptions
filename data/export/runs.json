@@ -42,10 +42,38 @@
     "warnings": []
   },
   {
+    "run_id": "run_2cb88d2bfdab437c831424f2d8aee6fa",
+    "source_id": "bank_of_canada_valet",
+    "started_at": "2026-07-14T15:19:23Z",
+    "finished_at": "2026-07-14T15:19:24Z",
+    "status": "success",
+    "records_seen": 94,
+    "records_inserted": 0,
+    "records_revised": 0,
+    "records_unchanged": 94,
+    "records_rejected": 0,
+    "error": null,
+    "warnings": []
+  },
+  {
     "run_id": "run_434930a7020a444d83477e9176cd43c2",
     "source_id": "eia_open_data",
     "started_at": "2026-07-14T15:10:49Z",
     "finished_at": "2026-07-14T15:10:51Z",
+    "status": "success",
+    "records_seen": 12,
+    "records_inserted": 0,
+    "records_revised": 0,
+    "records_unchanged": 12,
+    "records_rejected": 0,
+    "error": null,
+    "warnings": []
+  },
+  {
+    "run_id": "run_52fb07f83c334b62ac2284fef3275b79",
+    "source_id": "eia_open_data",
+    "started_at": "2026-07-14T15:19:32Z",
+    "finished_at": "2026-07-14T15:19:34Z",
     "status": "success",
     "records_seen": 12,
     "records_inserted": 0,
@@ -98,6 +126,20 @@
     "warnings": []
   },
   {
+    "run_id": "run_8def70aa3b04458d8c126526e5b12933",
+    "source_id": "world_bank_pink_sheet",
+    "started_at": "2026-07-14T15:19:34Z",
+    "finished_at": "2026-07-14T15:19:43Z",
+    "status": "success",
+    "records_seen": 636,
+    "records_inserted": 0,
+    "records_revised": 0,
+    "records_unchanged": 636,
+    "records_rejected": 0,
+    "error": null,
+    "warnings": []
+  },
+  {
     "run_id": "run_95a074158d66416db3c01749ee277e2e",
     "source_id": "world_bank_pink_sheet",
     "started_at": "2026-07-14T15:10:51Z",
@@ -121,6 +163,20 @@
     "records_inserted": 13242,
     "records_revised": 0,
     "records_unchanged": 0,
+    "records_rejected": 0,
+    "error": null,
+    "warnings": []
+  },
+  {
+    "run_id": "run_c63809e8178d46a5819bb29a8e4dfdd6",
+    "source_id": "statistics_canada_wds",
+    "started_at": "2026-07-14T15:19:24Z",
+    "finished_at": "2026-07-14T15:19:31Z",
+    "status": "success",
+    "records_seen": 318,
+    "records_inserted": 0,
+    "records_revised": 0,
+    "records_unchanged": 318,
     "records_rejected": 0,
     "error": null,
     "warnings": []

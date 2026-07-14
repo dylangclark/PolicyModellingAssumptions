@@ -1,6 +1,6 @@
 {
   "schema_version": "0.1.0",
-  "generated_at": "2026-07-14T15:11:02Z",
+  "generated_at": "2026-07-14T15:19:46Z",
   "configured_variable_count": 55,
   "configured_source_count": 7,
   "enabled_source_count": 5,
@@ -10,7 +10,7 @@
   "variable_count": 18,
   "source_count": 4,
   "document_count": 19,
-  "latest_successful_run": "2026-07-14T15:10:59Z",
+  "latest_successful_run": "2026-07-14T15:19:43Z",
   "failed_sources": [],
   "classes": [
     "Climate",
