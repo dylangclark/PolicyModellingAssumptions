@@ -16,7 +16,17 @@
     "license_name": "Bank of Canada terms of use",
     "raw_redistribution_allowed": "review_terms",
     "notes": null,
-    "latest_run": null
+    "latest_run": {
+      "run_id": "run_e5a6f29ab824426084b34c5cab45e1ce",
+      "started_at": "2026-07-14T15:10:38Z",
+      "finished_at": "2026-07-14T15:10:39Z",
+      "status": "success",
+      "records_seen": 94,
+      "records_inserted": 0,
+      "records_revised": 0,
+      "records_unchanged": 94,
+      "records_rejected": 0
+    }
   },
   {
     "source_id": "bc_data_catalogue_households",
@@ -73,7 +83,17 @@
     "license_name": "CMHC Licence Agreement for the Use of Data",
     "raw_redistribution_allowed": false,
     "notes": "Collection is enabled for internal analysis. Public export remains disabled until the CMHC licence is reviewed.",
-    "latest_run": null
+    "latest_run": {
+      "run_id": "run_a7b0d274f4324eb39eee55c1a4cb98b9",
+      "started_at": "2026-07-14T15:10:48Z",
+      "finished_at": "2026-07-14T15:10:49Z",
+      "status": "success",
+      "records_seen": 49,
+      "records_inserted": 0,
+      "records_revised": 0,
+      "records_unchanged": 49,
+      "records_rejected": 0
+    }
   },
   {
     "source_id": "eia_open_data",
@@ -92,7 +112,17 @@
     "license_name": "U.S. government public data; confirm dataset-specific terms",
     "raw_redistribution_allowed": true,
     "notes": null,
-    "latest_run": null
+    "latest_run": {
+      "run_id": "run_434930a7020a444d83477e9176cd43c2",
+      "started_at": "2026-07-14T15:10:49Z",
+      "finished_at": "2026-07-14T15:10:51Z",
+      "status": "success",
+      "records_seen": 12,
+      "records_inserted": 0,
+      "records_revised": 0,
+      "records_unchanged": 12,
+      "records_rejected": 0
+    }
   },
   {
     "source_id": "statistics_canada_wds",
@@ -111,7 +141,17 @@
     "license_name": "Statistics Canada Open Licence",
     "raw_redistribution_allowed": true,
     "notes": null,
-    "latest_run": null
+    "latest_run": {
+      "run_id": "run_0fd4082be6004050b36aa63e6a40a655",
+      "started_at": "2026-07-14T15:10:39Z",
+      "finished_at": "2026-07-14T15:10:48Z",
+      "status": "success",
+      "records_seen": 318,
+      "records_inserted": 0,
+      "records_revised": 0,
+      "records_unchanged": 318,
+      "records_rejected": 0
+    }
   },
   {
     "source_id": "world_bank_pink_sheet",
@@ -130,6 +170,16 @@
     "license_name": "World Bank dataset terms",
     "raw_redistribution_allowed": "review_terms",
     "notes": null,
-    "latest_run": null
+    "latest_run": {
+      "run_id": "run_95a074158d66416db3c01749ee277e2e",
+      "started_at": "2026-07-14T15:10:51Z",
+      "finished_at": "2026-07-14T15:10:59Z",
+      "status": "success",
+      "records_seen": 636,
+      "records_inserted": 0,
+      "records_revised": 0,
+      "records_unchanged": 636,
+      "records_rejected": 0
+    }
   }
 ]

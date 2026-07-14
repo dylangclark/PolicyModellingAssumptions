@@ -1,1 +1,12 @@
 run_id,source_id,started_at,finished_at,status,records_seen,records_inserted,records_revised,records_unchanged,records_rejected,warnings,error
+run_046a4206772347ffb544839b858e7dfd,world_bank_pink_sheet,2026-07-14T15:07:12Z,2026-07-14T15:07:30Z,success,636,495,0,141,0,[],
+run_0fd4082be6004050b36aa63e6a40a655,statistics_canada_wds,2026-07-14T15:10:39Z,2026-07-14T15:10:48Z,success,318,0,0,318,0,[],
+run_25ea8d2a8afa473dab976838a6b10f2e,eia_open_data,2026-07-14T14:58:50Z,2026-07-14T14:58:51Z,success,12,0,0,12,0,[],
+run_434930a7020a444d83477e9176cd43c2,eia_open_data,2026-07-14T15:10:49Z,2026-07-14T15:10:51Z,success,12,0,0,12,0,[],
+run_65720f2499aa486ea5c4af454b6a2d50,statistics_canada_wds,2026-07-14T15:07:34Z,2026-07-14T15:08:43Z,success,2284,2284,0,0,0,[],
+run_69c339975ee644e58f7c168c791bdc78,world_bank_pink_sheet,2026-07-14T15:01:45Z,2026-07-14T15:01:52Z,failed,636,141,0,0,0,[],OperationalError: database is locked
+run_8149dc46c9b94b17aab5576c6c5115e8,eia_open_data,2026-07-14T14:56:33Z,2026-07-14T14:57:05Z,success,1062,1062,0,0,0,[],
+run_95a074158d66416db3c01749ee277e2e,world_bank_pink_sheet,2026-07-14T15:10:51Z,2026-07-14T15:10:59Z,success,636,0,0,636,0,[],
+run_bb7754fb7f4a40e2ab86cdcbaa923a93,bank_of_canada_valet,2026-07-14T14:59:17Z,2026-07-14T15:05:33Z,success,13242,13242,0,0,0,[],
+run_e281f305c9054b41855f16ac85cd60d0,eia_open_data,2026-07-14T14:55:30Z,2026-07-14T14:55:30Z,failed,0,0,0,0,0,[],Missing environment variable EIA_API_KEY
+run_e5a6f29ab824426084b34c5cab45e1ce,bank_of_canada_valet,2026-07-14T15:10:38Z,2026-07-14T15:10:39Z,success,94,0,0,94,0,[],
