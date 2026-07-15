@@ -25,6 +25,7 @@ ALLOWED_RECORD_KINDS = {
 
 ALLOWED_EVIDENCE_TYPES = {
     "observed",
+    "observed_result",
     "government_forecast",
     "utility_forecast",
     "approved_regulatory_assumption",

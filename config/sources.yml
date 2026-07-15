@@ -831,6 +831,7 @@ sources:
   publisher: Government of British Columbia
   authority_tier: 1
   adapter: document_assumptions
+  coverage_match: variable_id
   enabled: true
   optional: true
   required: false
@@ -854,9 +855,9 @@ sources:
     - source_series_id: bc_moti_social_discount_rate_2018
       variable_id: financial.social_discount_rate_pct
       pages:
-      - 12
-      - 25
-      pattern: social discount rate of\s*(?P<value>[0-9.]+)\s*%
+      - 13
+      - 26
+      pattern: social\s+discount\s+rate\s+of\s*(?P<value>[0-9.]+)\s*%\s*/?\s*year
       value_group: value
       unit_original: percent
       unit_canonical: percent
@@ -888,6 +889,7 @@ sources:
   publisher: FortisBC Energy Inc. and FortisBC Inc.
   authority_tier: 1
   adapter: fortisbc_history
+  coverage_match: variable_id
   enabled: true
   optional: true
   required: false
@@ -1082,6 +1084,7 @@ sources:
   publisher: BC Hydro
   authority_tier: 1
   adapter: bc_hydro_history
+  coverage_match: variable_id
   enabled: true
   optional: true
   required: false

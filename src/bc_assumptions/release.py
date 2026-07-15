@@ -81,14 +81,40 @@ def coverage_blockers_for_source(
     """Return missing or stale coverage blockers for one source."""
 
     as_of = as_of or date.today()
+    coverage_rows = db.coverage_rows(source["id"])
     coverage = {
-        (row["source_series_id"], row["variable_id"]): row for row in db.coverage_rows(source["id"])
+        (row["source_series_id"], row["variable_id"]): row
+        for row in coverage_rows
     }
+
+    coverage_by_variable: dict[str, dict[str, Any]] = {}
+    for row in coverage_rows:
+        variable_id = row["variable_id"]
+        existing = coverage_by_variable.get(variable_id)
+        if existing is None:
+            coverage_by_variable[variable_id] = row
+            continue
+
+        existing_period = str(existing.get("latest_period") or "")
+        candidate_period = str(row.get("latest_period") or "")
+        if candidate_period > existing_period:
+            coverage_by_variable[variable_id] = row
+
+    match_mode = source.get("coverage_match", "source_series_id")
+    if match_mode not in {"source_series_id", "variable_id"}:
+        raise ValueError(
+            f"{source['id']}: unsupported coverage_match {match_mode!r}"
+        )
+
     blockers: list[str] = []
     for requirement in iter_coverage_requirements(source):
-        key = (requirement.source_series_id, requirement.variable_id)
-        row = coverage.get(key)
         label = f"{requirement.source_series_id}/{requirement.variable_id}"
+
+        if match_mode == "variable_id":
+            row = coverage_by_variable.get(requirement.variable_id)
+        else:
+            key = (requirement.source_series_id, requirement.variable_id)
+            row = coverage.get(key)
         if row is None or not row.get("latest_period"):
             blockers.append(f"{source['id']}: missing required series {label}")
             continue

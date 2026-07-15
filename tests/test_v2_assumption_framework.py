@@ -271,3 +271,9 @@ def test_regulatory_templates_cover_high_priority_utility_gaps():
         "utility.rate_change_pct",
         "financial.pension_discount_rate_pct",
     } <= variables
+
+
+def test_observed_result_is_allowed_evidence_type():
+    from bc_assumptions.validation import ALLOWED_EVIDENCE_TYPES
+
+    assert "observed_result" in ALLOWED_EVIDENCE_TYPES
