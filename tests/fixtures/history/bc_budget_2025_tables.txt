@@ -1,0 +1,189 @@
+Table 3.6.1 Gross Domestic Product (GDP): British Columbia
+                                                                                                    Forecast
+                                                            2023      2024 e     2025       2026        2027        2028          2029
+
+
+Gross Domestic Product at Market Prices:
+ – Real (chained 2017 $ billions) …………………                  333.1     337.2      343.4      350.0      356.6       364.2          372.1
+      (% change) ……………………………………                              2.4       1.2        1.8        1.9        1.9         2.1            2.2
+    – Nominal (current prices, $ billions) ………………          409.9     426.8      445.3      464.4      483.9       505.3          528.2
+        (% change) ……………………………………                            3.6       4.1        4.3        4.3        4.2         4.4            4.5
+    – GDP price deflator (2017 = 100) …………………              123.1     126.6      129.7      132.7      135.8       138.8          142.0
+        (% change) ……………………………………                            1.2       2.9        2.5        2.3        2.3         2.2            2.3
+Real GDP per person (chained 2017 $) ……………                60,218    59,172     60,123     61,482     62,171      62,807         63,467
+      (% change) ……………………………………                              -0.8      -1.7        1.6        2.3        1.1         1.0            1.1
+Real GDP per employed person
+      (% change) ……………………………………                              -0.2      -1.1       1.0        1.2         0.8         1.0           1.1
+Components of Real GDP at Market Prices (chained 2017 $ billions)
+Household expenditure on
+   goods and services …………………………..…                        204.4     207.4      211.5      215.1      220.8       226.6          232.6
+     (% change) ……………………………………                               1.5       1.5        2.0        1.7        2.6         2.6            2.6
+       – Goods ……………………………………………                            79.5      78.8       80.1       81.2       82.5         84.0          85.5
+         (% change) ……………………………………                           0.3      -0.9        1.7        1.4        1.6          1.7           1.8
+       – Services ………..………………………………                        125.1     128.8      131.6      134.1      138.4       142.7          147.2
+         (% change) ……………………………………                           2.3       3.0        2.2        1.9        3.2         3.1            3.1
+NPISH1 expenditure on
+   goods and services ……..………………………                          5.4       5.7        5.9        6.0         6.2         6.3           6.4
+     (% change) ……………………………………                               4.8       5.1        2.8        2.8         2.4         2.1           2.0
+Government expenditure on
+   goods and services ……..………………………                         65.6      67.1       68.3       68.3       68.8         69.6          70.5
+     (% change) ……………………………………                               6.9       2.4        1.7        0.0        0.8          1.1           1.2
+Investment in fixed capital …………...………………                   87.5      87.8       92.4       95.6       95.1         96.1          97.5
+      (% change) ……………………………………                              1.6       0.3        5.3        3.4       -0.6          1.1           1.4
+
+Final domestic demand …………………..…………                        362.8     367.9      378.2      385.2      390.8       398.4          406.7
+      (% change) ……………………………………                              2.5       1.4        2.8        1.9        1.4         1.9            2.1
+
+Exports of goods and services …………………..…                   121.8     122.7      125.0      129.3      133.0       137.2          141.6
+      (% change) ……………………………………                              1.4       0.7        1.8        3.4        2.9         3.2            3.2
+Imports of goods and services ……………………..                   155.8     155.6      160.3      164.8      167.9       172.3          177.3
+      (% change) ……………………………………                              1.0      -0.1        3.0        2.8        1.9         2.7            2.9
+Inventory change ……………...………………………                           5.1       2.9        1.5        1.4         1.5         1.6           1.8
+Statistical discrepancy ………………………………                         0.1       0.1        0.1        0.1         0.1         0.1           0.1
+
+Real GDP at market prices ………...………………                     333.1     337.2      343.4      350.0      356.6       364.2          372.1
+      (% change) ……………………………………                              2.4       1.2        1.8        1.9        1.9         2.1            2.2
+1
+    Non-profit institutions serving households.
+e
+    B.C. Ministry of Finance estimate.
+
+
+
+
+                                                                                                     B.C. Ministry of Finance
+
+
+
+
+                                            BUDGET AND FISCAL PLAN - 2025/26 to 2027/28                                            | 91
+                                          BRITISH COLUMBIA ECONOMIC REVIEW AND OUTLOOK
+
+
+Table 3.6.2 Selected Nominal Income and Other Indicators: British Columbia
+                                                                                                                Forecast
+                                                             2023           2024            2025        2026         2027        2028            2029
+                         1
+Compensation of employees ($ millions) …… 203,540                     217,263 e          227,039     235,869    244,646     254,136       264,070
+   (% change) …………………………………                   7.5                            6.7             4.5         3.9         3.7          3.9             3.9
+Household income ($ millions) ………………… 356,097                         380,244 e          395,960     411,656    428,869     447,055       465,974
+    (% change) …………………………………              9.5                             6.8                4.1         4.0        4.2         4.2           4.2
+Net operating surplus ($ millions) ……………                  41,160       34,047 e           33,636      34,338      35,241      37,093       39,785
+     (% change) …………………………………                              -23.4        -17.3                -1.2        2.1         2.6         5.3          7.3
+Retail sales ($ millions) ………………………… 107,766                          107,768 e          110,568     114,016    118,000     122,228       126,651
+     (% change) …………………………………            -0.1                             0.0                2.6         3.1        3.5         3.6           3.6
+Housing starts (units) …………………………                         50,490       45,828             46,543      47,815      48,697      50,004       51,114
+    (% change) …………………………………                                 8.1          -9.2               1.6         2.7         1.8         2.7          2.2
+Residential sales ($ millions)                            70,871       73,152             84,783      90,431      95,014    100,338       104,207
+    (% change) …………………………………                               -11.6          3.2               15.9         6.7         5.1        5.6           3.9
+Residential sales (units)                                 72,937       74,485             84,311      87,414      89,297      91,604       92,578
+    (% change) …………………………………                                 -9.2         2.1               13.2         3.7         2.2         2.6          1.1
+Residential average sale price ($) 971,680                            982,104        1,005,595 1,034,517 1,064,023 1,095,351 1,125,609
+    (% change) …………………………………           -2.6                               1.1              2.4        2.9       2.9       2.9       2.8
+Consumer price index (2002 = 100) …………                      151.2          155.2           158.6       161.8       165.0       168.4         171.7
+    (% change) …………………………………                                  3.9            2.6             2.2         2.1         2.0         2.0           2.0
+1
+    Domestic basis; wages, salaries and employers' social contributions.
+e
+    B.C. Ministry of Finance estimate.
+
+
+
+
+Table 3.6.3 Labour Market Indicators: British Columbia
+                                                                                                                Forecast
+                                                              2023           2024            2025       2026        2027        2028         2029
+Population (thousands at July 1) ………………                      5,532          5,698           5,711      5,693       5,735       5,798        5,863
+        (% change) ………………………………                                 3.2           3.0             0.2        -0.3         0.7         1.1            1.1
+Net migration (thousands)
+
+      – International 1,4 ……………………………                        189.8          101.8 e         -10.4        0.4        56.8        57.2         57.6
+                         4
+      – Interprovincial ……………………………                            -1.2          -6.9    e
+                                                                                              -4.3       5.2          8.5       10.6         11.6
+      – Total ………………………………………                                188.6           94.9 e         -14.6        5.6        65.3        67.8         69.2
+                               2
+Labour force population (thousands) ………                      4,566          4,732           4,752      4,752       4,801       4,865        4,929
+    (% change) ………………………………                                     2.8            3.6             0.4        0.0         1.0         1.3          1.3
+Labour force (thousands) ………………………                           3,004          3,086           3,116      3,128       3,157       3,184        3,214
+    (% change) ………………………………                                     3.2            2.7             1.0        0.4         0.9         0.9          0.9
+
+Participation rate 3 (%) …………………………                           65.8           65.2            65.6       65.8        65.8        65.5         65.2
+
+Employment (thousands) ………………………                             2,848          2,914           2,938      2,960       2,990       3,023        3,054
+    (% change) ………………………………                                     2.6            2.3             0.8        0.8         1.0         1.1          1.0
+Unemployment rate (%) ………………………                                 5.2           5.6             5.7        5.4          5.3         5.1            5.0
+1
+    International migration includes net non-permanent residents and returning emigrants less net temporary residents abroad.
+2
+    The civilian, non-institutionalized population 15 years of age and over.
+3
+    Percentage of the labour force population in the labour force.
+4
+    Components may not sum to total due to rounding.                                                                  B.C. Ministry of Finance
+e
+    BC Stats estimate.
+
+
+
+92 |                                        BUDGET AND FISCAL PLAN - 2025/26 to 2027/28
+                                         BRITISH COLUMBIA ECONOMIC REVIEW AND OUTLOOK
+
+
+Table 3.6.4 Major Economic Assumptions
+                                                                                                             Forecast
+                                                              2023         2024          2025         2026       2027          2028        2029
+Real GDP
+                                                                                   e
+       Canada (chained 2017 $ billions) ……………                2,385        2,414         2,448       2,482        2,524       2,570        2,616
+         (% change) …………………………………                               1.5          1.2           1.4         1.4          1.7         1.8          1.8
+       U.S. (chained 2017 US$ billions) …………… 22,671                    23,302         23,722      24,125      24,559       25,001       25,451
+         (% change) …………………………………                 2.9                       2.8            1.8         1.7         1.8          1.8          1.8
+                                                                                   e
+       Japan (chained 2015 Yen trillions) …………                 557          556           561         565          568         570          573
+         (% change) …………………………………                               1.5         -0.2           1.0         0.6          0.5         0.5          0.5
+       China (constant 2010 US$ billions) …………              14,082      14,787         15,393      15,978      16,601       17,265       17,955
+         (% change) …………………………………                               5.2         5.0            4.1         3.8         3.9          4.0          4.0
+       Euro zone1 (chained 2020 Euro billions)              12,840      12,932         13,048      13,179      13,337       13,497       13,659
+         (% change) …………………………………                               0.5         0.7            0.9         1.0         1.2          1.2          1.2
+Industrial production index (% change)
+   U.S. ……………………………………………                                       0.2         -0.3           0.6         1.3          1.6         1.6           1.6
+       Japan …………………………………………                                  -1.5         -2.5           1.9         0.8          0.8         0.8           0.8
+       China ……………………………………………                                  4.3         5.7            4.2         3.6          3.8         3.8           3.8
+                  1                                                                e
+       Euro zone ……………………………………                                -1.7         -3.0           0.3         1.5          1.2         1.2           1.2
+Housing starts (thousands)
+   Canada …………………………………………                                     240          245           235         230          230         230          230
+     (% change) …………………………………                                  -8.2          2.1          -4.2        -2.1          0.0         0.0          0.0
+       U.S. ……………………………………………                                1,420        1,364         1,360       1,400        1,400       1,400        1,400
+         (% change) …………………………………                              -8.5         -3.9          -0.3         2.9          0.0         0.0          0.0
+       Japan …………………………………………                                  820          792           795         805          860         860          860
+         (% change) …………………………………                              -4.6         -3.4           0.4         1.3          6.8         0.0          0.0
+Consumer price index
+   Canada (2002 = 100) …………………………                            157.1        160.9         164.3       167.7        171.1       174.5        178.0
+     (% change) …………………………………                                  3.9          2.4           2.1         2.1          2.0         2.0          2.0
+Canadian interest rates (%)
+   3-month Treasury bills ………………………                           4.81         4.41          2.63         2.36        2.63         2.75        2.75
+   10-year government bonds …………………                           3.36         3.34          3.08         3.13        3.23         3.30        3.30
+United States interest rates (%)
+   3-month Treasury bills ………………………                           5.28         5.18          3.93         3.44        3.25         3.25        3.25
+   10-year government bonds …………………                           3.96         4.21          4.21         4.05        3.95         3.95        3.95
+Exchange rate (US cents / Canadian $) ………                     74.1         73.0          70.0         71.8        74.5         75.8        76.3
+British Columbia goods and services
+   Export price deflator (% change) ……………                      -5.5         0.6 e          4.9         2.9          1.4         1.3           1.9
+1
+    Euro zone (20) is Austria, Belgium, Croatia, Cyprus, Estonia, Finland, France, Germany, Greece, Ireland, Italy, Latvia, Lithuania,
+    Luxembourg, Malta, Netherlands, Portugal, Slovakia, Slovenia and Spain.
+e
+    B.C. Ministry of Finance estimate.
+
+
+
+
+                                                                                                                   B.C. Ministry of Finance
+
+
+
+
+                                           BUDGET AND FISCAL PLAN - 2025/26 to 2027/28                                                      | 93
+                             BRITISH COLUMBIA ECONOMIC REVIEW AND OUTLOOK

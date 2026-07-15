@@ -1,0 +1,72 @@
+# Template only. Copy for a specific final BCUC order, replace dates/page ranges,
+# verify each expression against the order, and retain human review.
+recipe_id: bcuc_financial_parameters_TEMPLATE
+source_id: bcuc_approved_financial_parameters
+
+defaults:
+  record_kind: model_parameter
+  geography_id: CA-BC
+  reference_period_start: '2026-01-01'
+  reference_period_end: '2026-01-01'
+  evidence_type: approved_regulatory_assumption
+  assumption_owner: British Columbia Utilities Commission
+  source_status: approved_final_order
+  approval_status: approved
+  time_basis: non_temporal_parameter
+  decision_context: REPLACE_WITH_PROCEEDING_AND_ORDER
+
+extractors:
+  - id: allowed_roe
+    variable_id: financial.allowed_roe_pct
+    page_range: [1, 300]
+    pattern: 'allowed (?:return on equity|ROE)[^0-9]{0,100}(?P<value>[0-9]+(?:\.[0-9]+)?)\s*(?:%|percent)'
+    value_group: value
+    unit_original: percent
+    unit_canonical: percent
+    confidence: 0.75
+    fields:
+      parameter_scope: allowed return on common equity
+
+  - id: deemed_equity
+    variable_id: financial.deemed_equity_pct
+    page_range: [1, 300]
+    pattern: 'deemed (?:common )?equity[^0-9]{0,100}(?P<value>[0-9]+(?:\.[0-9]+)?)\s*(?:%|percent)'
+    value_group: value
+    unit_original: percent
+    unit_canonical: percent
+    confidence: 0.75
+    fields:
+      parameter_scope: deemed common-equity share
+
+  - id: approved_cost_of_debt
+    variable_id: financial.cost_of_debt_pct
+    page_range: [1, 300]
+    pattern: '(?:approved|deemed) cost of debt[^0-9]{0,100}(?P<value>[0-9]+(?:\.[0-9]+)?)\s*(?:%|percent)'
+    value_group: value
+    unit_original: percent
+    unit_canonical: percent
+    confidence: 0.65
+    fields:
+      parameter_scope: approved utility cost of debt
+
+  - id: approved_wacc
+    variable_id: financial.wacc_pct
+    page_range: [1, 300]
+    pattern: '(?:approved )?(?:weighted average cost of capital|WACC)[^0-9]{0,100}(?P<value>[0-9]+(?:\.[0-9]+)?)\s*(?:%|percent)'
+    value_group: value
+    unit_original: percent
+    unit_canonical: percent
+    confidence: 0.65
+    fields:
+      parameter_scope: approved weighted average cost of capital
+
+  - id: regulatory_discount_rate
+    variable_id: financial.utility_regulatory_discount_rate_pct
+    page_range: [1, 300]
+    pattern: 'discount rate[^0-9]{0,120}(?P<value>[0-9]+(?:\.[0-9]+)?)\s*(?:%|percent)'
+    value_group: value
+    unit_original: percent
+    unit_canonical: percent
+    confidence: 0.5
+    fields:
+      parameter_scope: REPLACE_WITH_EXACT_REGULATORY_CALCULATION

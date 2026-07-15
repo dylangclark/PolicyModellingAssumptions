@@ -53,10 +53,39 @@ class BCBudgetForecastAdapter(SourceAdapter):
                         f"B.C. Budget {config['source_series_id']} captured invalid values {values}"
                     )
                     continue
-                for year, value in zip(years, values):
-                    canonical_value = float(value) * float(config.get("multiplier", 1.0))
+                value_multipliers = config.get("value_multipliers")
+                if value_multipliers is not None and len(value_multipliers) != len(values):
+                    result.warnings.append(
+                        f"B.C. Budget {config['source_series_id']} defines "
+                        f"{len(value_multipliers)} value multipliers for {len(values)} values"
+                    )
+                    continue
+                for index, (year, value) in enumerate(zip(years, values)):
+                    per_value_multiplier = (
+                        float(value_multipliers[index]) if value_multipliers is not None else 1.0
+                    )
+                    canonical_value = (
+                        float(value)
+                        * float(config.get("multiplier", 1.0))
+                        * per_value_multiplier
+                    )
                     if config.get("invert"):
+                        if canonical_value == 0:
+                            result.warnings.append(
+                                f"B.C. Budget {config['source_series_id']} cannot invert zero"
+                            )
+                            continue
                         canonical_value = 1.0 / canonical_value
+                    hard_min = config.get("hard_min")
+                    hard_max = config.get("hard_max")
+                    if (hard_min is not None and canonical_value < float(hard_min)) or (
+                        hard_max is not None and canonical_value > float(hard_max)
+                    ):
+                        result.warnings.append(
+                            f"B.C. Budget {config['source_series_id']} value "
+                            f"{canonical_value} is outside hard bounds"
+                        )
+                        continue
                     result.records.append(
                         Record(
                             variable_id=config["variable_id"],
@@ -84,6 +113,18 @@ class BCBudgetForecastAdapter(SourceAdapter):
                             metadata={
                                 "budget_edition": document.get("edition"),
                                 "document_title": document.get("title"),
+                                "evidence_type": config.get(
+                                    "evidence_type", "government_forecast"
+                                ),
+                                "assumption_owner": config.get(
+                                    "assumption_owner", "B.C. Ministry of Finance"
+                                ),
+                                "source_status": config.get(
+                                    "source_status", "published_budget_forecast"
+                                ),
+                                "decision_context": config.get(
+                                    "decision_context", "B.C. Budget and Fiscal Plan"
+                                ),
                             },
                         )
                     )
@@ -91,8 +132,19 @@ class BCBudgetForecastAdapter(SourceAdapter):
 
     @staticmethod
     def _normalize(text: str) -> str:
-        text = text.replace("/uni00A0", " ").replace("\u00a0", " ")
-        text = text.replace("/f_", "")
+        substitutions = {
+            "/uni00A0": " ",
+            "\u00a0": " ",
+            "/f_": "",
+            "/T_": "T",
+            "\ufb01": "fi",
+            "\ufb02": "fl",
+            "\u2212": "-",
+            "\u2013": "-",
+            "\u2014": "-",
+        }
+        for old, new in substitutions.items():
+            text = text.replace(old, new)
         return re.sub(r"\s+", " ", text).strip()
 
     @staticmethod

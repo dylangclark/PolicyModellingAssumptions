@@ -153,9 +153,18 @@ class RegistryConfig:
                 )
 
             output_count = 0
+            output_mappings: set[tuple[str, str]] = set()
             for output in iter_source_outputs(source):
                 output_count += 1
                 variable_id = output.get("variable_id")
+                series_id = str(output.get("source_series_id", "")).strip()
+                mapping = (series_id, str(variable_id))
+                if series_id and mapping in output_mappings:
+                    errors.append(
+                        f"Source {source_id} repeats output mapping "
+                        f"{series_id}/{variable_id}"
+                    )
+                output_mappings.add(mapping)
                 if variable_id not in self.variables:
                     errors.append(f"Source {source_id} references unknown variable {variable_id}")
                     continue
@@ -228,19 +237,33 @@ class RegistryConfig:
             raise ConfigurationError("\n".join(errors))
 
 
+def _series_outputs(series: dict[str, Any]) -> Iterator[dict[str, Any]]:
+    if series.get("outputs"):
+        yield from series["outputs"]
+    elif series.get("variable_id"):
+        yield series
+    growth_variable_id = series.get("growth_variable_id")
+    if growth_variable_id:
+        yield {
+            "source_series_id": f"{series.get('source_series_id', 'series')}_growth_yoy",
+            "variable_id": growth_variable_id,
+            "unit_original": series.get("growth_unit_original", "percent"),
+            "unit_canonical": series.get("growth_unit_canonical", "percent"),
+        }
+
+
 def iter_source_outputs(source: dict[str, Any]) -> Iterator[dict[str, Any]]:
     for series in source.get("series", []):
-        if series.get("outputs"):
-            yield from series["outputs"]
-        elif series.get("variable_id"):
-            yield series
+        yield from _series_outputs(series)
     for dataset in source.get("datasets", []):
         yield from dataset.get("outputs", [])
         for series in dataset.get("series", []):
-            yield from series.get("outputs", [])
+            yield from _series_outputs(series)
     for key in ("monthly_trade_series", "monthly_price_series"):
         yield from source.get(key, [])
     for table in source.get("tables", []):
-        yield from table.get("series", [])
+        for series in table.get("series", []):
+            yield from _series_outputs(series)
     for document in source.get("documents", []):
-        yield from document.get("series", [])
+        for series in document.get("series", []):
+            yield from _series_outputs(series)

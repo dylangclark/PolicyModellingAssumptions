@@ -1,0 +1,135 @@
+    Net Income before movement in regulatory
+    balances                                                    497             981            924                 967
+
+    Net movement in regulatory balances                         194            (269)          (212)               (255)
+
+    Net Income                                                  691            712             712                 712
+
+    Other Selected Financial Information:
+
+    Dividends                                               -              -              -                   -
+
+    Net Debt3                                              25,338         28,115          30,590         31,819
+
+    Equity                                                  6,346          7,058          7,770               8,482
+
+    Capital Expenditures                                    3,573          4,738          4,413               3,305
+1
+  Table may not add due to rounding.
+2
+  These amounts are net of capitalized overhead and consist of the following:
+                                                          2020/21       2021/22      2022/23      2023/24
+   Domestic Base Operating Costs                             833           905          918           937
+   Other                                                     403           412          415           427
+                                                           1,236         1,317        1,332        1,364
+Other largely consists of Powerex & Powertech operating costs, IFRS-ineligible capital overhead phased into
+operating costs over a 10-year period ending in 2020/21, and expenses subject to regulatory deferral.
+3
+  Debt figures are net of sinking funds and cash and cash equivalents.
+
+
+
+2021/22 – 2023/24 Service Plan                                                                        Page | 19
+                                         BC Hydro and Power Authority
+
+
+Key Forecast Assumptions, Risks and Sensitivities
+    Key Assumptions                                           2020/21        2021/22       2022/23        2023/24
+                                                              Forecast       Budget        Budget         Budget
+
+    Growth and Load
+    B.C. Real Gross Domestic Product Growth (%)1                (6.7)          3.0           3.8            2.7
+    Domestic Sales Load Growth (%)2, 3                         (2.46)         3.54           1.54           2.43
+    Load and System Exports:
+     Domestic Sales Volume (GWh)                               50,655        52,448         53,258         54,552
+     System Exports Volume (GWh)                               9,220          6,979         5,893          4,827
+     Line Loss and System Use (GWh)                            4,947          5,376         5,417          5,509
+     Total Load and System Exports (GWh)                       64,821        64,802         64,568         64,887
+    Energy Generation
+    Total System Water Inflows (% of average)                   110            100           100            100
+
+
+    Sources of Supply:
+     Hydro Generation (GWh)                                    48,807        46,718         45,635         45,253
+     System Imports (GWh)                                      1,257          1,836         2,588          3,291
+     Independent Power Producers and
+     Long-term Purchases (GWh)                                 14,502        15,970         16,059         16,036
+     Thermal Generation & Other (GWh)                           255            278           287            307
+    Sources of Supply (GWh)                                    64,821        64,802         64,568         64,887
+
+
+    Average Mid-C Price (U.S.$/MWh)                            27.87          30.83         29.78          28.67
+    Average Natural Gas Price at Sumas (U.S.$/MMBTU)            3.11          3.08           2.61           2.46
+    Financial
+    Canadian Short-Term Interest Rates (%)4                     0.24          0.24           0.30           0.60
+    Canadian Long-Term Interest Rates (%)4                      1.49          1.86           2.12           2.37
+  Foreign Exchange Rate (U.S.$:Cdn$)4                           0.7452        0.7630         0.7660        0.7712
+1
+  Economic assumption based on calendar year, 2020/21 to 2021/22 from Ministry of Finance September 2020 First
+Quarter Report; 2022/23 to 2023/24 from Conference Board of Canada – August 2020.
+2
+  Includes the impact of Demand Side Management programs.
+3
+  Excludes system exports.
+4
+  Financial assumptions from Ministry of Finance, October 2020.
+
+
+
+
+2021/22 – 2023/24 Service Plan                                                                      Page | 20
+                                      BC Hydro and Power Authority
+
+
+Sensitivity Analysis
+             Factor                            Change                        Approximate change in 2021/22
+                                                                           earnings before regulatory account
+                                                                                 transfers (in $ millions)
+  Customer Load1                                      +/- 1%                                35
+  Interest Rates2                              +/- 100 basis points                         30
+  Electricity/Gas trade margins3                     +/- 10%                                30
+  Hydro Generation (GWh)4                             +/- 1%                                10
+  Exchange rates (US/ CDN)                           +/-$0.01                                5
+1
+  Assumes a percentage change is applied equally to all customer classes. Assumes a change in customer load is
+offset by a corresponding change in system imports or exports.
+2
+  Relates to debt subject to interest rate variability.
+3
+  Trade revenues less trade energy costs.
+4
+  Assumes a change in hydro generation is offset by a corresponding change in system imports or exports.
+
+Management’s Perspective on the Financial Outlook
+In December 2020, BC Hydro filed an application with the BCUC for its revenue requirements
+for 2021/22. BC Hydro expects a decision in spring 2021 which may change the financial
+projections for revenues and expenses.
+The current financial projections for revenues and expenses through 2023/24 were approved by
+the BC Hydro Board of Directors and submitted to the Ministry of Finance in March 2021.
+The COVID-19 pandemic continues to adversely impact global economic activity and has
+contributed to significant volatility in financial markets. The pandemic could have a sustained
+adverse impact on economic and market conditions and could adversely impact BC Hydro’s
+future performance if it were to cause a prolonged decrease in customer load, volatility in
+electricity/gas trade margins and interest rates, difficulty accessing debt, project delays and
+project cost escalations.
+While BC Hydro engages in emergency preparedness (including business continuity planning) to
+mitigate risks, the persisting uncertainty of this situation limits the ability to predict the ultimate
+adverse impact of COVID-19 on BC Hydro’s performance, financial condition, results of
+operations and cash flows.
+This plan contains forward looking statements, including statements regarding the business and
+anticipated financial performance of BC Hydro. These statements are subject to a number of
+risks and uncertainties such as customer load, interest rates, electricity/gas market conditions and
+our ability to deliver our capital projects on-time and on-budget. These and other risks and
+uncertainties may cause actual results to differ from those contemplated in the forward-looking
+statements.
+
+
+
+
+2021/22 – 2023/24 Service Plan                                                                       Page | 21
+                                            BC Hydro and Power Authority
+
+
+Capital Expenditures by Year and Type and Function
+                                                                2020/21           2021/22         2022/23         2023/24
+ ($millions)                                                    Forecast          Forecast        Forecast        Forecast

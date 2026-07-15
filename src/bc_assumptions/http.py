@@ -73,7 +73,7 @@ class HttpClient:
         )
         self.session.headers.update(
             {
-                "User-Agent": f"bc-assumptions-registry/0.1 ({contact_value})",
+                "User-Agent": f"bc-assumptions-registry/2.0.0rc2 ({contact_value})",
                 "Accept-Encoding": "gzip, deflate",
             }
         )

@@ -23,6 +23,21 @@ ALLOWED_RECORD_KINDS = {
     "qualitative_assumption",
 }
 
+ALLOWED_EVIDENCE_TYPES = {
+    "observed",
+    "government_forecast",
+    "utility_forecast",
+    "approved_regulatory_assumption",
+    "government_policy_assumption",
+    "private_sector_guidance",
+    "market_consensus",
+    "scenario",
+    "target",
+    "derived",
+    "cost_estimate",
+}
+
+
 
 def _date(value: str, field_name: str) -> date:
     try:
@@ -87,6 +102,42 @@ def validate_record(
         raise ValidationError(
             f"Non-observation record requires a publication or vintage date: {record.variable_id}"
         )
+
+    evidence_type = record.metadata.get("evidence_type")
+    if evidence_type is not None and evidence_type not in ALLOWED_EVIDENCE_TYPES:
+        raise ValidationError(
+            f"Unsupported evidence_type {evidence_type!r} for {record.variable_id}"
+        )
+
+    required_metadata = definition.get("required_metadata", [])
+    for field in required_metadata:
+        if not record.metadata.get(field):
+            raise ValidationError(
+                f"{record.variable_id} requires metadata field {field}"
+            )
+
+    temporal_semantics = definition.get("temporal_semantics")
+    if temporal_semantics == "non_temporal_parameter":
+        if record.record_kind != "model_parameter":
+            raise ValidationError(
+                f"{record.variable_id} must be stored as record_kind=model_parameter"
+            )
+        if record.target_period_start or record.target_period_end:
+            raise ValidationError(
+                f"Non-temporal parameter {record.variable_id} cannot have a target period"
+            )
+        if record.metadata.get("time_basis") != "non_temporal_parameter":
+            raise ValidationError(
+                f"Non-temporal parameter {record.variable_id} must identify its time_basis"
+            )
+        if not record.metadata.get("decision_context"):
+            raise ValidationError(
+                f"Non-temporal parameter {record.variable_id} requires decision_context metadata"
+            )
+        if not evidence_type:
+            raise ValidationError(
+                f"Non-temporal parameter {record.variable_id} requires evidence_type metadata"
+            )
 
     flags = list(dict.fromkeys(record.quality_flags))
     status = record.validation_status

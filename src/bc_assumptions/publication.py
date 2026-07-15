@@ -20,6 +20,7 @@ _SITE_JSON = {
     "variables": list,
     "sources": list,
     "runs": list,
+    "forecast_performance": list,
     "registry": dict,
 }
 
@@ -80,14 +81,19 @@ def validate_publication(config: RegistryConfig) -> dict[str, int]:
     variables = site["variables"]
     sources = site["sources"]
     runs = site["runs"]
+    forecast_performance = site["forecast_performance"]
     registry = site["registry"]
     documents = registry.get("documents")
     if not isinstance(documents, list):
         raise PublicationError("site/data/registry.json is missing a documents list")
 
     errors: list[str] = []
-    for key in ("summary", "records", "variables", "sources", "runs", "documents"):
-        if registry.get(key) != (documents if key == "documents" else site.get(key)):
+    for key in (
+        "summary", "records", "variables", "sources", "runs", "documents",
+        "forecast_performance",
+    ):
+        canonical = documents if key == "documents" else site.get(key)
+        if registry.get(key) != canonical:
             errors.append(f"registry.json section {key!r} does not match its canonical site data")
 
     _assert_count(summary, "current_record_count", len(records), errors)
@@ -98,6 +104,9 @@ def validate_publication(config: RegistryConfig) -> dict[str, int]:
     )
     _assert_count(summary, "source_count", len({row.get("source_id") for row in records}), errors)
     _assert_count(summary, "document_count", len(documents), errors)
+    _assert_count(
+        summary, "forecast_performance_match_count", len(forecast_performance), errors
+    )
 
     variable_ids = [row.get("variable_id") for row in variables]
     source_ids = [row.get("source_id") for row in sources]
@@ -135,11 +144,12 @@ def validate_publication(config: RegistryConfig) -> dict[str, int]:
             record_ids.add(record_id)
         if row.get("variable_id") not in configured_variable_ids:
             errors.append(f"Record {record_id} references an unknown variable")
-        if row.get("source_id") not in configured_source_ids:
+        source_id = row.get("source_id")
+        if source_id not in configured_source_ids:
             errors.append(f"Record {record_id} references an unknown source")
-        elif row.get("source_id") not in public_source_ids:
+        elif source_id not in public_source_ids:
             errors.append(
-                f"Record {record_id} references source {row.get('source_id')!r} "
+                f"Record {record_id} references source {source_id!r} "
                 "whose publication gate is disabled"
             )
         document_id = row.get("document_id")
@@ -150,10 +160,6 @@ def validate_publication(config: RegistryConfig) -> dict[str, int]:
                 f"Record {record_id} has non-public validation status "
                 f"{row.get('validation_status')!r}"
             )
-        if row.get("record_kind") in set(
-            config.validation.get("publication", {}).get("exclude_record_kinds", [])
-        ):
-            errors.append(f"Record {record_id} has excluded record kind {row.get('record_kind')!r}")
         for field in ("value", "range_low", "range_high"):
             value = row.get(field)
             if value is not None and (
@@ -162,6 +168,14 @@ def validate_publication(config: RegistryConfig) -> dict[str, int]:
                 or not math.isfinite(float(value))
             ):
                 errors.append(f"Record {record_id} has invalid numeric {field}={value!r}")
+
+    for index, row in enumerate(forecast_performance):
+        if row.get("forecast_record_id") not in record_ids:
+            errors.append(f"forecast_performance[{index}] references missing forecast record")
+        if row.get("actual_record_id") not in record_ids:
+            errors.append(f"forecast_performance[{index}] references missing actual record")
+        if row.get("match_method") != "exact_variable_unit_geography_entity_period":
+            errors.append(f"forecast_performance[{index}] has unsupported match method")
 
     site_csv = _csv_rows(config.paths.site_data_dir / "records.csv")
     export_csv = _csv_rows(config.paths.export_dir / "records.csv")

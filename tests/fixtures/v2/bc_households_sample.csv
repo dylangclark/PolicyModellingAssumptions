@@ -1,0 +1,6 @@
+YEAR,TYPE,REGION_ID,REGION_TYPE,REGION_NAME,HOUSEHOLDS,POPULATION,PERSONS_PER_HOUSEHOLD
+2023,Estimate,0,Development Region,British Columbia,2200000,5500000,2.5
+2024,Estimate,0,Development Region,British Columbia,2244000,5600000,2.4955
+2025,Projection,0,Development Region,British Columbia,2280000,5700000,2.5
+2026,Projection,0,Development Region,British Columbia,2325600,5800000,2.4939
+2024,Estimate,1,Development Region,Somewhere Else,100,200,2.0

@@ -1,0 +1,69 @@
+# Template only. Use a specific filed IRP or signpost-update document and review all candidates.
+recipe_id: bchydro_irp_assumptions_TEMPLATE
+source_id: bc_hydro_planning_assumptions
+
+defaults:
+  record_kind: forecast
+  geography_id: BC Hydro service area
+  reference_period_start: '2026-01-01'
+  reference_period_end: '2026-01-01'
+  scenario_original: REPLACE_WITH_SCENARIO
+  evidence_type: utility_forecast
+  assumption_owner: BC Hydro
+  source_status: filed_planning_assumption
+  decision_context: REPLACE_WITH_IRP_OR_SIGNPOST_UPDATE
+
+extractors:
+  - id: peak_forecast
+    variable_id: demand.utility.peak_forecast_mw
+    page_range: [1, 500]
+    pattern: 'peak (?:demand|load)[^0-9]{0,120}(?P<value>[0-9,]+(?:\.[0-9]+)?)\s*MW'
+    value_group: value
+    unit_original: MW
+    unit_canonical: MW
+    confidence: 0.5
+
+  - id: reserve_margin
+    variable_id: reliability.reserve_margin_pct
+    page_range: [1, 500]
+    pattern: 'reserve margin[^0-9]{0,120}(?P<value>[0-9]+(?:\.[0-9]+)?)\s*%'
+    value_group: value
+    unit_original: percent
+    unit_canonical: percent
+    confidence: 0.5
+
+  - id: elcc
+    variable_id: reliability.elcc_pct_nameplate
+    page_range: [1, 500]
+    pattern: '(?:effective load carrying capability|ELCC)[^0-9]{0,120}(?P<value>[0-9]+(?:\.[0-9]+)?)\s*%'
+    value_group: value
+    unit_original: percent_of_nameplate
+    unit_canonical: percent_of_nameplate
+    confidence: 0.5
+
+  - id: dsm_savings
+    variable_id: utility.dsm_savings_gwh
+    page_range: [1, 500]
+    pattern: '(?:DSM|demand.side management)[^0-9]{0,120}(?P<value>[0-9,]+(?:\.[0-9]+)?)\s*GWh'
+    value_group: value
+    unit_original: GWh
+    unit_canonical: GWh
+    confidence: 0.5
+
+  - id: capacity_gap
+    variable_id: utility.capacity_gap_mw
+    page_range: [1, 500]
+    pattern: 'capacity (?:gap|need|requirement)[^0-9]{0,120}(?P<value>[0-9,]+(?:\.[0-9]+)?)\s*MW'
+    value_group: value
+    unit_original: MW
+    unit_canonical: MW
+    confidence: 0.5
+
+  - id: energy_gap
+    variable_id: utility.energy_supply_gap_gwh
+    page_range: [1, 500]
+    pattern: '(?:energy|firm energy) (?:gap|need|requirement)[^0-9]{0,120}(?P<value>[0-9,]+(?:\.[0-9]+)?)\s*GWh'
+    value_group: value
+    unit_original: GWh
+    unit_canonical: GWh
+    confidence: 0.5

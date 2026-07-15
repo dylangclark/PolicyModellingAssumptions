@@ -8,6 +8,7 @@ from typing import Any
 
 from .config import RegistryConfig
 from .db import RegistryDB
+from .forecast_performance import build_forecast_performance
 
 
 RECORD_FIELDS = [
@@ -51,6 +52,13 @@ RECORD_FIELDS = [
     "extraction_method",
     "validation_status",
     "quality_flags",
+    "evidence_type",
+    "assumption_owner",
+    "source_status",
+    "decision_context",
+    "approval_status",
+    "parameter_scope",
+    "time_basis",
     "metadata",
     "first_seen_at",
     "last_seen_at",
@@ -161,6 +169,7 @@ def _is_public_record(row: dict[str, Any], config: RegistryConfig) -> bool:
 
 
 def _record_export(row: dict[str, Any]) -> dict[str, Any]:
+    metadata = _decode_json(row.get("metadata_json"), {})
     return {
         "record_id": row["record_id"],
         "variable_id": row["variable_id"],
@@ -202,7 +211,14 @@ def _record_export(row: dict[str, Any]) -> dict[str, Any]:
         "extraction_method": row["extraction_method"],
         "validation_status": row["validation_status"],
         "quality_flags": _decode_json(row.get("quality_flags_json"), []),
-        "metadata": _decode_json(row.get("metadata_json"), {}),
+        "evidence_type": metadata.get("evidence_type"),
+        "assumption_owner": metadata.get("assumption_owner"),
+        "source_status": metadata.get("source_status"),
+        "decision_context": metadata.get("decision_context"),
+        "approval_status": metadata.get("approval_status"),
+        "parameter_scope": metadata.get("parameter_scope"),
+        "time_basis": metadata.get("time_basis"),
+        "metadata": metadata,
         "first_seen_at": row["first_seen_at"],
         "last_seen_at": row["last_seen_at"],
         "valid_from": row["valid_from"],
@@ -224,6 +240,8 @@ def _variable_export(variable_id: str, variable: dict[str, Any]) -> dict[str, An
         "phase": variable.get("phase"),
         "expected_min": variable.get("expected_min"),
         "expected_max": variable.get("expected_max"),
+        "temporal_semantics": variable.get("temporal_semantics"),
+        "required_metadata": variable.get("required_metadata", []),
     }
 
 
@@ -292,6 +310,13 @@ def export_registry(
         _variable_export(variable_id, variable)
         for variable_id, variable in sorted(config.variables.items())
     ]
+    forecast_performance = build_forecast_performance(
+        public_current,
+        source_authority={
+            source_id: int(source.get("authority_tier", 99))
+            for source_id, source in config.sources.items()
+        },
+    )
 
     latest_run_by_source: dict[str, dict[str, Any]] = {}
     for run in all_runs:
@@ -346,7 +371,7 @@ def export_registry(
     ]
 
     summary = {
-        "schema_version": "0.1.0",
+        "schema_version": "2.0.0-rc2",
         "generated_at": _utc_now(),
         "configured_variable_count": len(config.variables),
         "configured_source_count": len(config.sources),
@@ -364,6 +389,7 @@ def export_registry(
         "variable_count": len({row["variable_id"] for row in public_current}),
         "source_count": len({row["source_id"] for row in public_current}),
         "document_count": len(public_documents),
+        "forecast_performance_match_count": len(forecast_performance),
         "latest_successful_run": latest_successful_run,
         "failed_sources": failed_sources,
         "classes": sorted({row["class_name"] for row in variables}),
@@ -377,6 +403,7 @@ def export_registry(
         "sources": sources,
         "runs": public_runs,
         "documents": public_documents,
+        "forecast_performance": forecast_performance,
     }
 
     _write_csv(config.paths.export_dir / "records.csv", public_current, RECORD_FIELDS)
@@ -393,12 +420,19 @@ def export_registry(
     _write_csv(config.paths.export_dir / "runs.csv", public_runs, RUN_FIELDS)
     _write_json(config.paths.export_dir / "runs.json", public_runs)
     _write_json(config.paths.export_dir / "summary.json", summary)
+    _write_csv(config.paths.export_dir / "forecast_performance.csv", forecast_performance)
+    _write_json(config.paths.export_dir / "forecast_performance.json", forecast_performance)
 
     site_output = {
         key: output[key]
-        for key in ("summary", "records", "variables", "sources", "runs", "documents")
+        for key in (
+            "summary", "records", "variables", "sources", "runs", "documents",
+            "forecast_performance",
+        )
     }
-    for name in ("records", "variables", "sources", "runs", "summary"):
+    for name in (
+        "records", "variables", "sources", "runs", "summary", "forecast_performance"
+    ):
         _write_json(config.paths.site_data_dir / f"{name}.json", site_output[name])
     _write_json(config.paths.site_data_dir / "registry.json", site_output)
     return output

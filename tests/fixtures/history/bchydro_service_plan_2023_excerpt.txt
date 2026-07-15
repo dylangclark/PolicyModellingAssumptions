@@ -1,0 +1,136 @@
+    Total Expenses                                            6,911           7,236            7,636            8,363
+
+    Net Income before movement in
+    regulatory balances                                       1,103            709              530               456
+
+    Net movement in regulatory balances                       (391)              3              182               256
+
+    Net Income                                                 712             712              712               712
+
+
+    Other Selected Financial Information
+
+    Dividends                                                    -               -                -                -
+
+    Net Debt3                                                27,200           29,077          31,146            32,081
+
+    Equity                                                    7,758           8,470            9,182            9,894
+
+    Capital Expenditures                                      3,878           3,815            3,924            2,653
+1
+  Table may not add due to rounding.
+2
+  These amounts are net of capitalized overhead and consist of the following:
+                                                             2022/23     2023/24        2024/25    2025/26
+          Domestic Base Operating Costs                         927         947           979        1,064
+          Other                                                437         492            535         572
+Other largely consists of Powerex & Powertech operating costs, IFRS-ineligible capital overhead, and expenses subject to regulatory
+deferral.
+3
+  Debt figures are net of sinking funds and cash and cash equivalents.
+
+
+2023/24 – 2025/26 Service Plan                                                                                Page | 28
+                                               BC Hydro and Power Authority
+
+Key Forecast Assumptions, Risks and Sensitivities
+    Key Assumptions1                                              2022/23         2023/24         2024/25        2025/26
+                                                                  Forecast        Budget          Budget         Budget
+    Growth and Load
+    B.C. Real Gross Domestic Product Growth (%)2                      3.8             2.7            1.8             2.2
+    Domestic Sales Load Growth (%)3                                   1.2             2.8            3.4             3.2
+    Load and System Exports:
+     Domestic Sales Volume (GWh)                                    54,096         55,636          57,512          59,367
+     System Exports Volume (GWh)                                    6,708           4,749           4,036          3,942
+     Line Loss and System Use (GWh)                                 5,173           5,640           5,781          5,925
+    Total Load and System Exports (GWh)                             65,977         66,026          67,329          69,234
+    Energy Generation
+    Total System Water Inflows (% of average)                        96.9           100.0           100.0          100.0
+    Sources of Supply:
+     Hydro Generation (GWh)                                         46,825         45,823          46,544          49,215
+     System Imports (GWh)                                           2,419           4,167           5,029          4,325
+     Independent Power Producers and
+     Long-term Purchases (GWh)                                      16,457         15,723          15,443          15,377
+
+     Thermal Generation & Other (GWh)                                275             312             313             317
+    Total Sources of Supply (GWh)                                   65,977         66,026          67,329          69,234
+
+
+    Average Mid-C Price (U.S.$/MWh)                                 79.27           83.41           71.38          64.87
+    Average Natural Gas Price at Sumas (U.S.$/MMBTU)                 7.21            5.08            4.51           4.43
+    Financial
+    Canadian Short-Term Interest Rates (%)4                          3.16            3.86            3.23           2.61
+    Canadian Long-Term Interest Rates (%)       4
+                                                                     4.11            4.08            3.91           3.72
+    Foreign Exchange Rate (U.S.$:Cdn$)     4
+                                                                    0.7558         0.7645          0.7855          0.7922
+1
+  Table may not add due to rounding.
+2
+  Economic assumptions based on Conference Board of Canada – August 2020 forecast and based on calendar year.
+  These economic assumptions are consistent with the economic assumptions used in the Load Forecast, which was prepared in
+  December 2020.
+3
+  Includes the impact of Demand Side Management programs. Excludes system exports.
+4
+  Financial assumptions from Ministry of Finance, October 2022.
+
+
+
+
+2023/24 – 2025/26 Service Plan                                                                              Page | 29
+                                                 BC Hydro and Power Authority
+
+Sensitivity Analysis
+               Factor                                Change                      Approximate change in 2023/24
+                                                                               earnings before regulatory account
+                                                                                     transfers (in $ millions)
+    Hydro Generation (GWh) 1                           +/- 1%                                           40
+    Customer Load 2                                    +/- 1%                                           5
+    Electricity/Gas trade margins
+    3
+                                                       +/- 1%                                            4
+    Purchases from Energy
+    Purchase Agreements (EPAs)
+    4
+                                                     +/- 1%                                             2
+    Interest rates – variable debt            +/- 100 basis points                                      40
+    Interest rates – hedges of
+    future debt issuances 5                   +/- 100 basis points                                 +300/-350
+    Discount rates – Post-
+    employment benefit plan
+    current service costs 6                   +/- 100 basis points                                   +15/-20
+1
+  Assumes a change in hydro generation is offset by a corresponding change in system imports or exports.
+2
+  Assumes a percentage change is applied equally to all customer classes. Assumes a change in customer load is offset by a
+corresponding change in system imports or exports.
+3
+  Trade revenues less trade energy costs.
+4
+  Assumes a change in purchases from EPAs is offset by a corresponding change in system imports or exports.
+5
+  Relates to unrealized gains/(losses) on interest rate hedges of future debt issuances. Note that hedging gains and losses serve to offset
+variation in annual interest rate costs when amortized through the Debt Management Regulatory Account. Sensitivity is based on
+notional value of hedges outstanding and market interest rates as of September 30, 2022.
+6
+  Discount rates based on the yields of AA Canadian Corporate bonds.
+
+
+Management’s Perspective on Financial Outlook
+In August 2021, BC Hydro filed a three-year revenue requirements application with the BCUC for
+2022/23 to 2024/25. BC Hydro expects a decision in the spring of calendar 2023 which may change the
+financial projections for revenues and expenses.
+
+The current financial projections for revenues and expenses through 2024/25 were approved by the BC
+Hydro Board of Directors and submitted to the Ministry of Finance in January 2023.
+
+The COVID-19 pandemic continues to adversely impact global economic activity and has contributed to
+significant volatility in financial markets. The pandemic could have a sustained adverse impact on
+economic and market conditions and could adversely impact BC Hydro’s future performance if it were to
+cause a prolonged decrease in customer load, volatility in electricity/gas trade margins and interest
+rates, difficulty accessing debt, project delays and project cost escalations.
+
+While BC Hydro engages in emergency preparedness (including business continuity planning) to
+mitigate risks, the persisting uncertainty of this situation limits the ability to predict the ultimate adverse
+impact of COVID-19 on BC Hydro’s performance, financial condition, results of operations and cash

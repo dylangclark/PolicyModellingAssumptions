@@ -1,0 +1,65 @@
+# Template only. Configure one utility, filing vintage and table at a time.
+recipe_id: fortisbc_rate_review_TEMPLATE
+source_id: fortisbc_rate_review_assumptions
+
+defaults:
+  record_kind: forecast
+  geography_id: REPLACE_WITH_SERVICE_AREA
+  reference_period_start: '2026-01-01'
+  reference_period_end: '2026-01-01'
+  scenario_original: applicant forecast
+  evidence_type: utility_forecast
+  assumption_owner: REPLACE_WITH_FBC_OR_FEI
+  source_status: applicant_forecast
+  decision_context: REPLACE_WITH_ANNUAL_REVIEW_PROCEEDING
+
+extractors:
+  - id: customer_forecast
+    variable_id: utility.customer_count
+    page_range: [1, 600]
+    pattern: 'customers?[^0-9]{0,120}(?P<value>[0-9,]+)'
+    value_group: value
+    unit_original: customers
+    unit_canonical: customers
+    confidence: 0.4
+
+  - id: load_forecast
+    variable_id: demand.utility.electricity_forecast_gwh
+    page_range: [1, 600]
+    pattern: '(?:gross load|electricity sales)[^0-9]{0,120}(?P<value>[0-9,]+(?:\.[0-9]+)?)\s*(?:GWh|gigawatt hours)'
+    value_group: value
+    unit_original: GWh
+    unit_canonical: GWh
+    confidence: 0.4
+
+  - id: loss_rate
+    variable_id: utility.loss_rate_pct
+    page_range: [1, 600]
+    pattern: '(?:line loss|loss rate)[^0-9]{0,120}(?P<value>[0-9]+(?:\.[0-9]+)?)\s*%'
+    value_group: value
+    unit_original: percent
+    unit_canonical: percent
+    confidence: 0.5
+
+  - id: rate_change
+    variable_id: utility.rate_change_pct
+    page_range: [1, 600]
+    pattern: '(?:rate increase|rate change)[^0-9]{0,120}(?P<value>[0-9]+(?:\.[0-9]+)?)\s*%'
+    value_group: value
+    unit_original: percent
+    unit_canonical: percent
+    confidence: 0.5
+
+  - id: pension_discount_rate
+    variable_id: financial.pension_discount_rate_pct
+    page_range: [1, 600]
+    pattern: '(?:pension|post.employment)[^%]{0,180}discount rate[^0-9]{0,80}(?P<value>[0-9]+(?:\.[0-9]+)?)\s*%'
+    value_group: value
+    unit_original: percent
+    unit_canonical: percent
+    confidence: 0.65
+    fields:
+      record_kind: model_parameter
+      evidence_type: private_sector_guidance
+      time_basis: non_temporal_parameter
+      parameter_scope: pension and post-employment-benefit accounting

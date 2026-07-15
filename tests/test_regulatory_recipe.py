@@ -11,6 +11,9 @@ def test_recipe_extracts_evidence_and_requires_review(tmp_path):
             "geography_id": "CA-BC",
             "reference_period_start": "2026-01-01",
             "reference_period_end": "2026-12-31",
+            "evidence_type": "approved_regulatory_assumption",
+            "decision_context": "Test BCUC order",
+            "assumption_owner": "BCUC",
         },
         "extractors": [
             {
@@ -33,6 +36,9 @@ def test_recipe_extracts_evidence_and_requires_review(tmp_path):
     assert candidates[0].value == 4.75
     assert candidates[0].page == 1
     assert candidates[0].status == "pending"
+    assert candidates[0].evidence_type == "approved_regulatory_assumption"
+    assert candidates[0].decision_context == "Test BCUC order"
+    assert candidates[0].time_basis == "non_temporal_parameter"
     assert "cost of debt" in candidates[0].evidence_text.lower()
 
     queue = ReviewQueue(tmp_path / "queue.json")

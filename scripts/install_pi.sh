@@ -11,7 +11,7 @@ SERVICE_USER="${BC_ASSUMPTIONS_USER:-bcassumptions}"
 SOURCE_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 
 apt-get update
-apt-get install -y git python3 python3-venv python3-pip util-linux
+apt-get install -y git python3 python3-venv python3-pip util-linux poppler-utils
 
 if ! id "$SERVICE_USER" >/dev/null 2>&1; then
   useradd --system --create-home --shell /bin/bash "$SERVICE_USER"

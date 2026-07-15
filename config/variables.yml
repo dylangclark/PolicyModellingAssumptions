@@ -3,8 +3,7 @@ variables:
 - id: economic.population.level
   class: Economic
   name: Population
-  description: Estimated resident population of British Columbia at the reference
-    date.
+  description: Estimated resident population of British Columbia at the reference date.
   canonical_unit: persons
   geography_id: CA-BC
   status: ready
@@ -14,8 +13,8 @@ variables:
 - id: economic.population.growth_yoy_pct
   class: Economic
   name: Population growth
-  description: Percentage change in the estimated resident population of British Columbia
-    from the same reference period one year earlier.
+  description: Percentage change in the estimated resident population of British Columbia from the same reference period one
+    year earlier.
   canonical_unit: percent
   geography_id: CA-BC
   status: ready
@@ -25,8 +24,7 @@ variables:
 - id: economic.households.level
   class: Economic
   name: Households
-  description: Estimated or projected number of private households in British Columbia;
-    collective dwellings excluded.
+  description: Estimated or projected number of private households in British Columbia; collective dwellings excluded.
   canonical_unit: households
   geography_id: CA-BC
   status: ready
@@ -36,8 +34,7 @@ variables:
 - id: economic.households.growth_yoy_pct
   class: Economic
   name: Household growth
-  description: Percentage change in the estimated or projected number of private households
-    from the preceding year.
+  description: Percentage change in the estimated or projected number of private households from the preceding year.
   canonical_unit: percent
   geography_id: CA-BC
   status: ready
@@ -47,19 +44,31 @@ variables:
 - id: economic.housing_starts.level
   class: Economic
   name: Housing starts (SAAR)
-  description: CMHC housing starts in British Columbia, seasonally adjusted at an
-    annual rate, for the reference month.
+  description: CMHC housing starts in British Columbia, seasonally adjusted at an annual rate, for the reference month.
   canonical_unit: dwelling_units_saar
   geography_id: CA-BC
   status: ready
   phase: 1
   expected_min: 0
   expected_max: 200000
+- id: economic.housing_starts.annual_units
+  class: Economic
+  name: Annual housing starts
+  description: Observed or forecast total housing starts over a calendar year in British Columbia; distinct from monthly SAAR
+    measures.
+  canonical_unit: dwelling_units
+  geography_id: CA-BC
+  status: ready
+  phase: 1
+  expected_min: 0
+  expected_max: 200000
+  required_metadata:
+  - evidence_type
 - id: economic.housing_starts.growth_yoy_pct
   class: Economic
   name: Housing starts growth (SAAR)
-  description: Percentage change in British Columbia total housing starts at a seasonally
-    adjusted annual rate from the same month one year earlier.
+  description: Percentage change in British Columbia total housing starts at a seasonally adjusted annual rate from the same
+    month one year earlier.
   canonical_unit: percent
   geography_id: CA-BC
   status: ready
@@ -69,8 +78,8 @@ variables:
 - id: economic.employment.level
   class: Economic
   name: Employment
-  description: Seasonally adjusted number of employed persons aged 15 years and over
-    in British Columbia, after applying the Statistics Canada scalar factor.
+  description: Seasonally adjusted number of employed persons aged 15 years and over in British Columbia, after applying the
+    Statistics Canada scalar factor.
   canonical_unit: persons
   geography_id: CA-BC
   status: ready
@@ -80,8 +89,7 @@ variables:
 - id: economic.employment.growth_yoy_pct
   class: Economic
   name: Employment growth
-  description: Percentage change in seasonally adjusted employment from the same month
-    one year earlier.
+  description: Percentage change in seasonally adjusted employment from the same month one year earlier.
   canonical_unit: percent
   geography_id: CA-BC
   status: ready
@@ -91,9 +99,8 @@ variables:
 - id: economic.labour_force.level
   class: Economic
   name: Labour force
-  description: Seasonally adjusted number of persons aged 15 years and over in the
-    labour force in British Columbia, after applying the Statistics Canada scalar
-    factor.
+  description: Seasonally adjusted number of persons aged 15 years and over in the labour force in British Columbia, after
+    applying the Statistics Canada scalar factor.
   canonical_unit: persons
   geography_id: CA-BC
   status: ready
@@ -103,8 +110,7 @@ variables:
 - id: economic.labour_force.growth_yoy_pct
   class: Economic
   name: Labour force growth
-  description: Percentage change in the seasonally adjusted labour force from the
-    same month one year earlier.
+  description: Percentage change in the seasonally adjusted labour force from the same month one year earlier.
   canonical_unit: percent
   geography_id: CA-BC
   status: ready
@@ -124,8 +130,7 @@ variables:
 - id: economic.cpi.all_items_yoy_pct
   class: Economic
   name: Inflation
-  description: Year-over-year percentage change in the all-items Consumer Price Index
-    for British Columbia.
+  description: Year-over-year percentage change in the all-items Consumer Price Index for British Columbia.
   canonical_unit: percent
   geography_id: CA-BC
   status: ready
@@ -135,8 +140,7 @@ variables:
 - id: economic.construction_price.vancouver_nonresidential_index
   class: Economic
   name: Vancouver non-residential construction price index
-  description: Quarterly aggregate non-residential building construction price index
-    for Vancouver.
+  description: Quarterly aggregate non-residential building construction price index for Vancouver.
   canonical_unit: index
   geography_id: CA-BC-VAN
   status: supporting_series
@@ -146,8 +150,8 @@ variables:
 - id: economic.construction_inflation.vancouver_nonresidential_yoy_pct
   class: Economic
   name: Construction inflation
-  description: Year-over-year percentage change in the Statistics Canada Building
-    Construction Price Index for aggregate non-residential construction in Vancouver.
+  description: Year-over-year percentage change in the Statistics Canada Building Construction Price Index for aggregate non-residential
+    construction in Vancouver.
   canonical_unit: percent
   geography_id: CA-BC-VAN
   status: ready
@@ -187,8 +191,8 @@ variables:
 - id: commodity.copper.usd_per_tonne
   class: Commodity
   name: Copper price
-  description: Specified copper benchmark price, with benchmark, market, frequency
-    and real or nominal price basis retained in source metadata.
+  description: Specified copper benchmark price, with benchmark, market, frequency and real or nominal price basis retained
+    in source metadata.
   canonical_unit: USD_per_metric_tonne
   geography_id: GLOBAL
   status: ready
@@ -198,8 +202,8 @@ variables:
 - id: commodity.lng.jkm_usd_per_mmbtu
   class: Commodity
   name: LNG price (JKM)
-  description: Platts Japan Korea Marker price or a clearly labelled public proxy;
-    proprietary JKM values must not be republished without suitable rights.
+  description: Platts Japan Korea Marker price or a clearly labelled public proxy; proprietary JKM values must not be republished
+    without suitable rights.
   canonical_unit: USD_per_MMBtu
   geography_id: Northeast Asia
   status: licence_review
@@ -207,8 +211,7 @@ variables:
 - id: commodity.lng.japan_proxy_usd_per_mmbtu
   class: Commodity
   name: Japan LNG import price proxy
-  description: World Bank monthly Japan LNG import price series. This is a public
-    proxy and is not Platts JKM.
+  description: World Bank monthly Japan LNG import price series. This is a public proxy and is not Platts JKM.
   canonical_unit: USD_per_MMBtu
   geography_id: JP
   status: proxy
@@ -228,8 +231,7 @@ variables:
 - id: commodity.natural_gas.aeco_cad_per_gj
   class: Commodity
   name: AECO natural gas price
-  description: Specified AECO or Alberta NIT benchmark, with product, delivery period
-    and administrator retained in metadata.
+  description: Specified AECO or Alberta NIT benchmark, with product, delivery period and administrator retained in metadata.
   canonical_unit: CAD_per_GJ
   geography_id: Alberta
   status: licence_review
@@ -257,26 +259,17 @@ variables:
 - id: commodity.critical_mineral_demand.index
   class: Commodity
   name: Critical mineral demand
-  description: Demand for a named mineral under a named scenario, expressed in physical
-    units or an index; mineral and end use are required dimensions.
+  description: Demand for a named mineral under a named scenario, expressed in physical units or an index; mineral and end
+    use are required dimensions.
   canonical_unit: source_unit
   geography_id: GLOBAL
-  status: draft
-  phase: 2
-- id: electrification.heat_pump.adoption_pct
-  class: Electrification
-  name: Heat pump adoption
-  description: Share of the specified building or equipment stock using a defined
-    heat-pump technology.
-  canonical_unit: percent
-  geography_id: CA-BC
   status: draft
   phase: 2
 - id: electrification.heat_pump.installed_cost_cad
   class: Electrification
   name: Heat pump installed cost
-  description: Installed cost for a defined heat-pump type and building archetype,
-    with rebate, tax, electrical-upgrade and dollar-year treatment specified.
+  description: Installed cost for a defined heat-pump type and building archetype, with rebate, tax, electrical-upgrade and
+    dollar-year treatment specified.
   canonical_unit: CAD_per_installation
   geography_id: CA-BC
   status: draft
@@ -284,8 +277,7 @@ variables:
 - id: electrification.ev.stock.level
   class: Electrification
   name: EV stock
-  description: Registered in-use light-duty or total electric vehicles, with vehicle
-    and powertrain scope specified.
+  description: Registered in-use light-duty or total electric vehicles, with vehicle and powertrain scope specified.
   canonical_unit: vehicles
   geography_id: CA-BC
   status: draft
@@ -301,8 +293,7 @@ variables:
 - id: electrification.buildings.rate_pct_per_year
   class: Electrification
   name: Building electrification rate
-  description: Annual share of the specified building stock converting a named end
-    use from fossil fuel to electricity.
+  description: Annual share of the specified building stock converting a named end use from fossil fuel to electricity.
   canonical_unit: percent_per_year
   geography_id: CA-BC
   status: draft
@@ -310,8 +301,8 @@ variables:
 - id: industrial.lng.realization_rate_pct
   class: Industrial
   name: LNG realization rate
-  description: Derived probability that a project at a defined development stage reaches
-    a defined realized stage within a stated time horizon.
+  description: Derived probability that a project at a defined development stage reaches a defined realized stage within a
+    stated time horizon.
   canonical_unit: percent
   geography_id: CA-BC
   status: derived_project_events
@@ -319,8 +310,8 @@ variables:
 - id: industrial.mining.realization_rate_pct
   class: Industrial
   name: Mining realization rate
-  description: Derived probability that a mining project at a defined development
-    stage reaches construction or commercial operation within a stated time horizon.
+  description: Derived probability that a mining project at a defined development stage reaches construction or commercial
+    operation within a stated time horizon.
   canonical_unit: percent
   geography_id: CA-BC
   status: derived_project_events
@@ -328,8 +319,8 @@ variables:
 - id: industrial.data_centre.realization_rate_pct
   class: Industrial
   name: Data centre realization rate
-  description: Derived probability that a data-centre proposal at a defined development
-    stage reaches construction or commercial operation within a stated time horizon.
+  description: Derived probability that a data-centre proposal at a defined development stage reaches construction or commercial
+    operation within a stated time horizon.
   canonical_unit: percent
   geography_id: CA-BC
   status: derived_project_events
@@ -337,8 +328,8 @@ variables:
 - id: industrial.data_centre.power_intensity_mw_per_unit
   class: Industrial
   name: Data centre power intensity
-  description: Electrical demand per defined unit of data-centre capacity or floor
-    area; denominator and load convention are required.
+  description: Electrical demand per defined unit of data-centre capacity or floor area; denominator and load convention are
+    required.
   canonical_unit: source_unit
   geography_id: GLOBAL
   status: draft
@@ -346,8 +337,7 @@ variables:
 - id: industrial.ai.compute_growth_pct_per_year
   class: Industrial
   name: AI compute growth
-  description: Annual growth in a specified measure of AI training or inference compute,
-    with scope and denominator retained.
+  description: Annual growth in a specified measure of AI training or inference compute, with scope and denominator retained.
   canonical_unit: percent_per_year
   geography_id: GLOBAL
   status: draft
@@ -355,8 +345,7 @@ variables:
 - id: reliability.reserve_margin_pct
   class: Reliability
   name: Reserve margin
-  description: Planning reserve margin for a defined system, season, planning year
-    and capacity-accreditation convention.
+  description: Planning reserve margin for a defined system, season, planning year and capacity-accreditation convention.
   canonical_unit: percent
   geography_id: CA-BC
   status: regulatory_filing
@@ -364,8 +353,7 @@ variables:
 - id: reliability.import_energy_availability_gwh
   class: Reliability
   name: Import energy availability
-  description: Energy available for import over a defined period and under a named
-    market, hydrological or reliability condition.
+  description: Energy available for import over a defined period and under a named market, hydrological or reliability condition.
   canonical_unit: GWh
   geography_id: CA-BC
   status: regulatory_filing
@@ -373,8 +361,7 @@ variables:
 - id: reliability.electricity_import_cost_cad_per_mwh
   class: Reliability
   name: Electricity import cost
-  description: Observed or assumed electricity import cost, including market, delivery
-    point, currency and price basis.
+  description: Observed or assumed electricity import cost, including market, delivery point, currency and price basis.
   canonical_unit: CAD_per_MWh
   geography_id: CA-BC
   status: regulatory_filing
@@ -382,8 +369,8 @@ variables:
 - id: reliability.elcc_pct_nameplate
   class: Reliability
   name: ELCC assumption
-  description: Effective load-carrying capability as a share of nameplate capacity
-    for a defined resource, duration, penetration level, system and target year.
+  description: Effective load-carrying capability as a share of nameplate capacity for a defined resource, duration, penetration
+    level, system and target year.
   canonical_unit: percent_of_nameplate
   geography_id: CA-BC
   status: regulatory_filing
@@ -391,8 +378,7 @@ variables:
 - id: climate.reservoir_inflows.index
   class: Climate
   name: Reservoir inflows
-  description: Observed or assumed inflow volume or normalized index for a named reservoir
-    system and period.
+  description: Observed or assumed inflow volume or normalized index for a named reservoir system and period.
   canonical_unit: source_unit
   geography_id: CA-BC
   status: draft
@@ -400,8 +386,7 @@ variables:
 - id: climate.drought.recurrence_years
   class: Climate
   name: Drought recurrence
-  description: Return period or scenario frequency for a precisely defined drought
-    event and basin.
+  description: Return period or scenario frequency for a precisely defined drought event and basin.
   canonical_unit: years
   geography_id: CA-BC
   status: draft
@@ -409,8 +394,7 @@ variables:
 - id: climate.snowpack.percent_of_normal
   class: Climate
   name: Snowpack assumption
-  description: Snow-water-equivalent index as a percentage of normal for a named basin
-    and bulletin date.
+  description: Snow-water-equivalent index as a percentage of normal for a named basin and bulletin date.
   canonical_unit: percent_of_normal
   geography_id: CA-BC
   status: draft
@@ -418,8 +402,8 @@ variables:
 - id: technology.battery.installed_cost_cad_per_kwh
   class: Technology
   name: Battery cost curve
-  description: Installed battery-system cost for a defined chemistry, duration, power/energy
-    basis, scenario, target year and dollar year.
+  description: Installed battery-system cost for a defined chemistry, duration, power/energy basis, scenario, target year
+    and dollar year.
   canonical_unit: CAD_per_kWh
   geography_id: CA-BC
   status: draft
@@ -427,8 +411,7 @@ variables:
 - id: technology.wind.capex_cad_per_kw
   class: Technology
   name: Wind cost curve
-  description: Capital cost for a defined wind technology, resource class, scenario,
-    target year, region and dollar year.
+  description: Capital cost for a defined wind technology, resource class, scenario, target year, region and dollar year.
   canonical_unit: CAD_per_kW
   geography_id: CA-BC
   status: draft
@@ -436,8 +419,7 @@ variables:
 - id: technology.solar.capex_cad_per_kw
   class: Technology
   name: Solar cost curve
-  description: Capital cost for a defined solar technology, scale, scenario, target
-    year, region and dollar year.
+  description: Capital cost for a defined solar technology, scale, scenario, target year, region and dollar year.
   canonical_unit: CAD_per_kW
   geography_id: CA-BC
   status: draft
@@ -445,8 +427,8 @@ variables:
 - id: technology.hydrogen.levelized_cost_cad_per_kg
   class: Technology
   name: Hydrogen cost curve
-  description: Levelized hydrogen production cost for a defined production pathway,
-    electricity price, utilization, scenario, region and dollar year.
+  description: Levelized hydrogen production cost for a defined production pathway, electricity price, utilization, scenario,
+    region and dollar year.
   canonical_unit: CAD_per_kg_H2
   geography_id: CA-BC
   status: draft
@@ -454,8 +436,7 @@ variables:
 - id: infrastructure.transformer.lead_time_months
   class: Infrastructure
   name: Transformer lead times
-  description: Elapsed time from order to delivery for a specified transformer class
-    and procurement market.
+  description: Elapsed time from order to delivery for a specified transformer class and procurement market.
   canonical_unit: months
   geography_id: North America
   status: draft
@@ -463,8 +444,7 @@ variables:
 - id: infrastructure.construction.lead_time_months
   class: Infrastructure
   name: Construction lead times
-  description: Elapsed time between defined project milestones for a named infrastructure
-    class.
+  description: Elapsed time between defined project milestones for a named infrastructure class.
   canonical_unit: months
   geography_id: CA-BC
   status: derived_project_events
@@ -472,8 +452,8 @@ variables:
 - id: financial.cost_of_debt_pct
   class: Financial
   name: Cost of debt
-  description: Embedded, forecast or allowed cost of debt, with issuer, regulatory
-    treatment and period specified.
+  description: Embedded, forecast or allowed cost of debt, with issuer, regulatory treatment and period specified. Retain
+    entity, approval status, decision context and filing vintage.
   canonical_unit: percent
   geography_id: CA-BC
   status: regulatory_filing
@@ -481,8 +461,8 @@ variables:
 - id: financial.cost_of_equity_pct
   class: Financial
   name: Cost of equity
-  description: Forecast or allowed return on equity, with methodology, capital structure
-    and period specified.
+  description: Forecast or allowed return on equity, with methodology, capital structure and period specified. Retain entity,
+    approval status, decision context and filing vintage.
   canonical_unit: percent
   geography_id: CA-BC
   status: regulatory_filing
@@ -490,8 +470,8 @@ variables:
 - id: financial.wacc_pct
   class: Financial
   name: WACC
-  description: Nominal or real weighted average cost of capital, before or after tax
-    as explicitly identified.
+  description: Nominal or real weighted average cost of capital, before or after tax as explicitly identified. Retain entity,
+    approval status, decision context and filing vintage.
   canonical_unit: percent
   geography_id: CA-BC
   status: regulatory_filing
@@ -499,17 +479,20 @@ variables:
 - id: financial.discount_rate_pct
   class: Financial
   name: Discount rate
-  description: Discount rate used in a named analysis, with nominal/real and pre-/post-tax
-    basis specified.
+  description: Legacy generic discount-rate variable retained for compatibility. New records should use social, utility-regulatory
+    or pension discount-rate variables and preserve the named decision context.
   canonical_unit: percent
   geography_id: CA-BC
-  status: regulatory_filing
+  status: legacy_generic
   phase: 3
+  temporal_semantics: non_temporal_parameter
+  required_metadata:
+  - decision_context
+  - time_basis
 - id: economic.real_gdp_growth_pct
   class: Economic
   name: Real GDP growth
-  description: Annual percentage change in real gross domestic product for British
-    Columbia.
+  description: Annual percentage change in real gross domestic product for British Columbia.
   canonical_unit: percent
   geography_id: CA-BC
   status: document_assumption
@@ -517,8 +500,7 @@ variables:
 - id: demand.electricity_energy_gwh
   class: Demand
   name: Annual electricity demand
-  description: Annual electrical energy demand for a defined system, customer scope
-    and weather-treatment basis.
+  description: Annual electrical energy demand for a defined system, customer scope and weather-treatment basis.
   canonical_unit: GWh
   geography_id: BC Hydro service area
   status: regulatory_filing
@@ -526,8 +508,7 @@ variables:
 - id: demand.electricity_growth_pct_per_year
   class: Demand
   name: Electricity load growth rate
-  description: Compound annual growth rate in annual electricity demand over the stated
-    forecast interval.
+  description: Compound annual growth rate in annual electricity demand over the stated forecast interval.
   canonical_unit: percent_per_year
   geography_id: BC Hydro service area
   status: regulatory_filing
@@ -575,7 +556,8 @@ variables:
 - id: reliability.electricity_trade.west_import_price_cad_per_mwh
   class: Reliability
   name: Western Canada electricity import price
-  description: CER monthly weighted-average international electricity import price for the western region, which includes B.C., Alberta, Saskatchewan, and Manitoba.
+  description: CER monthly weighted-average international electricity import price for the western region, which includes
+    B.C., Alberta, Saskatchewan, and Manitoba.
   canonical_unit: CAD_per_MWh
   geography_id: CA-WEST
   status: ready
@@ -585,7 +567,8 @@ variables:
 - id: reliability.electricity_trade.west_export_price_cad_per_mwh
   class: Reliability
   name: Western Canada electricity export price
-  description: CER monthly weighted-average international electricity export price for the western region, which includes B.C., Alberta, Saskatchewan, and Manitoba.
+  description: CER monthly weighted-average international electricity export price for the western region, which includes
+    B.C., Alberta, Saskatchewan, and Manitoba.
   canonical_unit: CAD_per_MWh
   geography_id: CA-WEST
   status: ready
@@ -615,7 +598,8 @@ variables:
 - id: electrification.residential_heating_systems.electric_stock
   class: Electrification
   name: Residential electric heating-system stock
-  description: NRCan estimate of electric residential heating systems in British Columbia, excluding the separately identified heat-pump category.
+  description: NRCan estimate of electric residential heating systems in British Columbia, excluding the separately identified
+    heat-pump category.
   canonical_unit: systems
   geography_id: CA-BC
   status: ready
@@ -632,3 +616,512 @@ variables:
   phase: 1
   expected_min: 0
   expected_max: 5000000
+- id: economic.unemployment_rate_pct
+  class: Economic
+  name: Unemployment rate
+  description: Unemployment rate for the stated geography, population scope, period, source and forecast vintage.
+  canonical_unit: percent
+  geography_id: CA-BC
+  status: ready
+  phase: 1
+  expected_min: 0
+  expected_max: 30
+- id: economic.labour_force_participation_rate_pct
+  class: Economic
+  name: Labour force participation rate
+  description: Labour force participation rate for the stated geography, age and sex scope, period, source and forecast vintage.
+  canonical_unit: percent
+  geography_id: CA-BC
+  status: ready
+  phase: 1
+  expected_min: 30
+  expected_max: 90
+- id: economic.nominal_gdp_growth_pct
+  class: Economic
+  name: Nominal GDP growth
+  description: Annual percentage change in nominal gross domestic product for the stated geography and forecast vintage.
+  canonical_unit: percent
+  geography_id: CA-BC
+  status: forecast_source_profiled
+  phase: 2
+  expected_min: -25
+  expected_max: 40
+- id: economic.productivity_growth_pct
+  class: Economic
+  name: Labour productivity growth
+  description: Annual percentage change in labour productivity under the stated definition, source and scenario.
+  canonical_unit: percent
+  geography_id: CA-BC
+  status: source_identified
+  phase: 2
+  expected_min: -20
+  expected_max: 20
+- id: economic.retail_sales_growth_pct
+  class: Economic
+  name: Retail sales growth
+  description: Annual percentage change in nominal retail sales for the stated geography and forecast vintage.
+  canonical_unit: percent
+  geography_id: CA-BC
+  status: forecast_source_profiled
+  phase: 2
+  expected_min: -40
+  expected_max: 50
+- id: economic.exports_growth_pct
+  class: Economic
+  name: Real exports growth
+  description: Annual percentage change in real exports of goods and services for the stated geography and forecast vintage.
+  canonical_unit: percent
+  geography_id: CA-BC
+  status: forecast_source_profiled
+  phase: 2
+  expected_min: -50
+  expected_max: 60
+- id: economic.imports_growth_pct
+  class: Economic
+  name: Real imports growth
+  description: Annual percentage change in real imports of goods and services for the stated geography and forecast vintage.
+  canonical_unit: percent
+  geography_id: CA-BC
+  status: forecast_source_profiled
+  phase: 2
+  expected_min: -50
+  expected_max: 60
+- id: economic.housing_completions.centres_10000_plus
+  class: Economic
+  name: Housing completions in centres of 10,000 and over
+  description: Monthly housing completions in British Columbia population centres of 10,000 and over; not a full provincial
+    total.
+  canonical_unit: dwelling_units
+  geography_id: CA-BC
+  status: ready
+  phase: 1
+  expected_min: 0
+  expected_max: 100000
+- id: economic.housing_under_construction.centres_10000_plus
+  class: Economic
+  name: Housing units under construction in centres of 10,000 and over
+  description: Month-end housing units under construction in British Columbia population centres of 10,000 and over; not a
+    full provincial total.
+  canonical_unit: dwelling_units
+  geography_id: CA-BC
+  status: ready
+  phase: 1
+  expected_min: 0
+  expected_max: 300000
+- id: electrification.ev.bev_stock.level
+  class: Electrification
+  name: Battery-electric vehicle stock
+  description: Registered battery-electric vehicle stock in B.C. under the configured ICBC geography and vehicle-class scope.
+  canonical_unit: vehicles
+  geography_id: CA-BC
+  status: source_profiled
+  phase: 2
+  expected_min: 0
+  expected_max: 3000000
+- id: electrification.ev.phev_stock.level
+  class: Electrification
+  name: Plug-in hybrid vehicle stock
+  description: Registered plug-in hybrid vehicle stock in B.C. under the configured ICBC geography and vehicle-class scope.
+  canonical_unit: vehicles
+  geography_id: CA-BC
+  status: source_profiled
+  phase: 2
+  expected_min: 0
+  expected_max: 3000000
+- id: electrification.ev.bev_stock_growth_yoy_pct
+  class: Electrification
+  name: Battery-electric vehicle stock growth
+  description: Annual percentage growth in registered B.C. battery-electric vehicle stock under a consistent ICBC scope.
+  canonical_unit: percent
+  geography_id: CA-BC
+  status: derived_source_profiled
+  phase: 2
+  expected_min: -30
+  expected_max: 300
+- id: electrification.ev.phev_stock_growth_yoy_pct
+  class: Electrification
+  name: Plug-in hybrid vehicle stock growth
+  description: Annual percentage growth in registered B.C. plug-in hybrid vehicle stock under a consistent ICBC scope.
+  canonical_unit: percent
+  geography_id: CA-BC
+  status: derived_source_profiled
+  phase: 2
+  expected_min: -30
+  expected_max: 300
+- id: energy.natural_gas.bc_gross_production_e3m3
+  class: Energy
+  name: B.C. gross reported natural-gas production
+  description: Monthly sum of gross reported gas production in the BCER bulk archive; not equivalent to marketable production.
+  canonical_unit: e3m3
+  geography_id: CA-BC
+  status: source_profiled
+  phase: 2
+  expected_min: 0
+  expected_max: 10000000
+- id: energy.natural_gas.bc_marketable_production_e3m3
+  class: Energy
+  name: B.C. marketable natural-gas production
+  description: Monthly British Columbia marketable natural-gas production published by the Canada Energy Regulator.
+  canonical_unit: e3m3
+  geography_id: CA-BC
+  status: ready
+  phase: 1
+  expected_min: 0
+  expected_max: 10000000
+- id: demand.utility.electricity_sales_gwh
+  class: Demand
+  name: Utility electricity sales
+  description: Electricity sales for the named utility and service territory, retaining quarterly, year-to-date or annual
+    basis in metadata.
+  canonical_unit: GWh
+  status: document_recipe
+  phase: 2
+  expected_min: 0
+  expected_max: 100000
+- id: demand.utility.natural_gas_sales_pj
+  class: Demand
+  name: Utility natural-gas sales
+  description: Natural-gas sales for the named utility and service territory, retaining quarterly, year-to-date or annual
+    basis in metadata.
+  canonical_unit: PJ
+  status: document_recipe
+  phase: 2
+  expected_min: 0
+  expected_max: 1000
+- id: demand.utility.peak_mw
+  class: Demand
+  name: Utility peak demand
+  description: Peak system demand for the named utility, service territory, measurement interval and period.
+  canonical_unit: MW
+  status: document_recipe
+  phase: 2
+  expected_min: 0
+  expected_max: 30000
+- id: demand.utility.electricity_forecast_gwh
+  class: Demand
+  name: Utility electricity demand forecast
+  description: Electricity demand or sales forecast for the named utility, service territory, scenario, target period and
+    vintage.
+  canonical_unit: GWh
+  status: document_recipe
+  phase: 2
+  expected_min: 0
+  expected_max: 200000
+- id: demand.utility.peak_forecast_mw
+  class: Demand
+  name: Utility peak-demand forecast
+  description: Peak-demand forecast for the named utility, service territory, scenario, target period and vintage.
+  canonical_unit: MW
+  status: document_recipe
+  phase: 2
+  expected_min: 0
+  expected_max: 40000
+- id: utility.customer_count
+  class: Utility
+  name: Utility customer count
+  description: Actual or forecast customer count for the named utility and service territory.
+  canonical_unit: customers
+  status: document_recipe
+  phase: 2
+  expected_min: 0
+  expected_max: 10000000
+- id: utility.customer_growth_pct
+  class: Utility
+  name: Utility customer growth
+  description: Actual or forecast annual customer-count growth for the named utility and service territory.
+  canonical_unit: percent
+  status: document_recipe
+  phase: 2
+  expected_min: -20
+  expected_max: 30
+- id: utility.capex_actual_cad_millions
+  class: Utility
+  name: Utility actual capital expenditure
+  description: Actual capital expenditure or property, plant and equipment additions for the named utility and stated reporting
+    basis.
+  canonical_unit: CAD_millions
+  status: document_recipe
+  phase: 2
+  expected_min: 0
+  expected_max: 30000
+- id: utility.capex_forecast_cad_millions
+  class: Utility
+  name: Utility capital expenditure forecast
+  description: Forecast capital expenditure for the named utility, target period and filing vintage.
+  canonical_unit: CAD_millions
+  status: document_recipe
+  phase: 2
+  expected_min: 0
+  expected_max: 50000
+- id: utility.rate_base_cad_millions
+  class: Utility
+  name: Utility rate base
+  description: Actual, approved or forecast average rate base for the named regulated utility.
+  canonical_unit: CAD_millions
+  status: document_recipe
+  phase: 2
+  expected_min: 0
+  expected_max: 100000
+- id: utility.power_purchase_cost_cad_millions
+  class: Utility
+  name: Utility power-purchase cost
+  description: Power-purchase cost for the named electric utility and stated reporting period.
+  canonical_unit: CAD_millions
+  status: document_recipe
+  phase: 2
+  expected_min: -1000
+  expected_max: 10000
+- id: utility.natural_gas_cost_cad_millions
+  class: Utility
+  name: Utility natural-gas cost
+  description: Natural-gas commodity, transport or storage cost for the named gas utility and stated reporting period, with
+    scope retained in metadata.
+  canonical_unit: CAD_millions
+  status: document_recipe
+  phase: 2
+  expected_min: -1000
+  expected_max: 10000
+- id: utility.loss_rate_pct
+  class: Utility
+  name: Utility system loss-rate assumption
+  description: Electricity or gas system loss-rate assumption used by the named utility in the stated planning or rate context.
+  canonical_unit: percent
+  status: document_recipe
+  phase: 2
+  expected_min: 0
+  expected_max: 30
+- id: utility.dsm_savings_gwh
+  class: Utility
+  name: Utility demand-side management savings
+  description: Actual or forecast annual energy savings attributed to utility demand-side management.
+  canonical_unit: GWh
+  status: document_recipe
+  phase: 2
+  expected_min: 0
+  expected_max: 30000
+- id: utility.trade_income_cad_millions
+  class: Utility
+  name: Utility electricity trade income
+  description: Actual or forecast trade income for the named utility and reporting period.
+  canonical_unit: CAD_millions
+  status: document_recipe
+  phase: 2
+  expected_min: -5000
+  expected_max: 10000
+- id: utility.domestic_generation_gwh
+  class: Utility
+  name: Utility domestic generation
+  description: Electricity generated by the named utility within the stated service or reporting scope.
+  canonical_unit: GWh
+  status: document_recipe
+  phase: 2
+  expected_min: 0
+  expected_max: 150000
+- id: utility.market_purchases_gwh
+  class: Utility
+  name: Utility market purchases
+  description: Electricity market purchases for the named utility and stated period.
+  canonical_unit: GWh
+  status: document_recipe
+  phase: 2
+  expected_min: 0
+  expected_max: 100000
+- id: utility.energy_supply_gap_gwh
+  class: Utility
+  name: Utility energy supply gap
+  description: Forecast firm-energy requirement or supply gap for the named utility, scenario, target period and vintage.
+  canonical_unit: GWh
+  status: document_recipe
+  phase: 2
+  expected_min: -50000
+  expected_max: 100000
+- id: utility.capacity_gap_mw
+  class: Utility
+  name: Utility capacity gap
+  description: Forecast dependable-capacity requirement or supply gap for the named utility, scenario, target period and vintage.
+  canonical_unit: MW
+  status: document_recipe
+  phase: 2
+  expected_min: -10000
+  expected_max: 30000
+- id: financial.allowed_roe_pct
+  class: Financial
+  name: Allowed return on equity
+  description: Regulator-approved return on equity for a named utility and decision context.
+  canonical_unit: percent
+  status: document_recipe
+  phase: 2
+  expected_min: 0
+  expected_max: 30
+- id: financial.deemed_equity_pct
+  class: Financial
+  name: Deemed common-equity share
+  description: Regulator-approved deemed common-equity share for a named utility and decision context.
+  canonical_unit: percent
+  status: document_recipe
+  phase: 2
+  expected_min: 0
+  expected_max: 100
+- id: financial.pension_discount_rate_pct
+  class: Financial
+  name: Pension and post-employment-benefit discount rate
+  description: Accounting discount-rate assumption used for pension or other post-employment-benefit expense; context must
+    be retained and it must not be treated as a project discount rate.
+  canonical_unit: percent
+  status: document_recipe
+  phase: 2
+  expected_min: 0
+  expected_max: 20
+  temporal_semantics: non_temporal_parameter
+  required_metadata:
+  - decision_context
+  - time_basis
+  - evidence_type
+- id: utility.water_inflows_pct_of_average
+  class: Utility
+  name: System water inflows relative to average
+  description: Forecast or observed water inflows for the named hydroelectric utility as a percentage of its planning average.
+  canonical_unit: percent
+  status: document_recipe
+  phase: 2
+  expected_min: 0
+  expected_max: 250
+- id: utility.system_exports_gwh
+  class: Utility
+  name: Utility system exports
+  description: Electricity exported by the named utility in the stated period and forecast vintage.
+  canonical_unit: GWh
+  status: document_recipe
+  phase: 2
+  expected_min: 0
+  expected_max: 50000
+- id: utility.line_loss_and_system_use_gwh
+  class: Utility
+  name: Line losses and system use
+  description: Electricity attributed to line losses and internal system use for the named utility.
+  canonical_unit: GWh
+  status: document_recipe
+  phase: 2
+  expected_min: 0
+  expected_max: 20000
+- id: utility.total_load_and_exports_gwh
+  class: Utility
+  name: Total utility load and system exports
+  description: Domestic sales, system exports, line losses and system use for the named utility.
+  canonical_unit: GWh
+  status: document_recipe
+  phase: 2
+  expected_min: 0
+  expected_max: 200000
+- id: utility.system_imports_gwh
+  class: Utility
+  name: Utility system imports
+  description: Electricity imports assumed or observed for the named utility.
+  canonical_unit: GWh
+  status: document_recipe
+  phase: 2
+  expected_min: 0
+  expected_max: 100000
+- id: utility.independent_power_purchases_gwh
+  class: Utility
+  name: Independent power and long-term purchases
+  description: Electricity purchased from independent power producers and long-term contracts by the named utility.
+  canonical_unit: GWh
+  status: document_recipe
+  phase: 2
+  expected_min: 0
+  expected_max: 100000
+- id: utility.thermal_generation_gwh
+  class: Utility
+  name: Thermal and other generation
+  description: Thermal and other electricity generation for the named utility.
+  canonical_unit: GWh
+  status: document_recipe
+  phase: 2
+  expected_min: 0
+  expected_max: 20000
+- id: utility.electrification_increment_gwh
+  class: Utility
+  name: Incremental electricity load from fuel switching
+  description: Incremental electricity demand attributed to a named fuel-switching or electrification driver, scenario, target
+    year and forecast vintage.
+  canonical_unit: GWh
+  status: document_recipe
+  phase: 2
+  expected_min: 0
+  expected_max: 100000
+- id: commodity.electricity.midc_usd_per_mwh
+  class: Commodity
+  name: Mid-Columbia electricity price assumption
+  description: Average Mid-Columbia wholesale electricity price assumption used by the named decision maker.
+  canonical_unit: USD_per_MWh
+  status: document_recipe
+  phase: 2
+  expected_min: -200
+  expected_max: 1000
+- id: commodity.natural_gas.sumas_usd_per_mmbtu
+  class: Commodity
+  name: Sumas natural-gas price assumption
+  description: Average Sumas natural-gas price assumption used by the named decision maker.
+  canonical_unit: USD_per_MMBtu
+  status: document_recipe
+  phase: 2
+  expected_min: -20
+  expected_max: 100
+- id: financial.short_term_interest_rate_assumption_pct
+  class: Financial
+  name: Short-term interest-rate assumption
+  description: Short-term Canadian interest-rate assumption used in a named public-sector or utility decision context.
+  canonical_unit: percent
+  status: document_recipe
+  phase: 2
+  expected_min: -5
+  expected_max: 25
+- id: financial.long_term_interest_rate_assumption_pct
+  class: Financial
+  name: Long-term interest-rate assumption
+  description: Long-term Canadian interest-rate assumption used in a named public-sector or utility decision context.
+  canonical_unit: percent
+  status: document_recipe
+  phase: 2
+  expected_min: -5
+  expected_max: 25
+- id: financial.social_discount_rate_pct
+  class: Financial
+  name: Social discount rate
+  description: Real social discount rate prescribed or recommended for a named public policy or benefit-cost decision context.
+    This is a non-temporal parameter and must retain its publication, effective and decision context.
+  canonical_unit: percent
+  status: document_recipe
+  phase: 2
+  temporal_semantics: non_temporal_parameter
+  required_metadata:
+  - decision_context
+  - time_basis
+  - evidence_type
+  expected_min: 0
+  expected_max: 20
+- id: financial.utility_regulatory_discount_rate_pct
+  class: Financial
+  name: Utility regulatory discount rate
+  description: Discount rate used for a named utility regulatory calculation. This is a non-temporal parameter; it must not
+    be confused with allowed ROE, WACC, cost of debt or pension discount rates.
+  canonical_unit: percent
+  status: document_recipe
+  phase: 3
+  temporal_semantics: non_temporal_parameter
+  required_metadata:
+  - decision_context
+  - time_basis
+  - evidence_type
+  expected_min: 0
+  expected_max: 30
+- id: utility.rate_change_pct
+  class: Utility
+  name: Utility rate change
+  description: Proposed, interim or approved utility rate change for the named utility, service and effective period.
+  canonical_unit: percent
+  status: document_recipe
+  phase: 2
+  expected_min: -100
+  expected_max: 200

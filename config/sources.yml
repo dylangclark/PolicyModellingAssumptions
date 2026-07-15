@@ -120,6 +120,26 @@ sources:
         transform: yoy_pct
         unit_original: percent
         unit_canonical: percent
+    - source_series_key: unemployment_rate
+      selectors:
+      - dimension: ^Labour force characteristics$
+        member: ^Unemployment rate$
+      outputs:
+      - output_id: level
+        variable_id: economic.unemployment_rate_pct
+        transform: level
+        unit_original: percent
+        unit_canonical: percent
+    - source_series_key: participation_rate
+      selectors:
+      - dimension: ^Labour force characteristics$
+        member: ^Participation rate$
+      outputs:
+      - output_id: level
+        variable_id: economic.labour_force_participation_rate_pct
+        transform: level
+        unit_original: percent
+        unit_canonical: percent
     stale_after_days: 75
   - dataset_id: cpi_all_items
     product_id: '18100004'
@@ -187,8 +207,8 @@ sources:
   license_name: Statistics Canada Open Licence
   raw_redistribution_allowed: true
   attribution_required: true
-  notes: Published from Statistics Canada table 34-10-0158-01 with CMHC identified
-    as the underlying data producer. Preserve the original SAAR measure and attribution.
+  notes: Published from Statistics Canada table 34-10-0158-01 with CMHC identified as the underlying data producer. Preserve
+    the original SAAR measure and attribution.
   revision_lookback_years: 4
   datasets:
   - dataset_id: housing_starts_saar
@@ -219,6 +239,45 @@ sources:
         based_on: monthly_SAAR
         dwelling_scope: total
         underlying_producer: Canada Mortgage and Housing Corporation
+    stale_after_days: 75
+  - dataset_id: housing_completions_under_construction
+    product_id: '34100143'
+    table_number: 34-10-0143-01
+    frequency: monthly
+    geography_id: CA-BC
+    start_date: '2000-01-01'
+    common_selectors:
+    - dimension: ^(Geography|GEO)$
+      member: ^British Columbia$
+    - dimension: ^(Population centre size|Population centre size group)$
+      member: ^(Total, centres 10,000 population and over|Centres 10,000 population and over|Total centres 10,000 and over)$
+    series:
+    - source_series_key: housing_completions
+      selectors:
+      - dimension: ^(Housing estimates|Housing activity|Type of activity)$
+        member: ^Completions$
+      outputs:
+      - output_id: level
+        variable_id: economic.housing_completions.centres_10000_plus
+        transform: level
+        unit_original: dwelling_units
+        unit_canonical: dwelling_units
+        metadata:
+          geographic_scope: population_centres_10000_plus
+          underlying_producer: Canada Mortgage and Housing Corporation
+    - source_series_key: housing_under_construction
+      selectors:
+      - dimension: ^(Housing estimates|Housing activity|Type of activity)$
+        member: ^Under construction$
+      outputs:
+      - output_id: level
+        variable_id: economic.housing_under_construction.centres_10000_plus
+        transform: level
+        unit_original: dwelling_units
+        unit_canonical: dwelling_units
+        metadata:
+          geographic_scope: population_centres_10000_plus
+          underlying_producer: Canada Mortgage and Housing Corporation
     stale_after_days: 75
   required: true
   collection_stale_after_days: 14
@@ -300,81 +359,134 @@ sources:
   collection_stale_after_days: 14
   stale_after_days: 120
 - id: bc_budget_economic_forecasts
-  name: B.C. Budget economic forecast assumptions
+  name: B.C. Budget economic forecast history
   publisher: Government of British Columbia
   authority_tier: 1
-  adapter: bc_budget_forecast
+  adapter: bc_budget_history
   enabled: true
   optional: true
   required: false
   publish_enabled: true
   update_cadence: annual_and_fiscal_updates
   source_url: https://www.bcbudget.gov.bc.ca/
+  archive_url: https://www.bcbudget.gov.bc.ca/previous_budgets.htm
   license_name: Open Government Licence - British Columbia
   raw_redistribution_allowed: true
   collection_stale_after_days: 450
-  timeout_seconds: 240
+  timeout_seconds: 300
+  expected_editions:
+  - 2021
+  - 2022
+  - 2023
+  - 2024
+  - 2025
+  - 2026
   documents:
+  - document_id: bc_budget_2021
+    edition: Budget 2021
+    publication_date: '2021-04-20'
+    url: https://www.bcbudget.gov.bc.ca/2021/pdf/2021_Budget%20and%20Fiscal%20Plan.pdf
+    parser: standard_tables
+    minimum_records: 20
+    edition_year: 2021
+  - document_id: bc_budget_2022
+    edition: Budget 2022
+    publication_date: '2022-02-22'
+    url: https://www.bcbudget.gov.bc.ca/2022/pdf/2022_Budget_and_Fiscal_Plan.pdf
+    parser: standard_tables
+    minimum_records: 20
+    edition_year: 2022
+  - document_id: bc_budget_2023
+    edition: Budget 2023
+    publication_date: '2023-02-28'
+    url: https://www.bcbudget.gov.bc.ca/2023/pdf/2023_Budget_and_Fiscal_Plan.pdf
+    parser: standard_tables
+    minimum_records: 20
+    edition_year: 2023
+  - document_id: bc_budget_2024
+    edition: Budget 2024
+    publication_date: '2024-02-22'
+    url: https://www.bcbudget.gov.bc.ca/2024/pdf/2024_Budget_and_Fiscal_Plan.pdf
+    parser: standard_tables
+    minimum_records: 20
+    edition_year: 2024
+  - document_id: bc_budget_2025
+    edition: Budget 2025
+    publication_date: '2025-03-04'
+    url: https://www.bcbudget.gov.bc.ca/2025/pdf/2025_Budget_and_Fiscal_Plan.pdf
+    parser: standard_tables
+    minimum_records: 20
+    edition_year: 2025
   - document_id: bc_budget_2026
     edition: Budget 2026
-    title: Budget and Fiscal Plan 2026/27 to 2028/29
     publication_date: '2026-02-17'
     url: https://www.bcbudget.gov.bc.ca/2026/pdf/2026_Budget_and_Fiscal_Plan.pdf
-    series:
-    - source_series_id: budget2026_real_gdp_growth
-      variable_id: economic.real_gdp_growth_pct
-      pages: [14]
-      target_years: [2025, 2026, 2027]
-      pattern: 'economy expanded by\s+([0-9.]+)\s*per cent in 2025.*?forecast to grow\s+by\s+([0-9.]+)\s*per cent in 2026.*?increasing to\s+([0-9.]+)\s*per cent in 2027'
-      unit_original: percent
-      unit_canonical: percent
-      geography_id: CA-BC
-      evidence_table: Budget 2026 Economic Forecast
-    - source_series_id: budget2026_overnight_rate
-      variable_id: economic.interest_rate.target_overnight_pct
-      pages: [122]
-      target_years: [2026, 2027]
-      pattern: 'overnight target rate will average\s+([0-9.]+)\s*per cent in 2026 and\s+([0-9.]+)\s*per cent in 2027'
-      unit_original: percent
-      unit_canonical: percent
-      geography_id: CA
-      evidence_table: Financial Markets - Interest Rates
-    - source_series_id: budget2026_goc_10y_rate
-      variable_id: economic.interest_rate.goc_10y_yield_pct
-      pages: [122]
-      target_years: [2026, 2027]
-      pattern: '10-year Government of Canada bond rate is assumed to be\s+([0-9.]+)\s*per cent in 2026 and\s+([0-9.]+)\s*per cent in 2027'
-      unit_original: percent
-      unit_canonical: percent
-      geography_id: CA
-      evidence_table: Table 3.4
-    - source_series_id: budget2026_cad_per_usd
-      variable_id: economic.exchange_rate.cad_per_usd
-      pages: [123]
-      target_years: [2026, 2027]
-      pattern: 'Canadian dollar will average\s+([0-9.]+)\s*US cents in 2026 and\s+([0-9.]+)\s*US cents in 2027'
-      multiplier: 0.01
-      invert: true
-      unit_original: US_cents_per_CAD
-      unit_canonical: CAD_per_USD
-      geography_id: CA
-      evidence_table: Table 3.5
-- id: bc_energy_regulator_production
-  name: B.C. Energy Regulator production data
-  publisher: B.C. Energy Regulator
-  authority_tier: 1
-  adapter: linked_dataset
-  enabled: false
-  optional: true
-  publish_enabled: true
-  update_cadence: monthly
-  source_url: https://www.bc-er.ca/data-reports/data-centre/
-  license_name: Review dataset-specific B.C. Energy Regulator terms
-  raw_redistribution_allowed: review_terms
-  notes: Priority structured source for raw and marketable natural-gas production,
-    condensate, natural-gas liquids, producing wells, basins, and operators.
-  required: false
-  collection_stale_after_days: 45
+    parser: raw_2026
+    minimum_records: 20
+    edition_year: 2026
+  notes: Backfills six forecast vintages. Forecasts are retained by publication vintage and target year; newer budgets never
+    overwrite older forecasts.
+  series:
+  - source_series_id: catalog_economic_real_gdp_growth_pct
+    variable_id: economic.real_gdp_growth_pct
+    unit_original: percent
+    unit_canonical: percent
+    catalog_only: true
+  - source_series_id: catalog_economic_nominal_gdp_growth_pct
+    variable_id: economic.nominal_gdp_growth_pct
+    unit_original: percent
+    unit_canonical: percent
+    catalog_only: true
+  - source_series_id: catalog_economic_exports_growth_pct
+    variable_id: economic.exports_growth_pct
+    unit_original: percent
+    unit_canonical: percent
+    catalog_only: true
+  - source_series_id: catalog_economic_retail_sales_growth_pct
+    variable_id: economic.retail_sales_growth_pct
+    unit_original: percent
+    unit_canonical: percent
+    catalog_only: true
+  - source_series_id: catalog_economic_housing_starts_annual_units
+    variable_id: economic.housing_starts.annual_units
+    unit_original: dwelling_units
+    unit_canonical: dwelling_units
+    catalog_only: true
+  - source_series_id: catalog_economic_cpi_all_items_yoy_pct
+    variable_id: economic.cpi.all_items_yoy_pct
+    unit_original: percent
+    unit_canonical: percent
+    catalog_only: true
+  - source_series_id: catalog_economic_population_growth_yoy_pct
+    variable_id: economic.population.growth_yoy_pct
+    unit_original: percent
+    unit_canonical: percent
+    catalog_only: true
+  - source_series_id: catalog_economic_labour_force_participation_rate_pct
+    variable_id: economic.labour_force_participation_rate_pct
+    unit_original: percent
+    unit_canonical: percent
+    catalog_only: true
+  - source_series_id: catalog_economic_employment_growth_yoy_pct
+    variable_id: economic.employment.growth_yoy_pct
+    unit_original: percent
+    unit_canonical: percent
+    catalog_only: true
+  - source_series_id: catalog_economic_unemployment_rate_pct
+    variable_id: economic.unemployment_rate_pct
+    unit_original: percent
+    unit_canonical: percent
+    catalog_only: true
+  - source_series_id: catalog_economic_interest_rate_goc_10y_yield_pct
+    variable_id: economic.interest_rate.goc_10y_yield_pct
+    unit_original: percent
+    unit_canonical: percent
+    catalog_only: true
+  - source_series_id: catalog_economic_exchange_rate_cad_per_usd
+    variable_id: economic.exchange_rate.cad_per_usd
+    unit_original: CAD_per_USD
+    unit_canonical: CAD_per_USD
+    catalog_only: true
 - id: nrcan_energy_use_database
   name: NRCan National and Comprehensive Energy Use Databases
   publisher: Natural Resources Canada
@@ -399,56 +511,94 @@ sources:
     series:
     - source_series_id: heat_pump_stock
       variable_id: electrification.residential_heating_systems.heat_pump_stock
-      row_pattern: '^Heat Pump$'
+      row_pattern: ^Heat Pump$
       occurrence: 1
       multiplier: 1000
       unit_original: thousand_systems
       unit_canonical: systems
     - source_series_id: heat_pump_share_pct
       variable_id: electrification.residential_heating_systems.heat_pump_share_pct
-      row_pattern: '^Heat Pump$'
+      row_pattern: ^Heat Pump$
       occurrence: 2
       unit_original: percent
       unit_canonical: percent
     - source_series_id: electric_stock
       variable_id: electrification.residential_heating_systems.electric_stock
-      row_pattern: '^Electric$'
+      row_pattern: ^Electric$
       occurrence: 1
       multiplier: 1000
       unit_original: thousand_systems
       unit_canonical: systems
+    - source_series_id: natural_gas_stock
+      variable_id: electrification.residential_heating_systems.natural_gas_stock
+      aggregate_row_patterns:
+      - ^Natural Gas - Normal Efficiency$
+      - ^Natural Gas - Medium Efficiency$
+      - ^Natural Gas - High Efficiency$
+      multiplier: 1000
+      unit_original: thousand_systems
+      unit_canonical: systems
+      metadata:
+        definition: normal_plus_medium_plus_high_efficiency_primary_natural_gas_systems
+        excludes: Natural Gas/Electric dual-fuel category
 - id: icbc_vehicle_population
-  name: ICBC vehicle population and registration statistics
+  name: ICBC vehicle population direct export
   publisher: Insurance Corporation of British Columbia
   authority_tier: 1
-  adapter: linked_dataset
+  adapter: icbc_vehicle_population
   enabled: false
   optional: true
+  required: false
   publish_enabled: false
-  update_cadence: annual_or_release_dependent
+  update_cadence: annual
   source_url: https://www.icbc.com/about-icbc/newsroom/Statistics
-  license_name: ICBC data licence - review required
+  download_url: REPLACE_WITH_VERIFIED_ICBC_DIRECT_CSV_OR_ZIP_URL
+  license_name: ICBC Open Data Licence
   raw_redistribution_allowed: review_terms
-  notes: Collect internally first. Enable public export only after confirming redistribution
-    terms for vehicle stock and propulsion-type data.
-  required: false
+  scope_note: Province total; configured vehicle classes only; BEV and PHEV kept separate
+  allowed_geography_values:
+  - British Columbia
+  - BC
+  - Grand Total
+  - All
+  allowed_vehicle_class_values:
+  - Passenger Vehicle
+  - Light Duty Vehicle
+  powertrain_labels:
+    bev:
+    - Battery Electric
+    - Electric
+    - BEV
+    phev:
+    - Plug-in Hybrid
+    - Plug In Hybrid
+    - PHEV
+  series:
+  - kind: bev
+    source_series_id: icbc_bev_stock
+    variable_id: electrification.ev.bev_stock.level
+    growth_variable_id: electrification.ev.bev_stock_growth_yoy_pct
+    unit_original: vehicles
+    unit_canonical: vehicles
+    growth_unit_original: percent
+    growth_unit_canonical: percent
+  - kind: phev
+    source_series_id: icbc_phev_stock
+    variable_id: electrification.ev.phev_stock.level
+    growth_variable_id: electrification.ev.phev_stock_growth_yoy_pct
+    unit_original: vehicles
+    unit_canonical: vehicles
+    growth_unit_original: percent
+    growth_unit_canonical: percent
   collection_stale_after_days: 450
-- id: bc_hydro_recurring_planning
-  name: BC Hydro recurring planning and corporate reporting
-  publisher: BC Hydro
-  authority_tier: 1
-  adapter: pdf_table
-  enabled: false
-  optional: true
-  publish_enabled: true
-  update_cadence: annual_and_filing_dependent
-  source_url: https://www.bchydro.com/toolbar/about/strategies-plans-regulatory.html
-  license_name: BC Hydro website and document terms
-  raw_redistribution_allowed: review_terms
-  notes: Begin with stable annual-report, service-plan, and IRP tables for sales, peak
-    demand, sector load, generation, imports, DSM, surplus margins, and capital timing.
-  required: false
-  collection_stale_after_days: 120
+  stale_after_days: 550
+  notes: Fails closed on duplicate rows and unknown scope. Remains disabled until a documented direct export URL and public-export
+    terms are verified.
+  preferred_geography_values:
+  - British Columbia
+  - BC
+  require_geography_column: true
+  minimum_years: 2
 - id: bc_zero_carbon_step_code
   name: B.C. Zero Carbon Step Code adoption and requirements
   publisher: Government of British Columbia
@@ -461,55 +611,45 @@ sources:
   source_url: https://energystepcode.ca/zero-carbon-step-code/
   license_name: Open Government Licence - British Columbia where applicable
   raw_redistribution_allowed: review_terms
-  notes: Track jurisdiction, effective date, emissions level, building types, and estimated
-    population or construction coverage.
+  notes: Track jurisdiction, effective date, emissions level, building types, and estimated population or construction coverage.
   required: false
   collection_stale_after_days: 60
-- id: bc_lng_project_inventory
-  name: B.C. LNG project capacity and regulatory status inventory
-  publisher: Government of British Columbia and relevant regulators
-  authority_tier: 1
-  adapter: linked_dataset
-  enabled: false
-  optional: true
-  publish_enabled: true
-  update_cadence: monthly_change_check
-  source_url: https://www2.gov.bc.ca/gov/content/industry/natural-gas-oil/lng/lng-projects
-  license_name: Source-specific government and regulatory terms
-  raw_redistribution_allowed: review_terms
-  notes: Dedicated LNG inventory only; do not use the general Major Projects Inventory.
-    Track capacity, feed-gas requirement, status, expected operation, and published load.
-  required: false
-  collection_stale_after_days: 60
-- id: bc_mining_electricity_assumptions
-  name: B.C. mining electricity-demand assumptions
-  publisher: BC Hydro, regulators, proponents, and industry sources
-  authority_tier: 2
-  adapter: regulatory_recipe
-  enabled: false
-  optional: true
-  publish_enabled: true
-  update_cadence: filing_dependent
-  source_url: https://www.bcuc.com/OurWork/Proceedings
-  license_name: Source-specific filing terms
-  raw_redistribution_allowed: review_terms
-  notes: Reviewed assumptions only. Distinguish operating, contracted, development-stage,
-    moderate-growth, and high-growth mining load.
-  required: false
-  collection_stale_after_days: 120
 - id: bc_data_catalogue_households
   name: B.C. household estimates and projections
   publisher: Government of British Columbia
   authority_tier: 1
-  adapter: linked_dataset
-  enabled: false
+  adapter: bc_households
+  enabled: true
   optional: true
-  publish_enabled: true
-  source_url: https://catalogue.data.gov.bc.ca/dataset/household-estimates-and-projections
-  license_name: Open Government Licence - British Columbia
-  notes: Registered for the next authoritative-source adapter.
   required: false
-  collection_stale_after_days: 30
+  publish_enabled: true
+  update_cadence: annual
+  source_url: https://catalogue.data.gov.bc.ca/dataset/bc-sub-provincial-household-estimates-and-projections-
+  download_url: https://catalogue.data.gov.bc.ca/dataset/2a8ddf6c-dfb9-4187-a66d-9bb15b15ea83/resource/5e88b528-24cb-4a58-bc14-cdaa7948fb1b/download/household_estimates_projections_bc_subprov.csv
+  license_name: Open Government Licence - British Columbia
+  raw_redistribution_allowed: true
+  geography_id: CA-BC
+  collection_stale_after_days: 450
+  stale_after_days: 550
+  series:
+  - source_series_id: households_estimate
+    variable_id: economic.households.level
+    unit_original: households
+    unit_canonical: households
+  - source_series_id: households_estimate_growth_yoy
+    variable_id: economic.households.growth_yoy_pct
+    unit_original: percent
+    unit_canonical: percent
+  - source_series_id: households_projection
+    variable_id: economic.households.level
+    unit_original: households
+    unit_canonical: households
+  - source_series_id: households_projection_growth_yoy
+    variable_id: economic.households.growth_yoy_pct
+    unit_original: percent
+    unit_canonical: percent
+  publication_date: '2026-04-17'
+  vintage_date: '2026-04-17'
 - id: cer_electricity_trade
   name: Canada Energy Regulator electricity trade summary
   publisher: Canada Energy Regulator
@@ -530,26 +670,30 @@ sources:
   monthly_trade_series:
   - source_series_id: canada_exports_mwh
     variable_id: reliability.electricity_trade.canada_exports_mwh
-    header_patterns: ['^Exports.*MW\.h']
+    header_patterns:
+    - ^Exports.*MW\.h
     unit_original: MWh
     unit_canonical: MWh
     geography_id: CA
   - source_series_id: canada_imports_mwh
     variable_id: reliability.electricity_trade.canada_imports_mwh
-    header_patterns: ['^Imports.*MW\.h']
+    header_patterns:
+    - ^Imports.*MW\.h
     unit_original: MWh
     unit_canonical: MWh
     geography_id: CA
   - source_series_id: canada_export_value_cad
     variable_id: reliability.electricity_trade.canada_export_value_cad
-    header_patterns: ['^Exports.*\(\$\)']
+    header_patterns:
+    - ^Exports.*\(\$\)
     unit_original: CAD
     unit_canonical: CAD
     currency: CAD
     geography_id: CA
   - source_series_id: canada_import_value_cad
     variable_id: reliability.electricity_trade.canada_import_value_cad
-    header_patterns: ['^Imports.*\(\$\)']
+    header_patterns:
+    - ^Imports.*\(\$\)
     unit_original: CAD
     unit_canonical: CAD
     currency: CAD
@@ -557,15 +701,766 @@ sources:
   monthly_price_series:
   - source_series_id: west_export_price_cad_per_mwh
     variable_id: reliability.electricity_trade.west_export_price_cad_per_mwh
-    header_patterns: ['Exports from Canada.*West.*\$/MW\.h']
+    header_patterns:
+    - Exports from Canada.*West.*\$/MW\.h
     unit_original: CAD_per_MWh
     unit_canonical: CAD_per_MWh
     currency: CAD
     geography_id: CA-WEST
   - source_series_id: west_import_price_cad_per_mwh
     variable_id: reliability.electricity_trade.west_import_price_cad_per_mwh
-    header_patterns: ['Imports to Canada.*West.*\$/MW\.h']
+    header_patterns:
+    - Imports to Canada.*West.*\$/MW\.h
     unit_original: CAD_per_MWh
     unit_canonical: CAD_per_MWh
     currency: CAD
     geography_id: CA-WEST
+- id: bc_stats_population_projections
+  name: BC Stats population estimates and projections
+  publisher: Government of British Columbia
+  authority_tier: 1
+  adapter: bc_stats_population
+  enabled: false
+  optional: true
+  required: false
+  publish_enabled: true
+  update_cadence: annual
+  source_url: https://catalogue.data.gov.bc.ca/dataset/bc-sub-provincial-population-estimates-and-projections
+  download_url: https://catalogue.data.gov.bc.ca/dataset/86839277-986a-4a29-9f70-fa9b1166f6cb/resource/36610a52-6f90-4ed6-946d-587641a490df/download/regional-district-population.csv
+  license_name: Open Government Licence - British Columbia
+  raw_redistribution_allowed: true
+  publication_date: '2026-06-03'
+  vintage_date: '2026-06-03'
+  scenario_original: P.E.O.P.L.E. reference projection
+  minimum_region_count: 25
+  collection_stale_after_days: 450
+  stale_after_days: 550
+  notes: Disabled until the live CSV headers and total-age/total-sex labels are verified on the Pi. The adapter can aggregate
+    non-overlapping regional districts when no province-total row exists.
+  series:
+  - source_series_id: bcstats_population_estimate
+    variable_id: economic.population.level
+    unit_original: persons
+    unit_canonical: persons
+  - source_series_id: bcstats_population_estimate_growth_yoy
+    variable_id: economic.population.growth_yoy_pct
+    unit_original: percent
+    unit_canonical: percent
+  - source_series_id: bcstats_population_projection
+    variable_id: economic.population.level
+    unit_original: persons
+    unit_canonical: persons
+  - source_series_id: bcstats_population_projection_growth_yoy
+    variable_id: economic.population.growth_yoy_pct
+    unit_original: percent
+    unit_canonical: percent
+- id: bcer_production_data
+  name: BCER production data bulk archive
+  publisher: B.C. Energy Regulator
+  authority_tier: 1
+  adapter: bcer_production
+  enabled: false
+  optional: true
+  required: false
+  publish_enabled: true
+  update_cadence: monthly
+  source_url: https://www.bc-er.ca/data-reports/data-centre/
+  download_url: https://iris.bcogc.ca/download/prod_csv.zip
+  license_name: B.C. Energy Regulator data terms
+  raw_redistribution_allowed: review_terms
+  encoding: latin-1
+  multiplier_to_e3m3: 0.001
+  unit_original: m3
+  series:
+  - source_series_id: bc_gross_gas_production
+    variable_id: energy.natural_gas.bc_gross_production_e3m3
+    unit_original: m3
+    unit_canonical: e3m3
+  collection_stale_after_days: 45
+  stale_after_days: 120
+  notes: Disabled pending live ZIP schema and redistribution verification. Gross reported production is kept distinct from
+    CER marketable production.
+  minimum_months: 12
+- id: cer_provincial_gas_production
+  name: CER historical provincial marketable natural-gas production
+  publisher: Canada Energy Regulator
+  authority_tier: 1
+  adapter: cer_gas_production
+  enabled: true
+  optional: false
+  required: true
+  publish_enabled: true
+  update_cadence: monthly
+  source_url: https://open.canada.ca/data/en/dataset/3bb59253-94d9-47e7-893d-5a794496e931
+  download_url: https://www.cer-rec.gc.ca/open/energy/historical-canadian-provincial-marketable-natural-gas-production.csv
+  license_name: Open Government Licence - Canada
+  raw_redistribution_allowed: true
+  series:
+  - source_series_id: bc_marketable_gas_production
+    variable_id: energy.natural_gas.bc_marketable_production_e3m3
+    unit_original: e3m3
+    unit_canonical: e3m3
+  collection_stale_after_days: 45
+  stale_after_days: 120
+- id: bc_hydro_quick_facts
+  name: BC Hydro Quick Facts
+  publisher: BC Hydro
+  authority_tier: 1
+  adapter: bc_hydro_quick_facts
+  enabled: false
+  optional: true
+  required: false
+  publish_enabled: true
+  update_cadence: annual
+  source_url: https://www.bchydro.com/about/accountability_reports/financial_reports/annual_reports.html
+  download_url: https://www.bchydro.com/content/dam/BCHydro/customer-portal/documents/corporate/accountability-reports/financial-reports/annual-reports/2024-2025-bc-hydro-quick-facts.pdf
+  license_name: BC Hydro website and document terms
+  raw_redistribution_allowed: review_terms
+  series:
+  - source_series_id: peak_one_hour_integrated_system_demand
+    variable_id: demand.utility.peak_mw
+    unit_original: MW
+    unit_canonical: MW
+  entity_id: bc_hydro
+  geography_id: BC Hydro service area
+  collection_stale_after_days: 450
+  stale_after_days: 550
+  notes: Disabled until a selective live run verifies PDF column order and document vintage.
+- id: bc_moti_benefit_cost_parameters
+  name: B.C. transportation benefit-cost analysis parameters
+  publisher: Government of British Columbia
+  authority_tier: 1
+  adapter: document_assumptions
+  enabled: true
+  optional: true
+  required: false
+  publish_enabled: true
+  update_cadence: document_change
+  source_url: https://www2.gov.bc.ca/gov/content/transportation/transportation-infrastructure/transportation-planning/benefit-cost-analysis
+  license_name: Open Government Licence - British Columbia
+  raw_redistribution_allowed: true
+  timeout_seconds: 240
+  collection_stale_after_days: 900
+  documents:
+  - document_id: bc_moti_default_values_bca_2018
+    title: Default Values for Benefit Cost Analysis in British Columbia 2018
+    edition: '2018'
+    publication_date: '2018-05-07'
+    url: https://www2.gov.bc.ca/assets/gov/driving-and-transportation/transportation-infrastructure/planning/tools/default_values-benefit_cost_analysis.pdf
+    guard_patterns:
+    - Default Values for Benefit Cost Analysis
+    - British Columbia
+    series:
+    - source_series_id: bc_moti_social_discount_rate_2018
+      variable_id: financial.social_discount_rate_pct
+      pages:
+      - 12
+      - 25
+      pattern: social discount rate of\s*(?P<value>[0-9.]+)\s*%
+      value_group: value
+      unit_original: percent
+      unit_canonical: percent
+      record_kind: model_parameter
+      non_temporal: true
+      decision_context: B.C. Ministry of Transportation benefit-cost analysis
+      parameter_scope: social real discount rate
+      approval_status: government_guidance
+      effective_from: '2018-05-07'
+      hard_min: 0
+      hard_max: 20
+      required: false
+      quality_flags:
+      - historical_guidance
+      - current_applicability_requires_confirmation
+      evidence_type: government_policy_assumption
+      assumption_owner: B.C. Ministry of Transportation and Transit
+      source_status: historical_published_guidance
+  notes: Extracts the published 6% social discount rate as a non-temporal model parameter with its 2018 decision context and
+    historical-guidance flag. It is not presented as a current government-wide rate.
+  series:
+  - source_series_id: catalog_financial_social_discount_rate_pct
+    variable_id: financial.social_discount_rate_pct
+    unit_original: percent
+    unit_canonical: percent
+    catalog_only: true
+- id: fortisbc_quarterly_financials
+  name: FortisBC annual financial results and approved parameter history
+  publisher: FortisBC Energy Inc. and FortisBC Inc.
+  authority_tier: 1
+  adapter: fortisbc_history
+  enabled: true
+  optional: true
+  required: false
+  publish_enabled: true
+  update_cadence: annual_with_index_discovery
+  source_url: https://www.fortisbc.com/about-us/corporate-information/investor-centre
+  discovery_url: https://www.fortisbc.com/about-us/corporate-information/investor-centre
+  start_year: 2021
+  end_year: 2025
+  minimum_document_count: 10
+  license_name: FortisBC website and public filing terms
+  raw_redistribution_allowed: review_terms
+  collection_stale_after_days: 450
+  timeout_seconds: 300
+  notes: Discovers maintained FEI and FBC annual MD&A links for 2021-2025. Extracts annual utility sales, supply costs, actual
+    and forecast capital expenditures, customer counts, rate base and disclosed BCUC-approved ROE and deemed equity. Quarterly
+    and direct BCUC proceeding recipes remain staged until separate historical layout tests are complete.
+  series:
+  - source_series_id: catalog_demand_utility_natural_gas_sales_pj
+    variable_id: demand.utility.natural_gas_sales_pj
+    unit_original: PJ
+    unit_canonical: PJ
+    catalog_only: true
+  - source_series_id: catalog_demand_utility_electricity_sales_gwh
+    variable_id: demand.utility.electricity_sales_gwh
+    unit_original: GWh
+    unit_canonical: GWh
+    catalog_only: true
+  - source_series_id: catalog_utility_natural_gas_cost_cad_millions
+    variable_id: utility.natural_gas_cost_cad_millions
+    unit_original: CAD_millions
+    unit_canonical: CAD_millions
+    catalog_only: true
+  - source_series_id: catalog_utility_power_purchase_cost_cad_millions
+    variable_id: utility.power_purchase_cost_cad_millions
+    unit_original: CAD_millions
+    unit_canonical: CAD_millions
+    catalog_only: true
+  - source_series_id: catalog_utility_capex_actual_cad_millions
+    variable_id: utility.capex_actual_cad_millions
+    unit_original: CAD_millions
+    unit_canonical: CAD_millions
+    catalog_only: true
+  - source_series_id: catalog_utility_capex_forecast_cad_millions
+    variable_id: utility.capex_forecast_cad_millions
+    unit_original: CAD_millions
+    unit_canonical: CAD_millions
+    catalog_only: true
+  - source_series_id: catalog_financial_allowed_roe_pct
+    variable_id: financial.allowed_roe_pct
+    unit_original: percent
+    unit_canonical: percent
+    catalog_only: true
+  - source_series_id: catalog_financial_deemed_equity_pct
+    variable_id: financial.deemed_equity_pct
+    unit_original: percent
+    unit_canonical: percent
+    catalog_only: true
+  - source_series_id: catalog_utility_customer_count
+    variable_id: utility.customer_count
+    unit_original: customers
+    unit_canonical: customers
+    catalog_only: true
+  - source_series_id: catalog_financial_pension_discount_rate_pct
+    variable_id: financial.pension_discount_rate_pct
+    unit_original: percent
+    unit_canonical: percent
+    catalog_only: true
+  - source_series_id: catalog_utility_rate_base_cad_millions
+    variable_id: utility.rate_base_cad_millions
+    unit_original: CAD_millions
+    unit_canonical: CAD_millions
+    catalog_only: true
+- id: fortisbc_rate_review_assumptions
+  name: FortisBC annual rate-review assumptions
+  publisher: FortisBC Inc. and British Columbia Utilities Commission
+  authority_tier: 1
+  adapter: document_assumptions
+  enabled: false
+  optional: true
+  required: false
+  publish_enabled: true
+  update_cadence: annual_and_proceeding_dependent
+  source_url: https://www.fortisbc.com/about-us/corporate-information/regulatory-affairs
+  license_name: FortisBC and BCUC filing terms
+  raw_redistribution_allowed: review_terms
+  collection_stale_after_days: 180
+  timeout_seconds: 240
+  documents:
+  - document_id: fbc_annual_review_2025_2026
+    title: FBC Annual Review for 2025 and 2026 Rates
+    edition: 2025-2026
+    publication_date: '2025-07-31'
+    url: https://www.cdn.fortisbc.com/libraries/docs/default-source/about-us-documents/regulatory-affairs-documents/electric-utility/250731-fbc-ar-2025-26-rates-application-ff.pdf?sfvrsn=293cb6b2_1
+    guard_patterns:
+    - Annual Review for 2025 and 2026 Rates
+    - FORTISBC INC
+    series:
+    - source_series_id: fbc_2026_customer_forecast
+      variable_id: utility.customer_count
+      pages:
+      - 188
+      pattern: 2025P\s+(?P<prior>[0-9,]+)\s+2026F\s+(?P<value>[0-9,]+)
+      value_group: value
+      unit_original: customers
+      unit_canonical: customers
+      record_kind: forecast
+      target_year: 2026
+      reference_period_start: '2025-07-31'
+      reference_period_end: '2025-07-31'
+      entity_id: fortisbc_inc
+      geography_id: FortisBC electric service area
+      evidence_type: utility_forecast
+      assumption_owner: FortisBC Inc.
+      source_status: applicant_forecast
+      decision_context: FBC 2025 and 2026 Annual Review of Rates
+      hard_min: 0
+      hard_max: 1000000
+      required: false
+    - source_series_id: fbc_2026_gross_load_forecast
+      variable_id: demand.utility.electricity_forecast_gwh
+      pages:
+      - 34
+      pattern: Gross Load.*?2025P\s+(?P<prior>[0-9,.]+).*?2026F\s+(?P<value>[0-9,.]+)
+      value_group: value
+      unit_original: GWh
+      unit_canonical: GWh
+      record_kind: forecast
+      target_year: 2026
+      reference_period_start: '2025-07-31'
+      reference_period_end: '2025-07-31'
+      entity_id: fortisbc_inc
+      geography_id: FortisBC electric service area
+      evidence_type: utility_forecast
+      assumption_owner: FortisBC Inc.
+      source_status: applicant_forecast
+      decision_context: FBC 2025 and 2026 Annual Review of Rates
+      hard_min: 0
+      hard_max: 20000
+      required: false
+    - source_series_id: fbc_2026_pension_discount_rate
+      variable_id: financial.pension_discount_rate_pct
+      pages:
+      - 59
+      pattern: 2026.*?(?P<value>4\.75)\s*%
+      value_group: value
+      unit_original: percent
+      unit_canonical: percent
+      record_kind: model_parameter
+      non_temporal: true
+      entity_id: fortisbc_inc
+      decision_context: FBC pension and other post-employment benefit expense forecast
+      parameter_scope: pension and OPEB accounting discount rate
+      evidence_type: private_sector_guidance
+      assumption_owner: FortisBC Inc.
+      source_status: applicant_forecast
+      hard_min: 0
+      hard_max: 20
+      required: false
+  - document_id: fei_annual_review_2025_2026
+    title: FEI Annual Review for 2025 and 2026 Delivery Rates
+    edition: 2025-2026
+    publication_date: '2025-07-24'
+    url: https://www.cdn.fortisbc.com/libraries/docs/default-source/about-us-documents/regulatory-affairs-documents/gas-utility/250724-fei-ar-2025-26-del-rates-application-ff.pdf?sfvrsn=df53a9b1_1
+    guard_patterns:
+    - Annual Review for 2025 and 2026 Delivery Rates
+    - FORTISBC ENERGY INC
+    series: []
+  notes: Selected FBC recipes are configured but remain non-blocking and disabled pending live page verification. The filing
+    explicitly uses a B.C. Stats population forecast prepared for FBC as a load-forecast driver; the proprietary numeric population
+    series is not republished as a public population forecast.
+- id: bcuc_approved_financial_parameters
+  name: BCUC approved utility financial parameters
+  publisher: British Columbia Utilities Commission
+  authority_tier: 1
+  adapter: document_assumptions
+  enabled: false
+  optional: true
+  required: false
+  publish_enabled: true
+  update_cadence: decision_dependent
+  source_url: https://www.bcuc.com/OurWork/Proceedings
+  license_name: BCUC public proceeding terms
+  raw_redistribution_allowed: review_terms
+  collection_stale_after_days: 365
+  timeout_seconds: 240
+  documents: []
+  notes: Staged decision-discovery family for final BCUC orders. Current approved ROE and deemed equity are also extracted
+    from utility filings with approval_status metadata. Do not infer cost of debt, WACC or discount rates from finance charges.
+- id: bc_hydro_planning_assumptions
+  name: BC Hydro service-plan forecasts and annual results history
+  publisher: BC Hydro
+  authority_tier: 1
+  adapter: bc_hydro_history
+  enabled: true
+  optional: true
+  required: false
+  publish_enabled: true
+  update_cadence: annual_and_plan_updates
+  source_url: https://www.bchydro.com/toolbar/about/strategies-plans-regulatory/service-plan.html
+  annual_reports_url: https://www.bchydro.com/about/accountability_reports/financial_reports/annual_reports.html
+  license_name: BC Hydro public-document terms
+  raw_redistribution_allowed: review_terms
+  collection_stale_after_days: 450
+  timeout_seconds: 300
+  expected_document_ids:
+  - bchydro_service_plan_2021_22
+  - bchydro_service_plan_2022_23
+  - bchydro_service_plan_2023_24
+  - bchydro_service_plan_2024_25
+  - bchydro_service_plan_2025_26
+  - bchydro_service_plan_2026_27
+  - bchydro_annual_service_plan_2020_21
+  - bchydro_annual_service_plan_2021_22
+  - bchydro_annual_service_plan_2022_23
+  - bchydro_annual_service_plan_2023_24
+  - bchydro_annual_service_plan_2024_25
+  documents:
+  - document_id: bchydro_service_plan_2021_22
+    document_type: service_plan
+    edition: 2021/22-2023/24
+    edition_start_year: 2021
+    publication_date: '2021-04-01'
+    url: https://www.bchydro.com/content/dam/BCHydro/customer-portal/documents/corporate/regulatory-planning-documents/service-plans/bchydro-service-plan-2021-22-2023-24.pdf
+    minimum_records: 40
+  - document_id: bchydro_service_plan_2022_23
+    document_type: service_plan
+    edition: 2022/23-2024/25
+    edition_start_year: 2022
+    publication_date: '2022-02-22'
+    url: https://www.bchydro.com/content/dam/BCHydro/customer-portal/documents/corporate/regulatory-planning-documents/service-plans/bchydro-service-plan-2022-23-2024-25.pdf
+    minimum_records: 40
+  - document_id: bchydro_service_plan_2023_24
+    document_type: service_plan
+    edition: 2023/24-2025/26
+    edition_start_year: 2023
+    publication_date: '2023-02-28'
+    url: https://www.bchydro.com/content/dam/BCHydro/customer-portal/documents/corporate/regulatory-planning-documents/service-plans/bchydro-service-plan-2023-24-2025-26.pdf
+    minimum_records: 40
+  - document_id: bchydro_service_plan_2024_25
+    document_type: service_plan
+    edition: 2024/25-2026/27
+    edition_start_year: 2024
+    publication_date: '2024-02-22'
+    url: https://www.bchydro.com/content/dam/BCHydro/customer-portal/documents/corporate/regulatory-planning-documents/service-plans/bchydro-service-plan-2024-25-2026-27.pdf
+    minimum_records: 40
+  - document_id: bchydro_service_plan_2025_26
+    document_type: service_plan
+    edition: 2025/26-2027/28
+    edition_start_year: 2025
+    publication_date: '2025-03-04'
+    url: https://www.bchydro.com/content/dam/BCHydro/customer-portal/documents/corporate/regulatory-planning-documents/service-plans/bchydro-service-plan-2025-26%E2%80%932027-28.pdf
+    minimum_records: 40
+  - document_id: bchydro_service_plan_2026_27
+    document_type: service_plan
+    edition: 2026/27-2028/29
+    edition_start_year: 2026
+    publication_date: '2026-02-17'
+    url: https://www.bchydro.com/content/dam/BCHydro/customer-portal/documents/corporate/regulatory-planning-documents/service-plans/bchydro-service-plan-2026-27%E2%80%932028-29.pdf
+    minimum_records: 40
+  - document_id: bchydro_annual_service_plan_2020_21
+    document_type: annual_service_plan_report
+    edition: 2020/21
+    fiscal_end_year: 2021
+    publication_date: '2021-08-31'
+    url: https://www.bcbudget.gov.bc.ca/Annual_Reports/2020_2021/pdf/agency/bchydro.pdf
+    minimum_records: 2
+  - document_id: bchydro_annual_service_plan_2021_22
+    document_type: annual_service_plan_report
+    edition: 2021/22
+    fiscal_end_year: 2022
+    publication_date: '2022-08-31'
+    url: https://www.bcbudget.gov.bc.ca/Annual_Reports/2021_2022/pdf/agency/bchydro.pdf
+    minimum_records: 2
+  - document_id: bchydro_annual_service_plan_2022_23
+    document_type: annual_service_plan_report
+    edition: 2022/23
+    fiscal_end_year: 2023
+    publication_date: '2023-08-31'
+    url: https://www.bcbudget.gov.bc.ca/Annual_Reports/2022_2023/pdf/agency/bchydro.pdf
+    minimum_records: 2
+  - document_id: bchydro_annual_service_plan_2023_24
+    document_type: annual_service_plan_report
+    edition: 2023/24
+    fiscal_end_year: 2024
+    publication_date: '2024-08-30'
+    url: https://www.bcbudget.gov.bc.ca/Annual_Reports/2023_2024/pdf/agency/bchydro.pdf
+    minimum_records: 2
+  - document_id: bchydro_annual_service_plan_2024_25
+    document_type: annual_service_plan_report
+    edition: 2024/25
+    fiscal_end_year: 2025
+    publication_date: '2025-08-28'
+    url: https://www.bcbudget.gov.bc.ca/Annual_Reports/2024_2025/pdf/agency/bchydro.pdf
+    minimum_records: 2
+  notes: Backfills six service-plan vintages and five annual result reports. Forecast and actual records remain distinct and
+    can be matched by variable, entity, unit and fiscal target period.
+  series:
+  - source_series_id: catalog_demand_electricity_growth_pct_per_year
+    variable_id: demand.electricity_growth_pct_per_year
+    unit_original: percent_per_year
+    unit_canonical: percent_per_year
+    catalog_only: true
+  - source_series_id: catalog_demand_utility_electricity_forecast_gwh
+    variable_id: demand.utility.electricity_forecast_gwh
+    unit_original: GWh
+    unit_canonical: GWh
+    catalog_only: true
+  - source_series_id: catalog_utility_system_exports_gwh
+    variable_id: utility.system_exports_gwh
+    unit_original: GWh
+    unit_canonical: GWh
+    catalog_only: true
+  - source_series_id: catalog_utility_line_loss_and_system_use_gwh
+    variable_id: utility.line_loss_and_system_use_gwh
+    unit_original: GWh
+    unit_canonical: GWh
+    catalog_only: true
+  - source_series_id: catalog_utility_total_load_and_exports_gwh
+    variable_id: utility.total_load_and_exports_gwh
+    unit_original: GWh
+    unit_canonical: GWh
+    catalog_only: true
+  - source_series_id: catalog_utility_domestic_generation_gwh
+    variable_id: utility.domestic_generation_gwh
+    unit_original: GWh
+    unit_canonical: GWh
+    catalog_only: true
+  - source_series_id: catalog_utility_system_imports_gwh
+    variable_id: utility.system_imports_gwh
+    unit_original: GWh
+    unit_canonical: GWh
+    catalog_only: true
+  - source_series_id: catalog_utility_independent_power_purchases_gwh
+    variable_id: utility.independent_power_purchases_gwh
+    unit_original: GWh
+    unit_canonical: GWh
+    catalog_only: true
+  - source_series_id: catalog_utility_thermal_generation_gwh
+    variable_id: utility.thermal_generation_gwh
+    unit_original: GWh
+    unit_canonical: GWh
+    catalog_only: true
+  - source_series_id: catalog_utility_water_inflows_pct_of_average
+    variable_id: utility.water_inflows_pct_of_average
+    unit_original: percent
+    unit_canonical: percent
+    catalog_only: true
+  - source_series_id: catalog_commodity_electricity_midc_usd_per_mwh
+    variable_id: commodity.electricity.midc_usd_per_mwh
+    unit_original: USD_per_MWh
+    unit_canonical: USD_per_MWh
+    catalog_only: true
+  - source_series_id: catalog_commodity_natural_gas_sumas_usd_per_mmbtu
+    variable_id: commodity.natural_gas.sumas_usd_per_mmbtu
+    unit_original: USD_per_MMBtu
+    unit_canonical: USD_per_MMBtu
+    catalog_only: true
+  - source_series_id: catalog_financial_short_term_interest_rate_assumption_pct
+    variable_id: financial.short_term_interest_rate_assumption_pct
+    unit_original: percent
+    unit_canonical: percent
+    catalog_only: true
+  - source_series_id: catalog_financial_long_term_interest_rate_assumption_pct
+    variable_id: financial.long_term_interest_rate_assumption_pct
+    unit_original: percent
+    unit_canonical: percent
+    catalog_only: true
+  - source_series_id: catalog_utility_capex_forecast_cad_millions
+    variable_id: utility.capex_forecast_cad_millions
+    unit_original: CAD_millions
+    unit_canonical: CAD_millions
+    catalog_only: true
+  - source_series_id: catalog_demand_utility_electricity_sales_gwh
+    variable_id: demand.utility.electricity_sales_gwh
+    unit_original: GWh
+    unit_canonical: GWh
+    catalog_only: true
+  - source_series_id: catalog_utility_capex_actual_cad_millions
+    variable_id: utility.capex_actual_cad_millions
+    unit_original: CAD_millions
+    unit_canonical: CAD_millions
+    catalog_only: true
+- id: bc_hydro_fortisbc_collaboration_assumptions
+  name: BC Hydro and FortisBC resource-planning collaboration assumptions
+  publisher: BC Hydro and FortisBC Energy Inc.
+  authority_tier: 1
+  adapter: document_assumptions
+  enabled: true
+  optional: true
+  required: false
+  publish_enabled: true
+  update_cadence: filing_dependent
+  source_url: https://www.bchydro.com/toolbar/about/strategies-plans-regulatory/supply-operations/long-term-electricity-planning/integrated-resource-plan.html
+  license_name: BC Hydro website and document terms
+  raw_redistribution_allowed: review_terms
+  collection_stale_after_days: 900
+  timeout_seconds: 240
+  evidence_type: utility_forecast
+  assumption_owner: BC Hydro and FortisBC Energy Inc.
+  notes: Live-tested against the July 2025 collaboration PDF. Customer growth is a utility-account CAGR informed by regional
+    population, housing and economic outlooks; it is not a population-growth series.
+  documents:
+  - document_id: bchydro_fortisbc_collaboration_july_2025
+    title: Summary of BC Hydro and FortisBC Energy Inc. collaboration on resource planning issues
+    edition: 2025 IRP TAC Meeting 5
+    publication_date: '2025-07-01'
+    url: https://www.bchydro.com/content/dam/BCHydro/customer-portal/documents/corporate/regulatory-planning-documents/integrated-resource-plans/current-plan/2025-irp-tac-mtg5ab-20250700-summary-bchydro-fortisbc-collaboration.pdf
+    guard_patterns:
+    - Summary of BC Hydro.*FortisBC Energy Inc
+    - collaboration on resource planning issues
+    guard_page_count: 2
+    series:
+    - source_series_id: utility_residential_customer_growth_cagr
+      variable_id: utility.customer_growth_pct
+      pages:
+      - 3
+      pattern: Lower Mainland\s+(?P<bch_lm>[0-9.]+)\s*%\s+(?P<fei_lm>[0-9.]+)\s*%\s+Vancouver Island\s+(?P<bch_vi>[0-9.]+)\s*%\s+(?P<fei_vi>[0-9.]+)\s*%\s+Inland\s+(?P<bch_inland>[0-9.]+)\s*%\s+(?P<fei_inland>[0-9.]+)\s*%\s+Columbia\s+(?P<bch_columbia>[0-9.]+)\s*%\s+(?P<fei_columbia>[0-9.]+)\s*%
+      values:
+      - group: bch_lm
+        label: bc_hydro_lower_mainland
+        entity_id: bc_hydro
+        geography_id: Lower Mainland
+      - group: fei_lm
+        label: fei_lower_mainland
+        entity_id: fortisbc_energy
+        geography_id: Lower Mainland
+      - group: bch_vi
+        label: bc_hydro_vancouver_island
+        entity_id: bc_hydro
+        geography_id: Vancouver Island
+      - group: fei_vi
+        label: fei_vancouver_island
+        entity_id: fortisbc_energy
+        geography_id: Vancouver Island
+      - group: bch_inland
+        label: bc_hydro_inland
+        entity_id: bc_hydro
+        geography_id: Inland
+      - group: fei_inland
+        label: fei_inland
+        entity_id: fortisbc_energy
+        geography_id: Inland
+      - group: bch_columbia
+        label: bc_hydro_columbia
+        entity_id: bc_hydro
+        geography_id: Columbia
+      - group: fei_columbia
+        label: fei_columbia
+        entity_id: fortisbc_energy
+        geography_id: Columbia
+      reference_period_start: '2025-07-01'
+      reference_period_end: '2025-07-01'
+      target_period_start: '2023-04-01'
+      target_period_end: '2045-03-31'
+      period_basis: 21_year_cagr
+      unit_original: percent
+      unit_canonical: percent
+      record_kind: forecast
+      scenario_original: BC Hydro 2025 Reference Load Forecast / FEI 2024 BAU customer forecast
+      scenario_family: reference
+      evidence_type: utility_forecast
+      assumption_owner: BC Hydro and FortisBC Energy Inc.
+      source_status: published_planning_assumption
+      decision_context: BC Hydro 2025 IRP and FEI 2026 LTGRP collaboration
+      hard_min: -10
+      hard_max: 20
+      metadata:
+        growth_method: compound_annual_growth_rate
+        forecast_driver_basis: Conference Board regional population, housing and economic outlooks planned for future alignment
+        not_population_growth_series: true
+    - source_series_id: bchydro_f2050_fuel_switching_increment
+      variable_id: utility.electrification_increment_gwh
+      pages:
+      - 6
+      pattern: Electric vehicles \(Light-duty and Medium and Heavy-duty\)\s*(?P<ev>[0-9,]+)\s*Zero Carbon Step Code \(Residential
+        and Commercial\)\s*(?P<zcsc>[0-9,]+)\s*Gas pipeline and processing\s*(?P<gas>[0-9,]+)\s*Total\s*(?P<total>[0-9,]+)
+      values:
+      - group: ev
+        label: electric_vehicles
+        metadata:
+          driver: electric_vehicles
+      - group: zcsc
+        label: zero_carbon_step_code
+        metadata:
+          driver: zero_carbon_step_code
+      - group: gas
+        label: gas_pipeline_processing
+        metadata:
+          driver: gas_pipeline_and_processing
+      - group: total
+        label: total
+        metadata:
+          driver: total
+      reference_period_start: '2025-07-01'
+      reference_period_end: '2025-07-01'
+      target_period_start: '2049-04-01'
+      target_period_end: '2050-03-31'
+      period_basis: fiscal_year_bc
+      unit_original: GWh
+      unit_canonical: GWh
+      record_kind: forecast
+      entity_id: bc_hydro
+      geography_id: BC Hydro service area
+      scenario_original: BC Hydro 2025 Reference Load Forecast Scenario
+      scenario_family: reference
+      evidence_type: utility_forecast
+      assumption_owner: BC Hydro
+      source_status: published_planning_assumption
+      decision_context: BC Hydro 2025 IRP
+      hard_min: 0
+      hard_max: 100000
+- id: bc_energy_regulator_production
+  name: B.C. Energy Regulator production data
+  publisher: B.C. Energy Regulator
+  authority_tier: 1
+  adapter: linked_dataset
+  enabled: false
+  optional: true
+  publish_enabled: true
+  update_cadence: monthly
+  source_url: https://www.bc-er.ca/data-reports/data-centre/
+  license_name: Review dataset-specific B.C. Energy Regulator terms
+  raw_redistribution_allowed: review_terms
+  notes: Priority structured source for raw and marketable natural-gas production, condensate, natural-gas liquids, producing
+    wells, basins, and operators.
+  required: false
+  collection_stale_after_days: 45
+- id: bc_hydro_recurring_planning
+  name: BC Hydro recurring planning and corporate reporting
+  publisher: BC Hydro
+  authority_tier: 1
+  adapter: pdf_table
+  enabled: false
+  optional: true
+  publish_enabled: true
+  update_cadence: annual_and_filing_dependent
+  source_url: https://www.bchydro.com/toolbar/about/strategies-plans-regulatory.html
+  license_name: BC Hydro website and document terms
+  raw_redistribution_allowed: review_terms
+  notes: Begin with stable annual-report, service-plan, and IRP tables for sales, peak demand, sector load, generation, imports,
+    DSM, surplus margins, and capital timing.
+  required: false
+  collection_stale_after_days: 120
+- id: bc_lng_project_inventory
+  name: B.C. LNG project capacity and regulatory status inventory
+  publisher: Government of British Columbia and relevant regulators
+  authority_tier: 1
+  adapter: linked_dataset
+  enabled: false
+  optional: true
+  publish_enabled: true
+  update_cadence: monthly_change_check
+  source_url: https://www2.gov.bc.ca/gov/content/industry/natural-gas-oil/lng/lng-projects
+  license_name: Source-specific government and regulatory terms
+  raw_redistribution_allowed: review_terms
+  notes: Dedicated LNG inventory only; do not use the general Major Projects Inventory. Track capacity, feed-gas requirement,
+    status, expected operation, and published load.
+  required: false
+  collection_stale_after_days: 60
+- id: bc_mining_electricity_assumptions
+  name: B.C. mining electricity-demand assumptions
+  publisher: BC Hydro, regulators, proponents, and industry sources
+  authority_tier: 2
+  adapter: regulatory_recipe
+  enabled: false
+  optional: true
+  publish_enabled: true
+  update_cadence: filing_dependent
+  source_url: https://www.bcuc.com/OurWork/Proceedings
+  license_name: Source-specific filing terms
+  raw_redistribution_allowed: review_terms
+  notes: Reviewed assumptions only. Distinguish operating, contracted, development-stage, moderate-growth, and high-growth
+    mining load.
+  required: false
+  collection_stale_after_days: 120

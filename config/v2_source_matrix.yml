@@ -1,0 +1,218 @@
+version: 2.0.0rc2
+evidence_types:
+- observed
+- government_forecast
+- utility_forecast
+- approved_regulatory_assumption
+- government_policy_assumption
+- private_sector_guidance
+- market_consensus
+- scenario
+- target
+- derived
+- cost_estimate
+source_families:
+- id: bc_government_budget_forecasts
+  priority: 1
+  automation_status: enabled_historical_2021_2026_official_pdf_regression_tested
+  variables:
+  - GDP
+  - employment
+  - unemployment
+  - population growth
+  - CPI
+  - housing starts
+  - retail sales
+  - exports
+  - interest rates
+  - exchange rate
+  - official B.C. population growth forecast
+  decision_use: Provincial fiscal planning
+- id: bc_stats_population_households
+  priority: 1
+  automation_status: households_enabled_population_staged
+  variables:
+  - population levels and growth
+  - household levels and growth
+  decision_use: Government and utility demographic assumptions
+- id: bc_hydro_service_plans
+  priority: 1
+  automation_status: enabled_six_plan_vintages_five_actual_reports_regression_tested
+  variables:
+  - sales load growth
+  - domestic sales
+  - exports
+  - imports
+  - generation
+  - power purchases
+  - water inflows
+  - commodity prices
+  - interest rates
+  - FX
+  - capex
+  - trade income
+  - Ministry of Finance rate and FX assumptions adopted by the utility
+  - water-inflow planning assumptions
+  - actual domestic electricity sales
+  - actual capital expenditure
+  decision_use: Utility financial and resource planning
+- id: bc_hydro_fortisbc_collaboration
+  priority: 1
+  automation_status: enabled_live_tested
+  variables:
+  - regional customer growth CAGRs
+  - electrification load increments
+  - population/housing/economic driver provenance
+  - population, housing and economic driver provenance
+  decision_use: IRP and LTGRP coordination
+- id: fortisbc_annual_financial_history
+  priority: 1
+  automation_status: enabled_optional_annual_2021_2025_discovery_and_multiyear_parser_tested
+  variables:
+  - annual electricity and gas sales
+  - annual energy supply costs
+  - customer counts
+  - forecast rate base
+  - approved ROE
+  - deemed equity
+  - pension discount assumptions
+  decision_use: Utility financial reporting and approved regulatory context
+- id: fortisbc_bcuc_rate_reviews
+  priority: 1
+  automation_status: coded_selected_recipes_live_gate
+  variables:
+  - customers
+  - load
+  - loss rates
+  - costs
+  - capex
+  - rate base
+  - rate changes
+  - pension discount rates
+  decision_use: Public utility rate setting
+- id: bcuc_final_decisions
+  priority: 1
+  automation_status: staged_discovery
+  variables:
+  - approved ROE
+  - equity share
+  - cost of debt
+  - WACC
+  - decision-specific discount rates
+  - social versus regulatory discount-rate context
+  - approval status and effective context
+  decision_use: Regulatory approval
+- id: icbc_vehicle_population
+  priority: 1
+  automation_status: adapter_ready_endpoint_gate
+  variables:
+  - BEV stock and growth
+  - PHEV stock and growth
+  decision_use: Transport electrification
+- id: bcer_cer_gas_production
+  priority: 1
+  automation_status: CER_enabled_BCER_schema_gate
+  variables:
+  - marketable gas production
+  - gross gas production
+  decision_use: Energy supply and industrial outlook
+- id: bank_of_canada_expectations
+  priority: 2
+  automation_status: existing_actuals_market_survey_staged
+  variables:
+  - policy rate
+  - bond yields
+  - inflation
+  - GDP
+  - recession probability
+  - FX
+  decision_use: Monetary and market assumptions
+- id: finance_canada_consensus
+  priority: 2
+  automation_status: staged_document_recipe
+  variables:
+  - private-sector consensus macroeconomic and commodity forecasts
+  decision_use: Federal fiscal planning
+- id: cer_energy_futures
+  priority: 2
+  automation_status: staged_scenario_ingest
+  variables:
+  - provincial demand by fuel and sector
+  - production
+  - generation mix
+  - commodity assumptions
+  decision_use: Federal energy scenarios
+- id: eccc_emissions_projections
+  priority: 2
+  automation_status: staged_scenario_ingest
+  variables:
+  - emissions by province and sector
+  - activity and policy assumptions
+  decision_use: Federal climate policy
+- id: cmhc_outlooks
+  priority: 2
+  automation_status: actuals_enabled_forecasts_staged
+  variables:
+  - starts
+  - completions
+  - prices
+  - resales
+  - vacancy
+  - rents
+  decision_use: Housing policy and market planning
+- id: crown_service_plans
+  priority: 3
+  automation_status: framework_ready_source_specific_recipes
+  variables:
+  - service demand
+  - capital plans
+  - fleet and building investment
+  - performance targets
+  decision_use: Public-sector operating and capital planning
+- id: selected_sedar_guidance
+  priority: 3
+  automation_status: staged_targeted_entities
+  variables:
+  - production guidance
+  - capex
+  - unit costs
+  - project schedules
+  - commodity sensitivities
+  - discount assumptions
+  decision_use: Private-sector planning evidence
+- id: bc_government_discount_rate_guidance
+  priority: 1
+  automation_status: enabled_historical_guidance_non_temporal
+  variables:
+  - social discount rate
+  - decision context
+  - effective and publication dates
+  decision_use: Public benefit-cost analysis
+- id: bc_hydro_irp_regulatory_filings
+  priority: 1
+  automation_status: review_queue_templates_ready
+  variables:
+  - peak load forecast
+  - energy and capacity gaps
+  - reserve margin
+  - ELCC
+  - DSM savings
+  - market purchases
+  decision_use: Electricity resource planning and regulatory review
+- id: nrel_atb_technology_costs
+  priority: 2
+  automation_status: staged_structured_ingest
+  variables:
+  - battery installed cost
+  - wind capex
+  - solar capex
+  - technology performance assumptions
+  decision_use: Technology-cost and resource modelling
+- id: public_data_centre_and_critical_mineral_scenarios
+  priority: 3
+  automation_status: source_and_licence_review
+  variables:
+  - data-centre power intensity
+  - AI compute growth
+  - critical-mineral demand
+  decision_use: Industrial and strategic-demand scenarios

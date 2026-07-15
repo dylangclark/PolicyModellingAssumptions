@@ -22,6 +22,7 @@ git pull --ff-only "$REMOTE" "$BRANCH"
 # No Git-facing file is changed until that release gate passes.
 "$VENV/bin/bc-assumptions" --root "$ROOT" run --all --no-export
 "$VENV/bin/bc-assumptions" --root "$ROOT" export
+"$VENV/bin/python" "$ROOT/scripts/build_history_coverage.py" --root "$ROOT"
 "$VENV/bin/bc-assumptions" --root "$ROOT" validate-public
 
 "$ROOT/.venv/bin/python" "$ROOT/scripts/build_source_gap_report.py" --root "$ROOT"

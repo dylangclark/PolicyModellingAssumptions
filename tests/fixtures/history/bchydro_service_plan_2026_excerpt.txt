@@ -1,0 +1,134 @@
+
+    Net Income before movement in regulatory                       50               346              415               640
+    balances
+
+    Net movement in regulatory balances                           662               366              297                72
+
+    Net Income                                                    712               712              712               712
+
+
+
+    Other Selected Financial Information
+
+    Dividends                                                       -                -                 -                 -
+
+    Net Debt3                                                   34,704            37,646           40,081            42,658
+
+    Equity                                                       8,964             9,671           10,379            11,091
+
+    Capital Expenditures before CIA                              4,288             4,760            4,839             4,991
+1 Table may not add due to rounding.
+
+2
+  These amounts are net of capitalized costs and recoveries and include Powerex & Powertech operating costs as well as expenses
+subject to regulatory deferral.
+3
+  Debt figures are net of sinking funds and cash and cash equivalents.
+
+
+
+
+2026/27 – 2028/29 Service Plan                                                                                      Page | 18
+                                           BC Hydro and Power Authority
+
+
+
+Key Forecast Assumptions, Risks and Sensitivities
+    Key Assumptions1                                                  2025/26        2026/27   2027/28       2028/29
+                                                                      Forecast       Budget    Budget        Budget
+    Growth and Load
+    Domestic Sales Load Growth (%)2                                       1.7          0.2       (0.9)             1.8
+    Load and System Exports:
+     Domestic Sales Volume (GWh)                                       56,961        57,083    56,595         57,610
+     System Exports Volume (GWh)                                        1,731         4,134     4,924          4,943
+     Line Loss and System Use (GWh)                                     5,188         5,533     5,518          5,614
+    Total Load and System Exports (GWh)                                63,880        66,750    67,037         68,168
+    Energy Generation
+    Total System Water Inflows (% of average)                            84.5         100.0     100.0          100.0
+    Sources of Supply:
+     Hydro Generation (GWh)                                            43,769         49,348    49,962         50,581
+     System Imports (GWh)                                               6,690         3,269     2,717          2,465
+     Independent Power Producers and Long-Term                         13,121         13,803    14,034         14,800
+     Purchases (GWh)
+     Thermal Generation & Other (GWh)                                    299           329       323               322
+    Total Sources of Supply (GWh)                                      63,880        66,750    67,037         68,168
+
+
+    Average Mid-C Price (U.S.$/MWh)                                     47.90         58.48     62.37          62.11
+    Average Natural Gas Price at Sumas (U.S.$/MMBTU)                     2.35          3.93      4.53              4.45
+    Financial
+    Canadian Short-Term Interest Rates (%)3                              2.45          2.21      2.45              2.51
+                                               3
+    Canadian Long-Term Interest Rates (%)                                4.03          4.05      4.09              4.09
+    Foreign Exchange Rate (U.S.$:Cdn$)3                                0.7261         0.7516    0.7679         0.7764
+1
+  Table may not add due to rounding.
+2
+  Includes the impact of Demand Side Management programs. Excludes system exports.
+3 Financial assumptions from Ministry of Finance, October 2025.
+
+
+
+
+2026/27 – 2028/29 Service Plan                                                                         Page | 19
+                                             BC Hydro and Power Authority
+
+
+
+Sensitivity Analysis
+                Factor                                 Change                       Approximate change in 2026/27
+                                                                                   earnings before regulatory account
+                                                                                         transfers (in $ millions)
+    Hydro Generation (GWh) 1                            +/- 1%                                      25
+    Customer Demand 2                                   +/- 1%                                      30
+    Electricity/Gas trade margins 3                     +/- 1%                                      10
+    Purchases from Energy
+                                                        +/- 1%                                             5
+    Purchase Agreements (EPAs) 4
+    Interest rates – variable debt              +/- 100 basis points                                    60
+1 Assumes a change in hydro generation is offset by a corresponding change in system imports or exports.
+
+2
+  Assumes a percentage change is applied equally to all customer classes. Assumes a change in customer load is offset by a
+corresponding change in system imports or exports.
+3
+  Trade revenues less trade energy costs.
+4
+  Assumes a change in purchases from EPAs is offset by a corresponding change in system imports or exports.
+
+
+Management’s Perspective on Financial Outlook
+The current financial projections for revenues and expenses through 2028/29 were approved by the
+BC Hydro Board of Directors and submitted to the Ministry of Finance in January 2026.
+
+The U.S. government’s announcement in 2025 of new tariffs on Canadian imports prompted
+retaliatory measures from Canada and British Columbia. BC Hydro continues to take actions to limit
+procurement from U.S. suppliers where viable in alignment with provincial regulation enacted under
+the Economic Stabilization Tariff Response Act. BC Hydro purchases the vast majority of goods and
+services from Canadian suppliers, but continues advancing longer-term plans to diversify its supply
+chain and reduce reliance on U.S. suppliers, including for certain critical equipment and services that
+are typically sourced from the U.S. and have no readily available alternatives. With respect to cost
+impacts from tariffs, these have remained relatively low. However, tariffs continue to represent risks
+of cost escalation and contribute to uncertainty in cost projections and planning.
+
+Escalating geopolitical tensions and the trade disputes have intensified fears of a global economic
+downturn and slower economic growth. These factors carry significant implications for federal and
+provincial economies, as well as BC Hydro's load, revenue, trade, supply chains, interest rate risk, and
+ability to deliver capital projects. These economic uncertainties make it difficult to predict the
+ultimate adverse effects on BC Hydro’s performance, financial condition, operational results, and cash
+flows.
+
+Uncertainty around water inflows (high or low) may have an impact on BC Hydro’s future
+performance. As at December 31, 2025, the forecast water inflows for this fiscal year are expected to
+be below the historical average, but higher than the actual water inflows in the two prior fiscal years.
+While snowpack levels in spring 2025 were significantly below the historical average, residual water
+supply improved in part with near average inflows over the third quarter of fiscal 2026. Cost of
+energy may be higher due to imports in times of deficit and domestic revenues may be higher due
+to exports in times of surplus. Variability in seasonal and annual surplus or deficit amounts affects BC
+Hydro’s cost of energy, domestic revenues, and financial performance.
+
+
+
+
+2026/27 – 2028/29 Service Plan                                                                                       Page | 20
+                                   BC Hydro and Power Authority

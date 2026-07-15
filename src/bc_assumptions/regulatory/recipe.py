@@ -34,6 +34,18 @@ class Candidate:
     scenario_original: str | None
     page: int
     evidence_text: str
+    entity_id: str | None = None
+    publication_date: str | None = None
+    vintage_date: str | None = None
+    period_basis: str | None = None
+    evidence_type: str | None = None
+    assumption_owner: str | None = None
+    source_status: str | None = None
+    decision_context: str | None = None
+    approval_status: str | None = None
+    parameter_scope: str | None = None
+    time_basis: str | None = None
+    metadata: dict[str, Any] = field(default_factory=dict)
     extraction_method: str = "pdf_regex_recipe"
     confidence: float = 1.0
     status: str = "pending"
@@ -121,6 +133,24 @@ def extract_candidates_from_pages(
                         scenario_original=fields.get("scenario_original"),
                         page=page_number,
                         evidence_text=_evidence(text, match.start(), match.end()),
+                        entity_id=fields.get("entity_id"),
+                        publication_date=fields.get("publication_date"),
+                        vintage_date=fields.get(
+                            "vintage_date", fields.get("publication_date")
+                        ),
+                        period_basis=fields.get("period_basis"),
+                        evidence_type=fields.get("evidence_type"),
+                        assumption_owner=fields.get("assumption_owner"),
+                        source_status=fields.get("source_status"),
+                        decision_context=fields.get("decision_context"),
+                        approval_status=fields.get("approval_status"),
+                        parameter_scope=fields.get("parameter_scope"),
+                        time_basis=(
+                            "non_temporal_parameter"
+                            if fields.get("record_kind") == "model_parameter"
+                            else fields.get("time_basis")
+                        ),
+                        metadata=dict(fields.get("metadata", {})),
                         confidence=float(extractor.get("confidence", 1.0)),
                     )
                 )
