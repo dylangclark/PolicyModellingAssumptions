@@ -1,16 +1,17 @@
 {
-  "schema_version": "0.1.0",
-  "generated_at": "2026-07-14T20:56:27Z",
-  "configured_variable_count": 65,
-  "configured_source_count": 15,
-  "enabled_source_count": 8,
-  "required_source_count": 5,
-  "current_record_count": 19056,
-  "history_record_count": 19964,
-  "variable_count": 30,
-  "source_count": 8,
-  "document_count": 26,
-  "latest_successful_run": "2026-07-14T20:56:24Z",
+  "schema_version": "2.0.0-rc2",
+  "generated_at": "2026-07-15T17:31:13Z",
+  "configured_variable_count": 117,
+  "configured_source_count": 25,
+  "enabled_source_count": 14,
+  "required_source_count": 6,
+  "current_record_count": 21207,
+  "history_record_count": 23060,
+  "variable_count": 69,
+  "source_count": 14,
+  "document_count": 63,
+  "forecast_performance_match_count": 0,
+  "latest_successful_run": "2026-07-15T17:13:18Z",
   "failed_sources": [],
   "classes": [
     "Climate",
@@ -18,10 +19,12 @@
     "Demand",
     "Economic",
     "Electrification",
+    "Energy",
     "Financial",
     "Industrial",
     "Infrastructure",
     "Reliability",
-    "Technology"
+    "Technology",
+    "Utility"
   ]
 }
