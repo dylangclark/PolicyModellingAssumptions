@@ -56,6 +56,20 @@
     "warnings": []
   },
   {
+    "run_id": "run_05f0446aa34f4bd28c53a59fd6911a60",
+    "source_id": "statistics_canada_wds",
+    "started_at": "2026-07-15T16:15:17Z",
+    "finished_at": "2026-07-15T16:16:24Z",
+    "status": "success",
+    "records_seen": 2920,
+    "records_inserted": 636,
+    "records_revised": 0,
+    "records_unchanged": 2284,
+    "records_rejected": 0,
+    "error": null,
+    "warnings": []
+  },
+  {
     "run_id": "run_0c0b0acb5f29423c8515787b10c4da1f",
     "source_id": "world_bank_pink_sheet",
     "started_at": "2026-07-14T19:14:02Z",
@@ -112,6 +126,22 @@
     "warnings": []
   },
   {
+    "run_id": "run_157830bb121b49dbaa9a3e1d8b8f8c8d",
+    "source_id": "bc_moti_benefit_cost_parameters",
+    "started_at": "2026-07-15T16:25:22Z",
+    "finished_at": "2026-07-15T16:25:23Z",
+    "status": "failed",
+    "records_seen": 1,
+    "records_inserted": 1,
+    "records_revised": 0,
+    "records_unchanged": 0,
+    "records_rejected": 0,
+    "error": "Source coverage gate failed with 1 blocker(s)",
+    "warnings": [
+      "bc_moti_benefit_cost_parameters: missing required series catalog_financial_social_discount_rate_pct/financial.social_discount_rate_pct"
+    ]
+  },
+  {
     "run_id": "run_168a2e6b4d5a4674af6fd447db4f5ecd",
     "source_id": "statistics_canada_wds",
     "started_at": "2026-07-14T18:44:55Z",
@@ -123,6 +153,20 @@
     "records_unchanged": 0,
     "records_rejected": 0,
     "error": "AcquisitionError: Selector '^(Both sexes|Total, gender)$' matched 0 members in 'Gender'. Available examples: ['Total - Gender', 'Men+', 'Women+']",
+    "warnings": []
+  },
+  {
+    "run_id": "run_1fbb79cf035c44f4b152c9acd7122ed4",
+    "source_id": "eia_open_data",
+    "started_at": "2026-07-15T17:11:06Z",
+    "finished_at": "2026-07-15T17:11:16Z",
+    "status": "success",
+    "records_seen": 12,
+    "records_inserted": 0,
+    "records_revised": 0,
+    "records_unchanged": 12,
+    "records_rejected": 0,
+    "error": null,
     "warnings": []
   },
   {
@@ -177,6 +221,48 @@
     "records_inserted": 0,
     "records_revised": 0,
     "records_unchanged": 12,
+    "records_rejected": 0,
+    "error": null,
+    "warnings": []
+  },
+  {
+    "run_id": "run_26e2490af6c741ca9c5b91b13ff677c1",
+    "source_id": "statistics_canada_wds",
+    "started_at": "2026-07-15T17:10:49Z",
+    "finished_at": "2026-07-15T17:11:00Z",
+    "status": "success",
+    "records_seen": 416,
+    "records_inserted": 0,
+    "records_revised": 0,
+    "records_unchanged": 416,
+    "records_rejected": 0,
+    "error": null,
+    "warnings": []
+  },
+  {
+    "run_id": "run_29b3a3362d0c475d80e9676a04996c5e",
+    "source_id": "cer_electricity_trade",
+    "started_at": "2026-07-15T17:12:15Z",
+    "finished_at": "2026-07-15T17:12:33Z",
+    "status": "success",
+    "records_seen": 1176,
+    "records_inserted": 0,
+    "records_revised": 0,
+    "records_unchanged": 1176,
+    "records_rejected": 0,
+    "error": null,
+    "warnings": []
+  },
+  {
+    "run_id": "run_2ba0885622f6423eb517bb01a795b944",
+    "source_id": "bc_hydro_planning_assumptions",
+    "started_at": "2026-07-15T16:30:03Z",
+    "finished_at": "2026-07-15T16:30:19Z",
+    "status": "success",
+    "records_seen": 362,
+    "records_inserted": 0,
+    "records_revised": 0,
+    "records_unchanged": 362,
     "records_rejected": 0,
     "error": null,
     "warnings": []
@@ -238,6 +324,20 @@
     "warnings": []
   },
   {
+    "run_id": "run_3a9b7873768c4f9f95618d6a66781983",
+    "source_id": "cmhc_via_statistics_canada",
+    "started_at": "2026-07-15T16:16:24Z",
+    "finished_at": "2026-07-15T16:16:25Z",
+    "status": "failed",
+    "records_seen": 0,
+    "records_inserted": 0,
+    "records_revised": 0,
+    "records_unchanged": 0,
+    "records_rejected": 0,
+    "error": "AcquisitionError: Selector '^Completions$' matched 0 members in 'Housing estimates'. Available examples: ['Housing starts', 'Housing under construction', 'Housing completions']",
+    "warnings": []
+  },
+  {
     "run_id": "run_3f56d8a895e9428e9bf4a805a3dff9c5",
     "source_id": "nrcan_energy_use_database",
     "started_at": "2026-07-14T18:37:06Z",
@@ -245,6 +345,48 @@
     "status": "success",
     "records_seen": 24,
     "records_inserted": 24,
+    "records_revised": 0,
+    "records_unchanged": 0,
+    "records_rejected": 0,
+    "error": null,
+    "warnings": []
+  },
+  {
+    "run_id": "run_3fa42079330a4080abff37033685c725",
+    "source_id": "cer_provincial_gas_production",
+    "started_at": "2026-07-15T16:40:43Z",
+    "finished_at": "2026-07-15T16:41:02Z",
+    "status": "success",
+    "records_seen": 630,
+    "records_inserted": 315,
+    "records_revised": 315,
+    "records_unchanged": 0,
+    "records_rejected": 0,
+    "error": null,
+    "warnings": []
+  },
+  {
+    "run_id": "run_407a884d565a4a738fbb75759b2a557d",
+    "source_id": "cmhc_via_statistics_canada",
+    "started_at": "2026-07-15T17:05:26Z",
+    "finished_at": "2026-07-15T17:05:42Z",
+    "status": "success",
+    "records_seen": 928,
+    "records_inserted": 0,
+    "records_revised": 0,
+    "records_unchanged": 928,
+    "records_rejected": 0,
+    "error": null,
+    "warnings": []
+  },
+  {
+    "run_id": "run_41ae4e9aa57e4781b150fd5fb75c8ba3",
+    "source_id": "bc_hydro_fortisbc_collaboration_assumptions",
+    "started_at": "2026-07-15T16:19:20Z",
+    "finished_at": "2026-07-15T16:19:21Z",
+    "status": "success",
+    "records_seen": 12,
+    "records_inserted": 12,
     "records_revised": 0,
     "records_unchanged": 0,
     "records_rejected": 0,
@@ -261,6 +403,20 @@
     "records_inserted": 0,
     "records_revised": 0,
     "records_unchanged": 12,
+    "records_rejected": 0,
+    "error": null,
+    "warnings": []
+  },
+  {
+    "run_id": "run_4621fd18e8a4475e860b405e092919b2",
+    "source_id": "fortisbc_quarterly_financials",
+    "started_at": "2026-07-15T17:12:54Z",
+    "finished_at": "2026-07-15T17:13:00Z",
+    "status": "success",
+    "records_seen": 102,
+    "records_inserted": 0,
+    "records_revised": 0,
+    "records_unchanged": 102,
     "records_rejected": 0,
     "error": null,
     "warnings": []
@@ -294,6 +450,48 @@
     "warnings": []
   },
   {
+    "run_id": "run_4f48c4ff540c4e8593965788d56a7c73",
+    "source_id": "bc_data_catalogue_households",
+    "started_at": "2026-07-15T17:12:13Z",
+    "finished_at": "2026-07-15T17:12:15Z",
+    "status": "success",
+    "records_seen": 142,
+    "records_inserted": 0,
+    "records_revised": 0,
+    "records_unchanged": 142,
+    "records_rejected": 0,
+    "error": null,
+    "warnings": []
+  },
+  {
+    "run_id": "run_4ffabf25bdf44501b969fabc1c8add13",
+    "source_id": "bc_data_catalogue_households",
+    "started_at": "2026-07-15T16:18:35Z",
+    "finished_at": "2026-07-15T16:18:39Z",
+    "status": "success",
+    "records_seen": 142,
+    "records_inserted": 70,
+    "records_revised": 0,
+    "records_unchanged": 72,
+    "records_rejected": 0,
+    "error": null,
+    "warnings": []
+  },
+  {
+    "run_id": "run_52e8b3062cc649cc98f1caf013c7f2c7",
+    "source_id": "fortisbc_quarterly_financials",
+    "started_at": "2026-07-15T16:32:04Z",
+    "finished_at": "2026-07-15T16:32:10Z",
+    "status": "success",
+    "records_seen": 102,
+    "records_inserted": 10,
+    "records_revised": 0,
+    "records_unchanged": 92,
+    "records_rejected": 0,
+    "error": null,
+    "warnings": []
+  },
+  {
     "run_id": "run_52fb07f83c334b62ac2284fef3275b79",
     "source_id": "eia_open_data",
     "started_at": "2026-07-14T15:19:32Z",
@@ -322,6 +520,32 @@
     "warnings": []
   },
   {
+    "run_id": "run_582a582113064eccab4e32a8817db0b2",
+    "source_id": "fortisbc_quarterly_financials",
+    "started_at": "2026-07-15T16:30:50Z",
+    "finished_at": "2026-07-15T16:30:56Z",
+    "status": "failed",
+    "records_seen": 102,
+    "records_inserted": 0,
+    "records_revised": 0,
+    "records_unchanged": 92,
+    "records_rejected": 10,
+    "error": "Source coverage gate failed with 1 blocker(s)",
+    "warnings": [
+      "Unsupported evidence_type 'observed_result' for utility.capex_actual_cad_millions",
+      "Unsupported evidence_type 'observed_result' for utility.capex_actual_cad_millions",
+      "Unsupported evidence_type 'observed_result' for utility.capex_actual_cad_millions",
+      "Unsupported evidence_type 'observed_result' for utility.capex_actual_cad_millions",
+      "Unsupported evidence_type 'observed_result' for utility.capex_actual_cad_millions",
+      "Unsupported evidence_type 'observed_result' for utility.capex_actual_cad_millions",
+      "Unsupported evidence_type 'observed_result' for utility.capex_actual_cad_millions",
+      "Unsupported evidence_type 'observed_result' for utility.capex_actual_cad_millions",
+      "Unsupported evidence_type 'observed_result' for utility.capex_actual_cad_millions",
+      "Unsupported evidence_type 'observed_result' for utility.capex_actual_cad_millions",
+      "fortisbc_quarterly_financials: missing required series catalog_utility_capex_actual_cad_millions/utility.capex_actual_cad_millions"
+    ]
+  },
+  {
     "run_id": "run_591e57941b05419ab6c1b344ac59515f",
     "source_id": "eia_open_data",
     "started_at": "2026-07-14T19:15:25Z",
@@ -334,6 +558,37 @@
     "records_rejected": 0,
     "error": null,
     "warnings": []
+  },
+  {
+    "run_id": "run_5d32f92e555f4e15923b84ab7a1ffecb",
+    "source_id": "cmhc_via_statistics_canada",
+    "started_at": "2026-07-15T16:37:58Z",
+    "finished_at": "2026-07-15T16:37:59Z",
+    "status": "failed",
+    "records_seen": 0,
+    "records_inserted": 0,
+    "records_revised": 0,
+    "records_unchanged": 0,
+    "records_rejected": 0,
+    "error": "AcquisitionError: Selector '^Completions$' matched 0 members in 'Housing estimates'. Available examples: ['Housing starts', 'Housing under construction', 'Housing completions']",
+    "warnings": []
+  },
+  {
+    "run_id": "run_5d8a93e6d3054fea951d33964a8703ce",
+    "source_id": "bc_moti_benefit_cost_parameters",
+    "started_at": "2026-07-15T16:23:12Z",
+    "finished_at": "2026-07-15T16:23:14Z",
+    "status": "failed",
+    "records_seen": 0,
+    "records_inserted": 0,
+    "records_revised": 0,
+    "records_unchanged": 0,
+    "records_rejected": 0,
+    "error": "Source coverage gate failed with 1 blocker(s)",
+    "warnings": [
+      "bc_moti_social_discount_rate_2018 expected 1 match(es), found 0",
+      "bc_moti_benefit_cost_parameters: missing required series catalog_financial_social_discount_rate_pct/financial.social_discount_rate_pct"
+    ]
   },
   {
     "run_id": "run_5f8a169af23940c7af4a482c5d6eb1dc",
@@ -392,6 +647,51 @@
     "warnings": []
   },
   {
+    "run_id": "run_6b28a5e4a269420cafcc7e886b697ca4",
+    "source_id": "cer_provincial_gas_production",
+    "started_at": "2026-07-15T16:38:06Z",
+    "finished_at": "2026-07-15T16:38:06Z",
+    "status": "failed",
+    "records_seen": 0,
+    "records_inserted": 0,
+    "records_revised": 0,
+    "records_unchanged": 0,
+    "records_rejected": 0,
+    "error": "ValueError: CER gas production CSV produced no B.C. observations",
+    "warnings": []
+  },
+  {
+    "run_id": "run_6db27102442d4db2ad8cc9182fbd9aa2",
+    "source_id": "cmhc_via_statistics_canada",
+    "started_at": "2026-07-15T16:48:33Z",
+    "finished_at": "2026-07-15T16:49:07Z",
+    "status": "failed",
+    "records_seen": 928,
+    "records_inserted": 306,
+    "records_revised": 0,
+    "records_unchanged": 622,
+    "records_rejected": 0,
+    "error": "Source coverage gate failed with 2 blocker(s)",
+    "warnings": [
+      "cmhc_via_statistics_canada: stale series 34100143:housing_completions/economic.housing_completions.centres_10000_plus; latest period 2022-12-31 is 1292 days old (limit 75)",
+      "cmhc_via_statistics_canada: stale series 34100143:housing_under_construction/economic.housing_under_construction.centres_10000_plus; latest period 2002-06-30 is 8781 days old (limit 75)"
+    ]
+  },
+  {
+    "run_id": "run_713e987cde3b4a208e6ca24283f86fd3",
+    "source_id": "cer_provincial_gas_production",
+    "started_at": "2026-07-15T17:12:33Z",
+    "finished_at": "2026-07-15T17:12:52Z",
+    "status": "success",
+    "records_seen": 630,
+    "records_inserted": 0,
+    "records_revised": 630,
+    "records_unchanged": 0,
+    "records_rejected": 0,
+    "error": null,
+    "warnings": []
+  },
+  {
     "run_id": "run_717ddceba7f143f892de54a1250df042",
     "source_id": "cer_electricity_trade",
     "started_at": "2026-07-14T18:45:13Z",
@@ -401,6 +701,34 @@
     "records_inserted": 0,
     "records_revised": 0,
     "records_unchanged": 1176,
+    "records_rejected": 0,
+    "error": null,
+    "warnings": []
+  },
+  {
+    "run_id": "run_73cadcc0a0ff409bbc86c1e9590c924e",
+    "source_id": "cmhc_via_statistics_canada",
+    "started_at": "2026-07-15T16:41:40Z",
+    "finished_at": "2026-07-15T16:41:40Z",
+    "status": "failed",
+    "records_seen": 0,
+    "records_inserted": 0,
+    "records_revised": 0,
+    "records_unchanged": 0,
+    "records_rejected": 0,
+    "error": "AcquisitionError: Selector '^Completions$' matched 0 members in 'Housing estimates'. Available examples: ['Housing starts', 'Housing under construction', 'Housing completions']",
+    "warnings": []
+  },
+  {
+    "run_id": "run_79963891c5e84863a7c34e35e957506e",
+    "source_id": "bc_moti_benefit_cost_parameters",
+    "started_at": "2026-07-15T17:12:52Z",
+    "finished_at": "2026-07-15T17:12:54Z",
+    "status": "success",
+    "records_seen": 1,
+    "records_inserted": 0,
+    "records_revised": 0,
+    "records_unchanged": 1,
     "records_rejected": 0,
     "error": null,
     "warnings": []
@@ -434,6 +762,34 @@
     "warnings": []
   },
   {
+    "run_id": "run_822936c52f4247ba98c1bf5c40d55498",
+    "source_id": "bank_of_canada_valet",
+    "started_at": "2026-07-15T17:10:48Z",
+    "finished_at": "2026-07-15T17:10:49Z",
+    "status": "success",
+    "records_seen": 97,
+    "records_inserted": 2,
+    "records_revised": 0,
+    "records_unchanged": 95,
+    "records_rejected": 0,
+    "error": null,
+    "warnings": []
+  },
+  {
+    "run_id": "run_873e702e0a6d451d861b56cfc1f906cd",
+    "source_id": "cmhc_via_statistics_canada",
+    "started_at": "2026-07-15T16:46:44Z",
+    "finished_at": "2026-07-15T16:46:45Z",
+    "status": "failed",
+    "records_seen": 0,
+    "records_inserted": 0,
+    "records_revised": 0,
+    "records_unchanged": 0,
+    "records_rejected": 0,
+    "error": "AcquisitionError: Selectors did not match a dimension: [{'dimension': '^(Population centre size|Population centre size group)$', 'member': '^(Total, centres 10,000 population and over|Centres 10,000 population and over|Total centres 10,000 and over)$'}]. Available dimensions: ['Geography', 'Housing estimates', 'Type of unit']",
+    "warnings": []
+  },
+  {
     "run_id": "run_8c4188e85d0044ad914edb075134c4ab",
     "source_id": "world_bank_pink_sheet",
     "started_at": "2026-07-14T19:10:04Z",
@@ -460,6 +816,23 @@
     "records_rejected": 0,
     "error": null,
     "warnings": []
+  },
+  {
+    "run_id": "run_957eb54bf6a94b4c88d1f13454292a4a",
+    "source_id": "cmhc_via_statistics_canada",
+    "started_at": "2026-07-15T16:53:41Z",
+    "finished_at": "2026-07-15T16:53:58Z",
+    "status": "failed",
+    "records_seen": 928,
+    "records_inserted": 0,
+    "records_revised": 0,
+    "records_unchanged": 928,
+    "records_rejected": 0,
+    "error": "Source coverage gate failed with 2 blocker(s)",
+    "warnings": [
+      "cmhc_via_statistics_canada: stale series 34100143:housing_completions/economic.housing_completions.centres_10000_plus; latest period 2022-12-31 is 1292 days old (limit 75)",
+      "cmhc_via_statistics_canada: stale series 34100143:housing_under_construction/economic.housing_under_construction.centres_10000_plus; latest period 2002-06-30 is 8781 days old (limit 75)"
+    ]
   },
   {
     "run_id": "run_95a074158d66416db3c01749ee277e2e",
@@ -513,6 +886,34 @@
     "records_inserted": 0,
     "records_revised": 0,
     "records_unchanged": 9,
+    "records_rejected": 0,
+    "error": null,
+    "warnings": []
+  },
+  {
+    "run_id": "run_99099010337a42c78cc81711bbe0fc06",
+    "source_id": "bc_hydro_planning_assumptions",
+    "started_at": "2026-07-15T17:13:00Z",
+    "finished_at": "2026-07-15T17:13:17Z",
+    "status": "success",
+    "records_seen": 362,
+    "records_inserted": 0,
+    "records_revised": 0,
+    "records_unchanged": 362,
+    "records_rejected": 0,
+    "error": null,
+    "warnings": []
+  },
+  {
+    "run_id": "run_a275f947847a4976a656c926dc081654",
+    "source_id": "world_bank_pink_sheet",
+    "started_at": "2026-07-15T17:11:16Z",
+    "finished_at": "2026-07-15T17:11:26Z",
+    "status": "success",
+    "records_seen": 636,
+    "records_inserted": 0,
+    "records_revised": 0,
+    "records_unchanged": 636,
     "records_rejected": 0,
     "error": null,
     "warnings": []
@@ -574,6 +975,64 @@
     "warnings": []
   },
   {
+    "run_id": "run_aa82513cd4a941d0a08ddd4a157d52ff",
+    "source_id": "cmhc_via_statistics_canada",
+    "started_at": "2026-07-15T16:45:22Z",
+    "finished_at": "2026-07-15T16:45:23Z",
+    "status": "failed",
+    "records_seen": 0,
+    "records_inserted": 0,
+    "records_revised": 0,
+    "records_unchanged": 0,
+    "records_rejected": 0,
+    "error": "AcquisitionError: No selector supplied for multi-member dimension 'Type of unit'. Available examples: ['Total units', 'Single-detached units', 'Multiples', 'Semi-detached units', 'Row units', 'Apartment and other unit types']",
+    "warnings": []
+  },
+  {
+    "run_id": "run_ad37a7f48dbe4958baf126aaad980f42",
+    "source_id": "bc_budget_economic_forecasts",
+    "started_at": "2026-07-15T17:11:26Z",
+    "finished_at": "2026-07-15T17:12:12Z",
+    "status": "success",
+    "records_seen": 326,
+    "records_inserted": 326,
+    "records_revised": 0,
+    "records_unchanged": 0,
+    "records_rejected": 0,
+    "error": null,
+    "warnings": []
+  },
+  {
+    "run_id": "run_af1684bd8a3544219f03ac10fe913de8",
+    "source_id": "fortisbc_quarterly_financials",
+    "started_at": "2026-07-15T16:33:43Z",
+    "finished_at": "2026-07-15T16:33:49Z",
+    "status": "success",
+    "records_seen": 102,
+    "records_inserted": 0,
+    "records_revised": 0,
+    "records_unchanged": 102,
+    "records_rejected": 0,
+    "error": null,
+    "warnings": []
+  },
+  {
+    "run_id": "run_af5414e34d794809bfedfe9fbfd5c4b8",
+    "source_id": "nrcan_energy_use_database",
+    "started_at": "2026-07-15T17:12:12Z",
+    "finished_at": "2026-07-15T17:12:13Z",
+    "status": "success",
+    "records_seen": 21,
+    "records_inserted": 0,
+    "records_revised": 0,
+    "records_unchanged": 21,
+    "records_rejected": 0,
+    "error": null,
+    "warnings": [
+      "NRCan residential_bc_heating_system_stock_21 series natural_gas_stock could not be resolved"
+    ]
+  },
+  {
     "run_id": "run_b308040de4544e41b033d5efa10e3e76",
     "source_id": "nrcan_energy_use_database",
     "started_at": "2026-07-14T19:15:39Z",
@@ -602,6 +1061,23 @@
     "warnings": []
   },
   {
+    "run_id": "run_b70b71e60e3e4ab6ace0e01177562d8c",
+    "source_id": "bc_moti_benefit_cost_parameters",
+    "started_at": "2026-07-15T16:18:40Z",
+    "finished_at": "2026-07-15T16:18:41Z",
+    "status": "failed",
+    "records_seen": 0,
+    "records_inserted": 0,
+    "records_revised": 0,
+    "records_unchanged": 0,
+    "records_rejected": 0,
+    "error": "Source coverage gate failed with 1 blocker(s)",
+    "warnings": [
+      "bc_moti_social_discount_rate_2018 expected 1 match(es), found 0",
+      "bc_moti_benefit_cost_parameters: missing required series catalog_financial_social_discount_rate_pct/financial.social_discount_rate_pct"
+    ]
+  },
+  {
     "run_id": "run_b7d65363d96f4ad2ac15b23f3687867b",
     "source_id": "cmhc_via_statistics_canada",
     "started_at": "2026-07-14T15:01:27Z",
@@ -625,6 +1101,20 @@
     "records_inserted": 13242,
     "records_revised": 0,
     "records_unchanged": 0,
+    "records_rejected": 0,
+    "error": null,
+    "warnings": []
+  },
+  {
+    "run_id": "run_c2dcaa0fa0be4b81a235b3e871d3f8cd",
+    "source_id": "bc_hydro_fortisbc_collaboration_assumptions",
+    "started_at": "2026-07-15T17:13:17Z",
+    "finished_at": "2026-07-15T17:13:18Z",
+    "status": "success",
+    "records_seen": 12,
+    "records_inserted": 0,
+    "records_revised": 0,
+    "records_unchanged": 12,
     "records_rejected": 0,
     "error": null,
     "warnings": []
@@ -658,6 +1148,38 @@
     "warnings": []
   },
   {
+    "run_id": "run_c7c4883402d24f71b591c385dc72af7f",
+    "source_id": "bc_hydro_planning_assumptions",
+    "started_at": "2026-07-15T16:18:55Z",
+    "finished_at": "2026-07-15T16:19:19Z",
+    "status": "failed",
+    "records_seen": 362,
+    "records_inserted": 362,
+    "records_revised": 0,
+    "records_unchanged": 0,
+    "records_rejected": 0,
+    "error": "Source coverage gate failed with 17 blocker(s)",
+    "warnings": [
+      "bc_hydro_planning_assumptions: missing required series catalog_demand_electricity_growth_pct_per_year/demand.electricity_growth_pct_per_year",
+      "bc_hydro_planning_assumptions: missing required series catalog_demand_utility_electricity_forecast_gwh/demand.utility.electricity_forecast_gwh",
+      "bc_hydro_planning_assumptions: missing required series catalog_utility_system_exports_gwh/utility.system_exports_gwh",
+      "bc_hydro_planning_assumptions: missing required series catalog_utility_line_loss_and_system_use_gwh/utility.line_loss_and_system_use_gwh",
+      "bc_hydro_planning_assumptions: missing required series catalog_utility_total_load_and_exports_gwh/utility.total_load_and_exports_gwh",
+      "bc_hydro_planning_assumptions: missing required series catalog_utility_domestic_generation_gwh/utility.domestic_generation_gwh",
+      "bc_hydro_planning_assumptions: missing required series catalog_utility_system_imports_gwh/utility.system_imports_gwh",
+      "bc_hydro_planning_assumptions: missing required series catalog_utility_independent_power_purchases_gwh/utility.independent_power_purchases_gwh",
+      "bc_hydro_planning_assumptions: missing required series catalog_utility_thermal_generation_gwh/utility.thermal_generation_gwh",
+      "bc_hydro_planning_assumptions: missing required series catalog_utility_water_inflows_pct_of_average/utility.water_inflows_pct_of_average",
+      "bc_hydro_planning_assumptions: missing required series catalog_commodity_electricity_midc_usd_per_mwh/commodity.electricity.midc_usd_per_mwh",
+      "bc_hydro_planning_assumptions: missing required series catalog_commodity_natural_gas_sumas_usd_per_mmbtu/commodity.natural_gas.sumas_usd_per_mmbtu",
+      "bc_hydro_planning_assumptions: missing required series catalog_financial_short_term_interest_rate_assumption_pct/financial.short_term_interest_rate_assumption_pct",
+      "bc_hydro_planning_assumptions: missing required series catalog_financial_long_term_interest_rate_assumption_pct/financial.long_term_interest_rate_assumption_pct",
+      "bc_hydro_planning_assumptions: missing required series catalog_utility_capex_forecast_cad_millions/utility.capex_forecast_cad_millions",
+      "bc_hydro_planning_assumptions: missing required series catalog_demand_utility_electricity_sales_gwh/demand.utility.electricity_sales_gwh",
+      "bc_hydro_planning_assumptions: missing required series catalog_utility_capex_actual_cad_millions/utility.capex_actual_cad_millions"
+    ]
+  },
+  {
     "run_id": "run_cf8dd6cc02734d12b1e522bb9305d777",
     "source_id": "bc_budget_economic_forecasts",
     "started_at": "2026-07-14T19:15:38Z",
@@ -667,6 +1189,20 @@
     "records_inserted": 0,
     "records_revised": 0,
     "records_unchanged": 9,
+    "records_rejected": 0,
+    "error": null,
+    "warnings": []
+  },
+  {
+    "run_id": "run_d02c01fe605243908c4f65ea92ae49ee",
+    "source_id": "cmhc_via_statistics_canada",
+    "started_at": "2026-07-15T17:11:00Z",
+    "finished_at": "2026-07-15T17:11:06Z",
+    "status": "success",
+    "records_seen": 184,
+    "records_inserted": 19,
+    "records_revised": 0,
+    "records_unchanged": 165,
     "records_rejected": 0,
     "error": null,
     "warnings": []
@@ -712,6 +1248,56 @@
     "records_rejected": 0,
     "error": null,
     "warnings": []
+  },
+  {
+    "run_id": "run_df3d4cd269094cd6bbabd66b7afcd52c",
+    "source_id": "cmhc_via_statistics_canada",
+    "started_at": "2026-07-15T16:43:13Z",
+    "finished_at": "2026-07-15T16:43:14Z",
+    "status": "failed",
+    "records_seen": 0,
+    "records_inserted": 0,
+    "records_revised": 0,
+    "records_unchanged": 0,
+    "records_rejected": 0,
+    "error": "AcquisitionError: Selector '^Completions$' matched 0 members in 'Housing estimates'. Available examples: ['Housing starts', 'Housing under construction', 'Housing completions']",
+    "warnings": []
+  },
+  {
+    "run_id": "run_e24acdb0ca3e4f96aa9233d39d70797a",
+    "source_id": "fortisbc_quarterly_financials",
+    "started_at": "2026-07-15T16:18:42Z",
+    "finished_at": "2026-07-15T16:18:54Z",
+    "status": "failed",
+    "records_seen": 102,
+    "records_inserted": 92,
+    "records_revised": 0,
+    "records_unchanged": 0,
+    "records_rejected": 10,
+    "error": "Source coverage gate failed with 11 blocker(s)",
+    "warnings": [
+      "Unsupported evidence_type 'observed_result' for utility.capex_actual_cad_millions",
+      "Unsupported evidence_type 'observed_result' for utility.capex_actual_cad_millions",
+      "Unsupported evidence_type 'observed_result' for utility.capex_actual_cad_millions",
+      "Unsupported evidence_type 'observed_result' for utility.capex_actual_cad_millions",
+      "Unsupported evidence_type 'observed_result' for utility.capex_actual_cad_millions",
+      "Unsupported evidence_type 'observed_result' for utility.capex_actual_cad_millions",
+      "Unsupported evidence_type 'observed_result' for utility.capex_actual_cad_millions",
+      "Unsupported evidence_type 'observed_result' for utility.capex_actual_cad_millions",
+      "Unsupported evidence_type 'observed_result' for utility.capex_actual_cad_millions",
+      "Unsupported evidence_type 'observed_result' for utility.capex_actual_cad_millions",
+      "fortisbc_quarterly_financials: missing required series catalog_demand_utility_natural_gas_sales_pj/demand.utility.natural_gas_sales_pj",
+      "fortisbc_quarterly_financials: missing required series catalog_demand_utility_electricity_sales_gwh/demand.utility.electricity_sales_gwh",
+      "fortisbc_quarterly_financials: missing required series catalog_utility_natural_gas_cost_cad_millions/utility.natural_gas_cost_cad_millions",
+      "fortisbc_quarterly_financials: missing required series catalog_utility_power_purchase_cost_cad_millions/utility.power_purchase_cost_cad_millions",
+      "fortisbc_quarterly_financials: missing required series catalog_utility_capex_actual_cad_millions/utility.capex_actual_cad_millions",
+      "fortisbc_quarterly_financials: missing required series catalog_utility_capex_forecast_cad_millions/utility.capex_forecast_cad_millions",
+      "fortisbc_quarterly_financials: missing required series catalog_financial_allowed_roe_pct/financial.allowed_roe_pct",
+      "fortisbc_quarterly_financials: missing required series catalog_financial_deemed_equity_pct/financial.deemed_equity_pct",
+      "fortisbc_quarterly_financials: missing required series catalog_utility_customer_count/utility.customer_count",
+      "fortisbc_quarterly_financials: missing required series catalog_financial_pension_discount_rate_pct/financial.pension_discount_rate_pct",
+      "fortisbc_quarterly_financials: missing required series catalog_utility_rate_base_cad_millions/utility.rate_base_cad_millions"
+    ]
   },
   {
     "run_id": "run_e281f305c9054b41855f16ac85cd60d0",
@@ -821,6 +1407,20 @@
     "records_inserted": 0,
     "records_revised": 0,
     "records_unchanged": 636,
+    "records_rejected": 0,
+    "error": null,
+    "warnings": []
+  },
+  {
+    "run_id": "run_f7b3500e216c4ec5a55f2e3af7e30c35",
+    "source_id": "bc_moti_benefit_cost_parameters",
+    "started_at": "2026-07-15T16:29:48Z",
+    "finished_at": "2026-07-15T16:29:49Z",
+    "status": "success",
+    "records_seen": 1,
+    "records_inserted": 0,
+    "records_revised": 0,
+    "records_unchanged": 1,
     "records_rejected": 0,
     "error": null,
     "warnings": []
