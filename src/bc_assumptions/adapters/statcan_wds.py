@@ -217,7 +217,7 @@ class StatisticsCanadaWDSAdapter(SourceAdapter):
         self, dataset: dict[str, Any], coordinate: str, metadata: dict[str, Any]
     ) -> tuple[int, dict[str, Any], Artifact | None]:
         key = f"{dataset['product_id']}:{coordinate}"
-        issue_date = metadata.get("issueDate") or metadata.get("releaseTime")
+        issue_date = metadata.get("releaseTime") or metadata.get("issueDate")
         cached = self.cache.get(key)
         if cached and cached.get("issue_date") == issue_date:
             return int(cached["vector_id"]), cached.get("series_info", {}), None

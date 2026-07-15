@@ -32,7 +32,14 @@ class CERGasProductionAdapter(SourceAdapter):
                 continue
             raw_date = str(row.get(date_col, "")).strip()
             month = None
-            for fmt in ("%Y-%m", "%Y-%m-%d", "%Y/%m", "%b-%y", "%B %Y"):
+            for fmt in (
+                "%Y-%m",
+                "%Y-%m-%d",
+                "%Y/%m",
+                "%m/%d/%Y",
+                "%b-%y",
+                "%B %Y",
+            ):
                 try:
                     parsed = datetime.strptime(raw_date, fmt)
                     month = date(parsed.year, parsed.month, 1)
@@ -42,10 +49,18 @@ class CERGasProductionAdapter(SourceAdapter):
             value = number(row.get(value_col))
             if month is None or value is None:
                 continue
+
+            unit = str(row.get(unit_col) or "").strip() if unit_col else ""
+            if unit.lower() == "thousand cubic metres per day":
+                value *= calendar.monthrange(month.year, month.month)[1]
+                unit_original = "e3m3_per_day"
+            else:
+                unit_original = unit or "e3m3"
+
             records.append(Record(
                 variable_id=cfg["variable_id"], source_id=self.source_id,
                 source_series_id=cfg["source_series_id"], value=value,
-                unit_original=str(row.get(unit_col) or "e3m3") if unit_col else "e3m3",
+                unit_original=unit_original,
                 unit_canonical="e3m3", reference_period_start=month.isoformat(),
                 reference_period_end=date(month.year, month.month, calendar.monthrange(month.year, month.month)[1]).isoformat(),
                 period_basis="monthly", geography_id="CA-BC", document_id=document_id,

@@ -180,3 +180,76 @@ def test_review_required_record_makes_source_run_partial(tmp_path: Path, monkeyp
     assert summary.status == "partial"
     assert summary.records_rejected == 1
     assert any("requires review" in warning for warning in summary.warnings)
+
+
+def test_dataset_can_be_excluded_from_required_coverage():
+    from bc_assumptions.release import iter_coverage_requirements
+
+    source = {
+        "id": "example",
+        "required": True,
+        "datasets": [
+            {
+                "dataset_id": "required_dataset",
+                "product_id": "100",
+                "required": True,
+                "outputs": [
+                    {
+                        "variable_id": "economic.required",
+                    }
+                ],
+            },
+            {
+                "dataset_id": "non_required_dataset",
+                "product_id": "200",
+                "required": False,
+                "outputs": [
+                    {
+                        "variable_id": "economic.non_required",
+                    }
+                ],
+            },
+        ],
+    }
+
+    requirements = list(iter_coverage_requirements(source))
+
+    assert [
+        (item.source_series_id, item.variable_id)
+        for item in requirements
+    ] == [
+        ("100:required_dataset", "economic.required"),
+    ]
+
+
+def test_output_requirement_overrides_dataset_requirement():
+    from bc_assumptions.release import iter_coverage_requirements
+
+    source = {
+        "id": "example",
+        "required": True,
+        "datasets": [
+            {
+                "dataset_id": "mixed_dataset",
+                "product_id": "300",
+                "required": False,
+                "outputs": [
+                    {
+                        "variable_id": "economic.explicitly_required",
+                        "required": True,
+                    },
+                    {
+                        "variable_id": "economic.inherited_non_required",
+                    },
+                ],
+            }
+        ],
+    }
+
+    requirements = list(iter_coverage_requirements(source))
+
+    assert [
+        item.variable_id for item in requirements
+    ] == [
+        "economic.explicitly_required",
+    ]

@@ -33,6 +33,15 @@ def _stale_after_days(*rows: dict[str, Any]) -> int | None:
     return None
 
 
+def _coverage_is_required(*rows: dict[str, Any]) -> bool:
+    """Resolve output coverage requirements from most to least specific."""
+
+    for row in rows:
+        if "required" in row:
+            return bool(row["required"])
+    return True
+
+
 def iter_coverage_requirements(source: dict[str, Any]) -> Iterator[CoverageRequirement]:
     """Yield the records an enabled source is expected to maintain.
 
@@ -45,6 +54,8 @@ def iter_coverage_requirements(source: dict[str, Any]) -> Iterator[CoverageRequi
         source_series_id = str(series["source_series_id"])
         outputs = series.get("outputs") or ([series] if series.get("variable_id") else [])
         for output in outputs:
+            if not _coverage_is_required(output, series, source):
+                continue
             yield CoverageRequirement(
                 source_id=source_id,
                 source_series_id=source_series_id,
@@ -64,6 +75,8 @@ def iter_coverage_requirements(source: dict[str, Any]) -> Iterator[CoverageRequi
             source_series_id = f"{dataset['product_id']}:{source_series_key}"
             outputs = series.get("outputs") or dataset.get("outputs", [])
             for output in outputs:
+                if not _coverage_is_required(output, series, dataset, source):
+                    continue
                 yield CoverageRequirement(
                     source_id=source_id,
                     source_series_id=source_series_id,

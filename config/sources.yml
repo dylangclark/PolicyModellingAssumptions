@@ -241,6 +241,7 @@ sources:
         underlying_producer: Canada Mortgage and Housing Corporation
     stale_after_days: 75
   - dataset_id: housing_completions_under_construction
+    required: false
     product_id: '34100143'
     table_number: 34-10-0143-01
     frequency: monthly
@@ -249,13 +250,13 @@ sources:
     common_selectors:
     - dimension: ^(Geography|GEO)$
       member: ^British Columbia$
-    - dimension: ^(Population centre size|Population centre size group)$
-      member: ^(Total, centres 10,000 population and over|Centres 10,000 population and over|Total centres 10,000 and over)$
+    - dimension: ^(Type of unit|Dwelling type)$
+      member: ^Total units$
     series:
     - source_series_key: housing_completions
       selectors:
       - dimension: ^(Housing estimates|Housing activity|Type of activity)$
-        member: ^Completions$
+        member: ^Housing completions$
       outputs:
       - output_id: level
         variable_id: economic.housing_completions.centres_10000_plus
@@ -268,7 +269,7 @@ sources:
     - source_series_key: housing_under_construction
       selectors:
       - dimension: ^(Housing estimates|Housing activity|Type of activity)$
-        member: ^Under construction$
+        member: ^Housing under construction$
       outputs:
       - output_id: level
         variable_id: economic.housing_under_construction.centres_10000_plus

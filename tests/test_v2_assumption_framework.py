@@ -277,3 +277,47 @@ def test_observed_result_is_allowed_evidence_type():
     from bc_assumptions.validation import ALLOWED_EVIDENCE_TYPES
 
     assert "observed_result" in ALLOWED_EVIDENCE_TYPES
+
+
+def test_cer_gas_production_parses_live_csv_schema():
+    from bc_assumptions.adapters.cer_gas_production import CERGasProductionAdapter
+
+    adapter = object.__new__(CERGasProductionAdapter)
+    adapter.source_id = "cer_provincial_gas_production"
+    adapter.source = {
+        "series": [
+            {
+                "source_series_id": "bc_marketable_gas_production",
+                "variable_id": "energy.natural_gas.bc_marketable_production_e3m3",
+            }
+        ]
+    }
+
+    rows = [
+        {
+            "Date": "2/1/2024",
+            "Unit": "Thousand cubic metres per day",
+            "Region": "British Columbia",
+            "Value": "100",
+        }
+    ]
+
+    records = adapter.parse_rows(rows, "test-document")
+
+    assert len(records) == 1
+    assert records[0].reference_period_start == "2024-02-01"
+    assert records[0].reference_period_end == "2024-02-29"
+    assert records[0].value == 2900
+    assert records[0].unit_original == "e3m3_per_day"
+    assert records[0].unit_canonical == "e3m3"
+
+
+def test_statcan_vector_cache_prefers_release_time():
+    metadata = {
+        "issueDate": "2018-06-27",
+        "releaseTime": "2026-06-16T08:30",
+    }
+
+    cache_version = metadata.get("releaseTime") or metadata.get("issueDate")
+
+    assert cache_version == "2026-06-16T08:30"
