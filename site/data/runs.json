@@ -282,6 +282,20 @@
     "warnings": []
   },
   {
+    "run_id": "run_31dff060ee8448f69a7a4bb6e4b7059f",
+    "source_id": "bc_hydro_planning_assumptions",
+    "started_at": "2026-07-19T10:48:24Z",
+    "finished_at": "2026-07-19T10:48:58Z",
+    "status": "success",
+    "records_seen": 362,
+    "records_inserted": 0,
+    "records_revised": 0,
+    "records_unchanged": 362,
+    "records_rejected": 0,
+    "error": null,
+    "warnings": []
+  },
+  {
     "run_id": "run_32d9a3d067064c77b0c7e3793d333c38",
     "source_id": "world_bank_pink_sheet",
     "started_at": "2026-07-14T18:58:40Z",
@@ -291,6 +305,20 @@
     "records_inserted": 0,
     "records_revised": 0,
     "records_unchanged": 400,
+    "records_rejected": 0,
+    "error": null,
+    "warnings": []
+  },
+  {
+    "run_id": "run_3394501d496249d590e9710f7c5dd767",
+    "source_id": "bc_moti_benefit_cost_parameters",
+    "started_at": "2026-07-19T10:48:10Z",
+    "finished_at": "2026-07-19T10:48:11Z",
+    "status": "success",
+    "records_seen": 1,
+    "records_inserted": 0,
+    "records_revised": 0,
+    "records_unchanged": 1,
     "records_rejected": 0,
     "error": null,
     "warnings": []
@@ -336,6 +364,22 @@
     "records_rejected": 0,
     "error": "AcquisitionError: Selector '^Completions$' matched 0 members in 'Housing estimates'. Available examples: ['Housing starts', 'Housing under construction', 'Housing completions']",
     "warnings": []
+  },
+  {
+    "run_id": "run_3d32c7bd3c254e9186fcc2709fc08e8c",
+    "source_id": "nrcan_energy_use_database",
+    "started_at": "2026-07-19T10:47:23Z",
+    "finished_at": "2026-07-19T10:47:24Z",
+    "status": "success",
+    "records_seen": 21,
+    "records_inserted": 0,
+    "records_revised": 0,
+    "records_unchanged": 21,
+    "records_rejected": 0,
+    "error": null,
+    "warnings": [
+      "NRCan residential_bc_heating_system_stock_21 series natural_gas_stock could not be resolved"
+    ]
   },
   {
     "run_id": "run_3f56d8a895e9428e9bf4a805a3dff9c5",
@@ -692,6 +736,20 @@
     "warnings": []
   },
   {
+    "run_id": "run_7173c1cade844fb5ad9b28f8e0a63a3c",
+    "source_id": "bc_hydro_fortisbc_collaboration_assumptions",
+    "started_at": "2026-07-19T10:48:58Z",
+    "finished_at": "2026-07-19T10:48:58Z",
+    "status": "success",
+    "records_seen": 12,
+    "records_inserted": 0,
+    "records_revised": 0,
+    "records_unchanged": 12,
+    "records_rejected": 0,
+    "error": null,
+    "warnings": []
+  },
+  {
     "run_id": "run_717ddceba7f143f892de54a1250df042",
     "source_id": "cer_electricity_trade",
     "started_at": "2026-07-14T18:45:13Z",
@@ -720,6 +778,20 @@
     "warnings": []
   },
   {
+    "run_id": "run_744c807b62e44897b6eebaa09867d081",
+    "source_id": "world_bank_pink_sheet",
+    "started_at": "2026-07-19T10:46:32Z",
+    "finished_at": "2026-07-19T10:46:43Z",
+    "status": "success",
+    "records_seen": 636,
+    "records_inserted": 0,
+    "records_revised": 0,
+    "records_unchanged": 636,
+    "records_rejected": 0,
+    "error": null,
+    "warnings": []
+  },
+  {
     "run_id": "run_79963891c5e84863a7c34e35e957506e",
     "source_id": "bc_moti_benefit_cost_parameters",
     "started_at": "2026-07-15T17:12:52Z",
@@ -729,6 +801,34 @@
     "records_inserted": 0,
     "records_revised": 0,
     "records_unchanged": 1,
+    "records_rejected": 0,
+    "error": null,
+    "warnings": []
+  },
+  {
+    "run_id": "run_7b8d2f32959649019f3e7f6b5a1a028e",
+    "source_id": "bc_data_catalogue_households",
+    "started_at": "2026-07-19T10:47:24Z",
+    "finished_at": "2026-07-19T10:47:26Z",
+    "status": "success",
+    "records_seen": 142,
+    "records_inserted": 0,
+    "records_revised": 0,
+    "records_unchanged": 142,
+    "records_rejected": 0,
+    "error": null,
+    "warnings": []
+  },
+  {
+    "run_id": "run_7ba82497fae8427abb4de1f84c98443e",
+    "source_id": "fortisbc_quarterly_financials",
+    "started_at": "2026-07-19T10:48:11Z",
+    "finished_at": "2026-07-19T10:48:24Z",
+    "status": "success",
+    "records_seen": 102,
+    "records_inserted": 0,
+    "records_revised": 0,
+    "records_unchanged": 102,
     "records_rejected": 0,
     "error": null,
     "warnings": []
@@ -776,6 +876,20 @@
     "warnings": []
   },
   {
+    "run_id": "run_83e9cccae97a40cbb9ccc99e6ee8110d",
+    "source_id": "statistics_canada_wds",
+    "started_at": "2026-07-19T10:46:12Z",
+    "finished_at": "2026-07-19T10:46:24Z",
+    "status": "success",
+    "records_seen": 416,
+    "records_inserted": 0,
+    "records_revised": 0,
+    "records_unchanged": 416,
+    "records_rejected": 0,
+    "error": null,
+    "warnings": []
+  },
+  {
     "run_id": "run_873e702e0a6d451d861b56cfc1f906cd",
     "source_id": "cmhc_via_statistics_canada",
     "started_at": "2026-07-15T16:46:44Z",
@@ -787,6 +901,20 @@
     "records_unchanged": 0,
     "records_rejected": 0,
     "error": "AcquisitionError: Selectors did not match a dimension: [{'dimension': '^(Population centre size|Population centre size group)$', 'member': '^(Total, centres 10,000 population and over|Centres 10,000 population and over|Total centres 10,000 and over)$'}]. Available dimensions: ['Geography', 'Housing estimates', 'Type of unit']",
+    "warnings": []
+  },
+  {
+    "run_id": "run_8b3573667ae546468aa5b179edbd667c",
+    "source_id": "cmhc_via_statistics_canada",
+    "started_at": "2026-07-19T10:46:24Z",
+    "finished_at": "2026-07-19T10:46:30Z",
+    "status": "success",
+    "records_seen": 186,
+    "records_inserted": 2,
+    "records_revised": 10,
+    "records_unchanged": 174,
+    "records_rejected": 0,
+    "error": null,
     "warnings": []
   },
   {
@@ -813,6 +941,20 @@
     "records_inserted": 0,
     "records_revised": 0,
     "records_unchanged": 636,
+    "records_rejected": 0,
+    "error": null,
+    "warnings": []
+  },
+  {
+    "run_id": "run_94380976531e416cbf4975c74bc8c092",
+    "source_id": "bc_budget_economic_forecasts",
+    "started_at": "2026-07-19T10:46:43Z",
+    "finished_at": "2026-07-19T10:47:23Z",
+    "status": "success",
+    "records_seen": 326,
+    "records_inserted": 0,
+    "records_revised": 0,
+    "records_unchanged": 326,
     "records_rejected": 0,
     "error": null,
     "warnings": []
@@ -914,6 +1056,20 @@
     "records_inserted": 0,
     "records_revised": 0,
     "records_unchanged": 636,
+    "records_rejected": 0,
+    "error": null,
+    "warnings": []
+  },
+  {
+    "run_id": "run_a3993125b4af4fe3891dafb117c0e868",
+    "source_id": "cer_electricity_trade",
+    "started_at": "2026-07-19T10:47:26Z",
+    "finished_at": "2026-07-19T10:47:44Z",
+    "status": "success",
+    "records_seen": 1176,
+    "records_inserted": 0,
+    "records_revised": 0,
+    "records_unchanged": 1176,
     "records_rejected": 0,
     "error": null,
     "warnings": []
@@ -1222,6 +1378,20 @@
     "warnings": []
   },
   {
+    "run_id": "run_da751b259026409aba4420742159f2cb",
+    "source_id": "cer_provincial_gas_production",
+    "started_at": "2026-07-19T10:47:44Z",
+    "finished_at": "2026-07-19T10:48:10Z",
+    "status": "success",
+    "records_seen": 630,
+    "records_inserted": 0,
+    "records_revised": 630,
+    "records_unchanged": 0,
+    "records_rejected": 0,
+    "error": null,
+    "warnings": []
+  },
+  {
     "run_id": "run_dd185e49f3184dc19ad176b3a195f9d7",
     "source_id": "cer_electricity_trade",
     "started_at": "2026-07-14T18:58:49Z",
@@ -1407,6 +1577,34 @@
     "records_inserted": 0,
     "records_revised": 0,
     "records_unchanged": 636,
+    "records_rejected": 0,
+    "error": null,
+    "warnings": []
+  },
+  {
+    "run_id": "run_f126e1ba6a7343509bbe5fcb7172139c",
+    "source_id": "bank_of_canada_valet",
+    "started_at": "2026-07-19T10:46:10Z",
+    "finished_at": "2026-07-19T10:46:11Z",
+    "status": "success",
+    "records_seen": 100,
+    "records_inserted": 6,
+    "records_revised": 0,
+    "records_unchanged": 94,
+    "records_rejected": 0,
+    "error": null,
+    "warnings": []
+  },
+  {
+    "run_id": "run_f4e8de7916ad413795a9cec45b53e61e",
+    "source_id": "eia_open_data",
+    "started_at": "2026-07-19T10:46:30Z",
+    "finished_at": "2026-07-19T10:46:32Z",
+    "status": "success",
+    "records_seen": 12,
+    "records_inserted": 0,
+    "records_revised": 0,
+    "records_unchanged": 12,
     "records_rejected": 0,
     "error": null,
     "warnings": []

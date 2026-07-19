@@ -1,34 +1,34 @@
 [
   {
-    "document_id": "doc_00df34b34a934a84b705ca8b",
-    "source_id": "cmhc_via_statistics_canada",
-    "source_url": "https://www150.statcan.gc.ca/t1/wds/rest/getDataFromVectorByReferencePeriodRange?vectorIds=%22730995%22&startRefPeriod=1998-05-29&endReferencePeriod=2026-07-15",
-    "local_path": "cmhc_via_statistics_canada/38/vector-730995-38369fbbec63d790.json",
+    "document_id": "doc_043afa0d53f0270510cbb30f",
+    "source_id": "statistics_canada_wds",
+    "source_url": "https://www150.statcan.gc.ca/t1/wds/rest/getDataFromVectorByReferencePeriodRange?vectorIds=%222064700%22&startRefPeriod=2022-05-29&endReferencePeriod=2026-07-19",
+    "local_path": "statistics_canada_wds/3e/vector-2064700-3e8f7cfbe211c2e3.json",
     "content_type": "application/json",
-    "retrieved_at": "2026-07-15T17:11:02Z",
-    "sha256": "38369fbbec63d790f5960f83439d58a8d657f44628ba41021058d74f618e5ab5",
-    "size_bytes": 11453,
+    "retrieved_at": "2026-07-19T10:46:14Z",
+    "sha256": "3e8f7cfbe211c2e39a0600fda98ae029136d68ee458b42377baefb41243bfb1d",
+    "size_bytes": 11422,
     "request_method": "GET",
     "request_metadata": {
       "json_body_sha256": null,
       "params": [
         [
           "vectorIds",
-          "\"730995\""
+          "\"2064700\""
         ],
         [
           "startRefPeriod",
-          "1998-05-29"
+          "2022-05-29"
         ],
         [
           "endReferencePeriod",
-          "2026-07-15"
+          "2026-07-19"
         ]
       ]
     },
     "response_headers": {
       "Content-Type": "application/json",
-      "Date": "Wed, 15 Jul 2026 17:11:02 GMT"
+      "Date": "Sun, 19 Jul 2026 10:46:13 GMT"
     }
   },
   {
@@ -125,7 +125,7 @@
     "source_url": "https://www.cdn.fortisbc.com/libraries/docs/default-source/about-us-documents/fortisbc-electric_mda_q4_2022_c2_audit_sedar.pdf?sfvrsn=d158abe_1",
     "local_path": "fortisbc_quarterly_financials/d1/fortis_fbc_2022_annual_mda-d15abcd50f345402.pdf",
     "content_type": "application/pdf",
-    "retrieved_at": "2026-07-15T17:12:55Z",
+    "retrieved_at": "2026-07-19T10:48:13Z",
     "sha256": "d15abcd50f3454026a3e21fc96f739bb14354b3dc6e5fa9547b5e01a8cb83adf",
     "size_bytes": 436854,
     "request_method": "GET",
@@ -135,8 +135,40 @@
     },
     "response_headers": {
       "Content-Type": "application/pdf",
-      "Date": "Wed, 15 Jul 2026 17:12:55 GMT",
+      "Date": "Sun, 19 Jul 2026 10:48:13 GMT",
       "Last-Modified": "Fri, 10 Feb 2023 22:11:07 GMT"
+    }
+  },
+  {
+    "document_id": "doc_11c07e5a39ac1b122ba80b12",
+    "source_id": "cmhc_via_statistics_canada",
+    "source_url": "https://www150.statcan.gc.ca/t1/wds/rest/getDataFromVectorByReferencePeriodRange?vectorIds=%2252300169%22&startRefPeriod=2022-04-28&endReferencePeriod=2026-07-19",
+    "local_path": "cmhc_via_statistics_canada/e3/vector-52300169-e342f27223dfc54e.json",
+    "content_type": "application/json",
+    "retrieved_at": "2026-07-19T10:46:25Z",
+    "sha256": "e342f27223dfc54ebb749c7f7036238f8c2fe90eeb4761a5c70807dc1f1a2905",
+    "size_bytes": 11648,
+    "request_method": "GET",
+    "request_metadata": {
+      "json_body_sha256": null,
+      "params": [
+        [
+          "vectorIds",
+          "\"52300169\""
+        ],
+        [
+          "startRefPeriod",
+          "2022-04-28"
+        ],
+        [
+          "endReferencePeriod",
+          "2026-07-19"
+        ]
+      ]
+    },
+    "response_headers": {
+      "Content-Type": "application/json",
+      "Date": "Sun, 19 Jul 2026 10:46:25 GMT"
     }
   },
   {
@@ -145,7 +177,7 @@
     "source_url": "https://www.bcbudget.gov.bc.ca/Annual_Reports/2023_2024/pdf/agency/bchydro.pdf",
     "local_path": "bc_hydro_planning_assumptions/2e/bchydro_annual_service_plan_2023_24-2e744c119ffd7e04.pdf",
     "content_type": "application/pdf",
-    "retrieved_at": "2026-07-15T17:13:08Z",
+    "retrieved_at": "2026-07-19T10:48:32Z",
     "sha256": "2e744c119ffd7e04a6193567b46ffc995f8c43860eb82766a6e6e6953e6340d8",
     "size_bytes": 1467092,
     "request_method": "GET",
@@ -155,41 +187,9 @@
     },
     "response_headers": {
       "Content-Type": "application/pdf",
-      "Date": "Wed, 15 Jul 2026 17:13:08 GMT",
+      "Date": "Sun, 19 Jul 2026 10:48:32 GMT",
       "ETag": "\"e3ecd2719feda1:0\"",
       "Last-Modified": "Tue, 03 Sep 2024 15:51:35 GMT"
-    }
-  },
-  {
-    "document_id": "doc_1995fed241fb794bddd507ab",
-    "source_id": "statistics_canada_wds",
-    "source_url": "https://www150.statcan.gc.ca/t1/wds/rest/getDataFromVectorByReferencePeriodRange?vectorIds=%222064706%22&startRefPeriod=2022-05-29&endReferencePeriod=2026-07-15",
-    "local_path": "statistics_canada_wds/e6/vector-2064706-e631b6ec349b805c.json",
-    "content_type": "application/json",
-    "retrieved_at": "2026-07-15T17:10:53Z",
-    "sha256": "e631b6ec349b805ce9ab618b4c4f5002e4e3ae94e3187dce1eb1a9cf237c02ea",
-    "size_bytes": 11324,
-    "request_method": "GET",
-    "request_metadata": {
-      "json_body_sha256": null,
-      "params": [
-        [
-          "vectorIds",
-          "\"2064706\""
-        ],
-        [
-          "startRefPeriod",
-          "2022-05-29"
-        ],
-        [
-          "endReferencePeriod",
-          "2026-07-15"
-        ]
-      ]
-    },
-    "response_headers": {
-      "Content-Type": "application/json",
-      "Date": "Wed, 15 Jul 2026 17:10:53 GMT"
     }
   },
   {
@@ -198,7 +198,7 @@
     "source_url": "https://api.eia.gov/v2/petroleum/pri/spt/data/?api_key=REDACTED&frequency=monthly&data%5B0%5D=value&facets%5Bseries%5D%5B%5D=RBRTE&start=2026-03&sort%5B0%5D%5Bcolumn%5D=period&sort%5B0%5D%5Bdirection%5D=asc&offset=0&length=5000",
     "local_path": "eia_open_data/8a/RBRTE-8a80a234d920343e.json",
     "content_type": "application/json",
-    "retrieved_at": "2026-07-15T17:11:16Z",
+    "retrieved_at": "2026-07-19T10:46:31Z",
     "sha256": "8a80a234d920343e219229fe74eb50bf35066c5ee6888f114321d08e4a25b3b5",
     "size_bytes": 1541,
     "request_method": "GET",
@@ -245,7 +245,7 @@
     },
     "response_headers": {
       "Content-Type": "application/json",
-      "Date": "Wed, 15 Jul 2026 17:11:16 GMT"
+      "Date": "Sun, 19 Jul 2026 10:46:31 GMT"
     }
   },
   {
@@ -254,7 +254,7 @@
     "source_url": "https://www.bchydro.com/content/dam/BCHydro/customer-portal/documents/corporate/regulatory-planning-documents/integrated-resource-plans/current-plan/2025-irp-tac-mtg5ab-20250700-summary-bchydro-fortisbc-collaboration.pdf",
     "local_path": "bc_hydro_fortisbc_collaboration_assumptions/8a/bchydro_fortisbc_collaboration_july_2025-8a7ffa203812bf86.pdf",
     "content_type": "application/pdf",
-    "retrieved_at": "2026-07-15T17:13:17Z",
+    "retrieved_at": "2026-07-19T10:48:58Z",
     "sha256": "8a7ffa203812bf8667617ab79fcc289ca440baacf66886fd274f9c690797d8b5",
     "size_bytes": 506446,
     "request_method": "GET",
@@ -264,7 +264,7 @@
     },
     "response_headers": {
       "Content-Type": "application/pdf",
-      "Date": "Wed, 15 Jul 2026 17:13:17 GMT",
+      "Date": "Sun, 19 Jul 2026 10:48:58 GMT",
       "ETag": "\"7ba4e-63a3581e1cac0\"",
       "Last-Modified": "Fri, 18 Jul 2025 15:09:07 GMT"
     }
@@ -299,7 +299,7 @@
     "source_url": "https://www.bchydro.com/content/dam/BCHydro/customer-portal/documents/corporate/regulatory-planning-documents/service-plans/bchydro-service-plan-2023-24-2025-26.pdf",
     "local_path": "bc_hydro_planning_assumptions/ba/bchydro_service_plan_2023_24-babd6cef74cb30c1.pdf",
     "content_type": "application/pdf",
-    "retrieved_at": "2026-07-15T17:13:02Z",
+    "retrieved_at": "2026-07-19T10:48:26Z",
     "sha256": "babd6cef74cb30c1224fc65bf666fe8e4f6ea61c33386182011e0f9ef5492d9f",
     "size_bytes": 583781,
     "request_method": "GET",
@@ -309,7 +309,7 @@
     },
     "response_headers": {
       "Content-Type": "application/pdf",
-      "Date": "Wed, 15 Jul 2026 17:13:02 GMT",
+      "Date": "Sun, 19 Jul 2026 10:48:26 GMT",
       "ETag": "\"8e865-5f5dae78ce700\"",
       "Last-Modified": "Wed, 01 Mar 2023 18:30:20 GMT"
     }
@@ -320,7 +320,7 @@
     "source_url": "https://www.bcbudget.gov.bc.ca/2023/pdf/2023_Budget_and_Fiscal_Plan.pdf",
     "local_path": "bc_budget_economic_forecasts/88/bc_budget_2023-88b6920976e85c6a.pdf",
     "content_type": "application/pdf",
-    "retrieved_at": "2026-07-15T17:11:40Z",
+    "retrieved_at": "2026-07-19T10:46:57Z",
     "sha256": "88b6920976e85c6ae3fbdad1dd66212ef682f4772fddfc5060b85edd7fab1649",
     "size_bytes": 2217716,
     "request_method": "GET",
@@ -330,7 +330,7 @@
     },
     "response_headers": {
       "Content-Type": "application/pdf",
-      "Date": "Wed, 15 Jul 2026 17:11:40 GMT",
+      "Date": "Sun, 19 Jul 2026 10:46:56 GMT",
       "ETag": "\"4b812b74d773d91:0\"",
       "Last-Modified": "Thu, 20 Apr 2023 22:28:38 GMT"
     }
@@ -341,7 +341,7 @@
     "source_url": "https://www2.gov.bc.ca/assets/gov/driving-and-transportation/transportation-infrastructure/planning/tools/default_values-benefit_cost_analysis.pdf",
     "local_path": "bc_moti_benefit_cost_parameters/2d/bc_moti_default_values_bca_2018-2d947a88e14c32ad.pdf",
     "content_type": "application/pdf",
-    "retrieved_at": "2026-07-15T17:12:53Z",
+    "retrieved_at": "2026-07-19T10:48:10Z",
     "sha256": "2d947a88e14c32ad0b99c40a09b4d06017a0fd012b1feed35f0fe3cfbe4bf428",
     "size_bytes": 333644,
     "request_method": "GET",
@@ -351,7 +351,7 @@
     },
     "response_headers": {
       "Content-Type": "application/pdf; charset=UTF-8",
-      "Date": "Wed, 15 Jul 2026 17:12:53 GMT",
+      "Date": "Sun, 19 Jul 2026 10:48:10 GMT",
       "Last-Modified": "Thu, 17 May 2018 16:12:47 GMT"
     }
   },
@@ -361,7 +361,7 @@
     "source_url": "https://www.bcbudget.gov.bc.ca/Annual_Reports/2021_2022/pdf/agency/bchydro.pdf",
     "local_path": "bc_hydro_planning_assumptions/17/bchydro_annual_service_plan_2021_22-1728b19f46edd85d.pdf",
     "content_type": "application/pdf",
-    "retrieved_at": "2026-07-15T17:13:07Z",
+    "retrieved_at": "2026-07-19T10:48:31Z",
     "sha256": "1728b19f46edd85dd9b7aa74891e652ad2e6a6bbb25b7970adb8a3c165b70e37",
     "size_bytes": 1409250,
     "request_method": "GET",
@@ -371,7 +371,7 @@
     },
     "response_headers": {
       "Content-Type": "application/pdf",
-      "Date": "Wed, 15 Jul 2026 17:13:06 GMT",
+      "Date": "Sun, 19 Jul 2026 10:48:31 GMT",
       "ETag": "\"1081408d63b9d81:0\"",
       "Last-Modified": "Fri, 26 Aug 2022 15:50:23 GMT"
     }
@@ -382,7 +382,7 @@
     "source_url": "https://catalogue.data.gov.bc.ca/dataset/2a8ddf6c-dfb9-4187-a66d-9bb15b15ea83/resource/5e88b528-24cb-4a58-bc14-cdaa7948fb1b/download/household_estimates_projections_bc_subprov.csv",
     "local_path": "bc_data_catalogue_households/af/household-estimates-projections-af1f67a168c3970b.csv",
     "content_type": "text/csv",
-    "retrieved_at": "2026-07-15T17:12:13Z",
+    "retrieved_at": "2026-07-19T10:47:24Z",
     "sha256": "af1f67a168c3970bb227e3431b8ad7069dc216be7fbc154750a407dbd54ae5f7",
     "size_bytes": 610630,
     "request_method": "GET",
@@ -392,7 +392,7 @@
     },
     "response_headers": {
       "content-type": "text/csv",
-      "date": "Wed, 15 Jul 2026 17:12:13 GMT",
+      "date": "Sun, 19 Jul 2026 10:47:24 GMT",
       "etag": "\"1779927016.935672-610630-2080051992\"",
       "last-modified": "Thu, 28 May 2026 00:10:16 GMT"
     }
@@ -435,7 +435,7 @@
     "source_url": "https://thedocs.worldbank.org/en/doc/74e8be41ceb20fa0da750cda2f6b9e4e-0050012026/related/CMO-Historical-Data-Monthly.xlsx",
     "local_path": "world_bank_pink_sheet/8d/monthly-prices-8d51e9ac53037684.xlsx",
     "content_type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
-    "retrieved_at": "2026-07-15T17:11:17Z",
+    "retrieved_at": "2026-07-19T10:46:32Z",
     "sha256": "8d51e9ac53037684a43cf00075dd3619517563ef17c7327ef9f09074e312ed95",
     "size_bytes": 575636,
     "request_method": "GET",
@@ -445,7 +445,7 @@
     },
     "response_headers": {
       "Content-Type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
-      "Date": "Wed, 15 Jul 2026 17:11:17 GMT",
+      "Date": "Sun, 19 Jul 2026 10:46:32 GMT",
       "Last-Modified": "Mon, 06 Jul 2026 19:14:50 GMT"
     }
   },
@@ -455,7 +455,7 @@
     "source_url": "https://www.cdn.fortisbc.com/libraries/docs/default-source/about-us-documents/fortisbc-electric-mda-q4-2021-d2-pa-sedar.pdf?sfvrsn=67c53fd8_2",
     "local_path": "fortisbc_quarterly_financials/57/fortis_fbc_2021_annual_mda-57d50ec45c657e54.pdf",
     "content_type": "application/pdf",
-    "retrieved_at": "2026-07-15T17:12:55Z",
+    "retrieved_at": "2026-07-19T10:48:12Z",
     "sha256": "57d50ec45c657e54cf3bb7f61108c04b434fea8e40e26aeabea143fc1f2ad4ce",
     "size_bytes": 608009,
     "request_method": "GET",
@@ -465,7 +465,7 @@
     },
     "response_headers": {
       "Content-Type": "application/pdf",
-      "Date": "Wed, 15 Jul 2026 17:12:54 GMT",
+      "Date": "Sun, 19 Jul 2026 10:48:12 GMT",
       "Last-Modified": "Fri, 11 Feb 2022 22:31:06 GMT"
     }
   },
@@ -475,7 +475,7 @@
     "source_url": "https://www.cdn.fortisbc.com/libraries/docs/default-source/about-us-documents/fortisbc-(gas)-mda-q4-2023-d2-pa-sedar.pdf?sfvrsn=49c2fa5b_1",
     "local_path": "fortisbc_quarterly_financials/07/fortis_fei_2023_annual_mda-0771a4fe06ed9297.pdf",
     "content_type": "application/pdf",
-    "retrieved_at": "2026-07-15T17:12:57Z",
+    "retrieved_at": "2026-07-19T10:48:19Z",
     "sha256": "0771a4fe06ed92972084f8ff8814e162d6dd43e300b71aec750ac7c9b70fef89",
     "size_bytes": 538404,
     "request_method": "GET",
@@ -485,7 +485,7 @@
     },
     "response_headers": {
       "Content-Type": "application/pdf",
-      "Date": "Wed, 15 Jul 2026 17:12:57 GMT",
+      "Date": "Sun, 19 Jul 2026 10:48:19 GMT",
       "Last-Modified": "Fri, 09 Feb 2024 23:12:38 GMT"
     }
   },
@@ -495,7 +495,7 @@
     "source_url": "https://www.bchydro.com/content/dam/BCHydro/customer-portal/documents/corporate/regulatory-planning-documents/service-plans/bchydro-service-plan-2022-23-2024-25.pdf",
     "local_path": "bc_hydro_planning_assumptions/53/bchydro_service_plan_2022_23-535c26f57becf4d2.pdf",
     "content_type": "application/pdf",
-    "retrieved_at": "2026-07-15T17:13:01Z",
+    "retrieved_at": "2026-07-19T10:48:25Z",
     "sha256": "535c26f57becf4d28794cc784ad7e2b15b842d347585283a9fc62f3012546613",
     "size_bytes": 561320,
     "request_method": "GET",
@@ -505,7 +505,7 @@
     },
     "response_headers": {
       "Content-Type": "application/pdf",
-      "Date": "Wed, 15 Jul 2026 17:13:01 GMT",
+      "Date": "Sun, 19 Jul 2026 10:48:25 GMT",
       "ETag": "\"890a8-5d8c8987de6c0\"",
       "Last-Modified": "Thu, 24 Feb 2022 19:29:07 GMT"
     }
@@ -516,7 +516,7 @@
     "source_url": "https://www.cdn.fortisbc.com/libraries/docs/default-source/about-us-documents/fortisbc-(electric)-mda-q4-2023-c2-audit-sedar.pdf?sfvrsn=9d56ca39_1",
     "local_path": "fortisbc_quarterly_financials/e8/fortis_fbc_2023_annual_mda-e8f2d6d62ff24901.pdf",
     "content_type": "application/pdf",
-    "retrieved_at": "2026-07-15T17:12:55Z",
+    "retrieved_at": "2026-07-19T10:48:14Z",
     "sha256": "e8f2d6d62ff2490191ce53420378819853ed37bbb6ddecbe7074a35646bb0f91",
     "size_bytes": 462197,
     "request_method": "GET",
@@ -526,7 +526,7 @@
     },
     "response_headers": {
       "Content-Type": "application/pdf",
-      "Date": "Wed, 15 Jul 2026 17:12:55 GMT",
+      "Date": "Sun, 19 Jul 2026 10:48:14 GMT",
       "Last-Modified": "Fri, 09 Feb 2024 23:12:38 GMT"
     }
   },
@@ -568,7 +568,7 @@
     "source_url": "https://api.eia.gov/v2/natural-gas/pri/fut/data/?api_key=REDACTED&frequency=monthly&data%5B0%5D=value&facets%5Bseries%5D%5B%5D=RNGWHHD&start=2026-03&sort%5B0%5D%5Bcolumn%5D=period&sort%5B0%5D%5Bdirection%5D=asc&offset=0&length=5000",
     "local_path": "eia_open_data/ec/RNGWHHD-ec763da6e4868b51.json",
     "content_type": "application/json",
-    "retrieved_at": "2026-07-15T17:11:10Z",
+    "retrieved_at": "2026-07-19T10:46:31Z",
     "sha256": "ec763da6e4868b51a61e9962d5f73413dcdc3ade7b32b903a121741091d6d5ae",
     "size_bytes": 1535,
     "request_method": "GET",
@@ -615,7 +615,7 @@
     },
     "response_headers": {
       "Content-Type": "application/json",
-      "Date": "Wed, 15 Jul 2026 17:11:10 GMT"
+      "Date": "Sun, 19 Jul 2026 10:46:31 GMT"
     }
   },
   {
@@ -639,44 +639,12 @@
     }
   },
   {
-    "document_id": "doc_59dd0f35b3a81841f0de8ab2",
-    "source_id": "statistics_canada_wds",
-    "source_url": "https://www150.statcan.gc.ca/t1/wds/rest/getDataFromVectorByReferencePeriodRange?vectorIds=%221617916980%22&startRefPeriod=2021-12-29&endReferencePeriod=2026-07-15",
-    "local_path": "statistics_canada_wds/4e/vector-1617916980-4e74afd1d243f4f0.json",
-    "content_type": "application/json",
-    "retrieved_at": "2026-07-15T17:10:55Z",
-    "sha256": "4e74afd1d243f4f05cc78bf188d8ae001bdc5a257e0f5e4516cc2c77e3428bc3",
-    "size_bytes": 4042,
-    "request_method": "GET",
-    "request_metadata": {
-      "json_body_sha256": null,
-      "params": [
-        [
-          "vectorIds",
-          "\"1617916980\""
-        ],
-        [
-          "startRefPeriod",
-          "2021-12-29"
-        ],
-        [
-          "endReferencePeriod",
-          "2026-07-15"
-        ]
-      ]
-    },
-    "response_headers": {
-      "Content-Type": "application/json",
-      "Date": "Wed, 15 Jul 2026 17:10:55 GMT"
-    }
-  },
-  {
     "document_id": "doc_63f7fede6558ed9ed615e70c",
     "source_id": "fortisbc_quarterly_financials",
     "source_url": "https://www.cdn.fortisbc.com/libraries/docs/default-source/about-us-documents/fbc-ye-2025-md-a-b-sedar.pdf?sfvrsn=357b6d42_1",
     "local_path": "fortisbc_quarterly_financials/a5/fortis_fbc_2025_annual_mda-a53ed3e4d3774ea0.pdf",
     "content_type": "application/pdf",
-    "retrieved_at": "2026-07-15T17:12:56Z",
+    "retrieved_at": "2026-07-19T10:48:16Z",
     "sha256": "a53ed3e4d3774ea09e2b5604bdf6ee9d2693715b46ed99336dabfe5d35219d70",
     "size_bytes": 263705,
     "request_method": "GET",
@@ -686,7 +654,7 @@
     },
     "response_headers": {
       "Content-Type": "application/pdf",
-      "Date": "Wed, 15 Jul 2026 17:12:56 GMT",
+      "Date": "Sun, 19 Jul 2026 10:48:16 GMT",
       "Last-Modified": "Thu, 12 Feb 2026 19:09:17 GMT"
     }
   },
@@ -696,7 +664,7 @@
     "source_url": "https://www.cdn.fortisbc.com/libraries/docs/default-source/about-us-documents/fortisbc-gas-mda-q4-2021-d2-pa-sedar.pdf?sfvrsn=9f170962_2",
     "local_path": "fortisbc_quarterly_financials/62/fortis_fei_2021_annual_mda-626846ca1b548a1a.pdf",
     "content_type": "application/pdf",
-    "retrieved_at": "2026-07-15T17:12:56Z",
+    "retrieved_at": "2026-07-19T10:48:17Z",
     "sha256": "626846ca1b548a1a4c44ee7cffad5d62c6f6243979f6f9277a5f8b103a46cc4a",
     "size_bytes": 661968,
     "request_method": "GET",
@@ -706,7 +674,7 @@
     },
     "response_headers": {
       "Content-Type": "application/pdf",
-      "Date": "Wed, 15 Jul 2026 17:12:56 GMT",
+      "Date": "Sun, 19 Jul 2026 10:48:17 GMT",
       "Last-Modified": "Fri, 11 Feb 2022 22:31:06 GMT"
     }
   },
@@ -716,7 +684,7 @@
     "source_url": "https://www.cer-rec.gc.ca/open/energy/historical-canadian-provincial-marketable-natural-gas-production.csv",
     "local_path": "cer_provincial_gas_production/6b/provincial-gas-production-6b6a3a49d6d29f9a.csv",
     "content_type": "application/octet-stream",
-    "retrieved_at": "2026-07-15T17:12:33Z",
+    "retrieved_at": "2026-07-19T10:47:45Z",
     "sha256": "6b6a3a49d6d29f9aea7bbd80b963f21add85132f05d9723ca59f6aef79ef60ff",
     "size_bytes": 242647,
     "request_method": "GET",
@@ -726,41 +694,41 @@
     },
     "response_headers": {
       "Content-Type": "application/octet-stream",
-      "Date": "Wed, 15 Jul 2026 17:12:32 GMT",
+      "Date": "Sun, 19 Jul 2026 10:47:44 GMT",
       "ETag": "\"a4916e8bf0dd1:0\"",
       "Last-Modified": "Fri, 19 Jun 2026 17:17:45 GMT"
     }
   },
   {
-    "document_id": "doc_6de50ce920b6245bfb9126f3",
+    "document_id": "doc_6f5772460523a7ba81f8a2a5",
     "source_id": "statistics_canada_wds",
-    "source_url": "https://www150.statcan.gc.ca/t1/wds/rest/getDataFromVectorByReferencePeriodRange?vectorIds=%222064705%22&startRefPeriod=2022-05-29&endReferencePeriod=2026-07-15",
-    "local_path": "statistics_canada_wds/f9/vector-2064705-f97c86339021c930.json",
+    "source_url": "https://www150.statcan.gc.ca/t1/wds/rest/getDataFromVectorByReferencePeriodRange?vectorIds=%2241692462%22&startRefPeriod=2022-04-28&endReferencePeriod=2026-07-19",
+    "local_path": "statistics_canada_wds/a7/vector-41692462-a73a6f87bc580d66.json",
     "content_type": "application/json",
-    "retrieved_at": "2026-07-15T17:10:52Z",
-    "sha256": "f97c86339021c930250223220a3b3b09bc1261e70d770450511b904cdd3e1325",
-    "size_bytes": 11275,
+    "retrieved_at": "2026-07-19T10:46:15Z",
+    "sha256": "a73a6f87bc580d66c279feeb235cfa7eb3520a86f7c5da3c18c7ba84ca9816c0",
+    "size_bytes": 11374,
     "request_method": "GET",
     "request_metadata": {
       "json_body_sha256": null,
       "params": [
         [
           "vectorIds",
-          "\"2064705\""
+          "\"41692462\""
         ],
         [
           "startRefPeriod",
-          "2022-05-29"
+          "2022-04-28"
         ],
         [
           "endReferencePeriod",
-          "2026-07-15"
+          "2026-07-19"
         ]
       ]
     },
     "response_headers": {
       "Content-Type": "application/json",
-      "Date": "Wed, 15 Jul 2026 17:10:52 GMT"
+      "Date": "Sun, 19 Jul 2026 10:46:15 GMT"
     }
   },
   {
@@ -769,7 +737,7 @@
     "source_url": "https://www.bcbudget.gov.bc.ca/2025/pdf/2025_Budget_and_Fiscal_Plan.pdf",
     "local_path": "bc_budget_economic_forecasts/b2/bc_budget_2025-b2cf83914a77ad0f.pdf",
     "content_type": "application/pdf",
-    "retrieved_at": "2026-07-15T17:11:52Z",
+    "retrieved_at": "2026-07-19T10:47:09Z",
     "sha256": "b2cf83914a77ad0f9e8b6da84a44b0bafff530e517d04887185c5ba697b14c23",
     "size_bytes": 1909011,
     "request_method": "GET",
@@ -779,9 +747,41 @@
     },
     "response_headers": {
       "Content-Type": "application/pdf",
-      "Date": "Wed, 15 Jul 2026 17:11:52 GMT",
+      "Date": "Sun, 19 Jul 2026 10:47:08 GMT",
       "ETag": "\"326493b368adb1:0\"",
       "Last-Modified": "Fri, 28 Feb 2025 23:11:06 GMT"
+    }
+  },
+  {
+    "document_id": "doc_76ba6bee512288ceb8cd5b35",
+    "source_id": "cmhc_via_statistics_canada",
+    "source_url": "https://www150.statcan.gc.ca/t1/wds/rest/getDataFromVectorByReferencePeriodRange?vectorIds=%22731930%22&startRefPeriod=2018-11-28&endReferencePeriod=2026-07-19",
+    "local_path": "cmhc_via_statistics_canada/31/vector-731930-31e9a32dbd3728cd.json",
+    "content_type": "application/json",
+    "retrieved_at": "2026-07-19T10:46:26Z",
+    "sha256": "31e9a32dbd3728cdb420ec74d9652bffa3b3342cb3c39884885bc55b7c63167a",
+    "size_bytes": 19629,
+    "request_method": "GET",
+    "request_metadata": {
+      "json_body_sha256": null,
+      "params": [
+        [
+          "vectorIds",
+          "\"731930\""
+        ],
+        [
+          "startRefPeriod",
+          "2018-11-28"
+        ],
+        [
+          "endReferencePeriod",
+          "2026-07-19"
+        ]
+      ]
+    },
+    "response_headers": {
+      "Content-Type": "application/json",
+      "Date": "Sun, 19 Jul 2026 10:46:26 GMT"
     }
   },
   {
@@ -790,7 +790,7 @@
     "source_url": "https://www.cdn.fortisbc.com/libraries/docs/default-source/about-us-documents/fei-ye-2025-md-a-pa-sedar.pdf?sfvrsn=ace62b1_1",
     "local_path": "fortisbc_quarterly_financials/a0/fortis_fei_2025_annual_mda-a016a3742f9c5b99.pdf",
     "content_type": "application/pdf",
-    "retrieved_at": "2026-07-15T17:12:58Z",
+    "retrieved_at": "2026-07-19T10:48:21Z",
     "sha256": "a016a3742f9c5b99bb09a5be467c1bf97e10c0d63414a9233705aa344b4eb1b8",
     "size_bytes": 313019,
     "request_method": "GET",
@@ -800,40 +800,8 @@
     },
     "response_headers": {
       "Content-Type": "application/pdf",
-      "Date": "Wed, 15 Jul 2026 17:12:58 GMT",
+      "Date": "Sun, 19 Jul 2026 10:48:21 GMT",
       "Last-Modified": "Thu, 12 Feb 2026 19:09:44 GMT"
-    }
-  },
-  {
-    "document_id": "doc_794328c6dd118b4e5ded8de4",
-    "source_id": "statistics_canada_wds",
-    "source_url": "https://www150.statcan.gc.ca/t1/wds/rest/getDataFromVectorByReferencePeriodRange?vectorIds=%222064701%22&startRefPeriod=2022-05-29&endReferencePeriod=2026-07-15",
-    "local_path": "statistics_canada_wds/fd/vector-2064701-fd220616f4a18e38.json",
-    "content_type": "application/json",
-    "retrieved_at": "2026-07-15T17:10:51Z",
-    "sha256": "fd220616f4a18e385b5fd047146b401cce24c6d270137aea05cd2c7104c2f6ea",
-    "size_bytes": 11422,
-    "request_method": "GET",
-    "request_metadata": {
-      "json_body_sha256": null,
-      "params": [
-        [
-          "vectorIds",
-          "\"2064701\""
-        ],
-        [
-          "startRefPeriod",
-          "2022-05-29"
-        ],
-        [
-          "endReferencePeriod",
-          "2026-07-15"
-        ]
-      ]
-    },
-    "response_headers": {
-      "Content-Type": "application/json",
-      "Date": "Wed, 15 Jul 2026 17:10:51 GMT"
     }
   },
   {
@@ -874,7 +842,7 @@
     "source_url": "https://www.bcbudget.gov.bc.ca/Annual_Reports/2022_2023/pdf/agency/bchydro.pdf",
     "local_path": "bc_hydro_planning_assumptions/48/bchydro_annual_service_plan_2022_23-48cc7cc884897fd6.pdf",
     "content_type": "application/pdf",
-    "retrieved_at": "2026-07-15T17:13:07Z",
+    "retrieved_at": "2026-07-19T10:48:31Z",
     "sha256": "48cc7cc884897fd6ceedaca78145bba813bca252e5366ce8aa46b1b0a1322ce5",
     "size_bytes": 1629921,
     "request_method": "GET",
@@ -884,7 +852,7 @@
     },
     "response_headers": {
       "Content-Type": "application/pdf",
-      "Date": "Wed, 15 Jul 2026 17:13:06 GMT",
+      "Date": "Sun, 19 Jul 2026 10:48:31 GMT",
       "ETag": "\"15a99d194d7d91:0\"",
       "Last-Modified": "Fri, 25 Aug 2023 20:43:35 GMT"
     }
@@ -895,7 +863,7 @@
     "source_url": "https://www.cer-rec.gc.ca/en/data-analysis/energy-commodities/electricity/statistics/electricity-trade-summary/electricity-trades-summary-resume-echanges-commerciaux-electricite.xlsx",
     "local_path": "cer_electricity_trade/53/electricity-trade-summary-537c3915227b5834.xlsx",
     "content_type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
-    "retrieved_at": "2026-07-15T17:12:15Z",
+    "retrieved_at": "2026-07-19T10:47:27Z",
     "sha256": "537c3915227b58345a73fde4516e0b3880f9b6dac77dc714dca2c3e87a834618",
     "size_bytes": 110203,
     "request_method": "GET",
@@ -905,9 +873,41 @@
     },
     "response_headers": {
       "Content-Type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
-      "Date": "Wed, 15 Jul 2026 17:12:15 GMT",
+      "Date": "Sun, 19 Jul 2026 10:47:26 GMT",
       "ETag": "\"744e7b5b5dffdc1:0\"",
       "Last-Modified": "Thu, 18 Jun 2026 20:02:14 GMT"
+    }
+  },
+  {
+    "document_id": "doc_85a27c7cdc5579d627791acf",
+    "source_id": "statistics_canada_wds",
+    "source_url": "https://www150.statcan.gc.ca/t1/wds/rest/getDataFromVectorByReferencePeriodRange?vectorIds=%223%22&startRefPeriod=2022-03-29&endReferencePeriod=2026-07-19",
+    "local_path": "statistics_canada_wds/a8/vector-3-a86c49f192ee8777.json",
+    "content_type": "application/json",
+    "retrieved_at": "2026-07-19T10:46:12Z",
+    "sha256": "a86c49f192ee877721b20f14b8ee008eb76762ec62fd4b5cda28372383d17e7f",
+    "size_bytes": 4107,
+    "request_method": "GET",
+    "request_metadata": {
+      "json_body_sha256": null,
+      "params": [
+        [
+          "vectorIds",
+          "\"3\""
+        ],
+        [
+          "startRefPeriod",
+          "2022-03-29"
+        ],
+        [
+          "endReferencePeriod",
+          "2026-07-19"
+        ]
+      ]
+    },
+    "response_headers": {
+      "Content-Type": "application/json",
+      "Date": "Sun, 19 Jul 2026 10:46:12 GMT"
     }
   },
   {
@@ -916,7 +916,7 @@
     "source_url": "https://oee.nrcan.gc.ca/corporate/statistics/neud/dpa/showTable.cfm?juris=bc&page=0&rn=21&sector=res&type=CP&year=2023",
     "local_path": "nrcan_energy_use_database/da/residential_bc_heating_system_stock_21-da856189a2105032.cfm",
     "content_type": "text/html",
-    "retrieved_at": "2026-07-15T17:12:12Z",
+    "retrieved_at": "2026-07-19T10:47:23Z",
     "sha256": "da856189a21050321c898c287f2bd5af13c1c0e41f1974e0c5795c3c61ea343a",
     "size_bytes": 36383,
     "request_method": "GET",
@@ -926,7 +926,7 @@
     },
     "response_headers": {
       "Content-Type": "text/html;charset=UTF-8",
-      "Date": "Wed, 15 Jul 2026 17:12:12 GMT"
+      "Date": "Sun, 19 Jul 2026 10:47:22 GMT"
     }
   },
   {
@@ -991,7 +991,7 @@
     "source_url": "https://www.bcbudget.gov.bc.ca/2024/pdf/2024_Budget_and_Fiscal_Plan.pdf",
     "local_path": "bc_budget_economic_forecasts/b3/bc_budget_2024-b33fe60d46dd091e.pdf",
     "content_type": "application/pdf",
-    "retrieved_at": "2026-07-15T17:11:46Z",
+    "retrieved_at": "2026-07-19T10:47:03Z",
     "sha256": "b33fe60d46dd091ea2678c19a843c6f7fbf706dfd10e9cb52250297cf33f21e8",
     "size_bytes": 2195205,
     "request_method": "GET",
@@ -1001,7 +1001,7 @@
     },
     "response_headers": {
       "Content-Type": "application/pdf",
-      "Date": "Wed, 15 Jul 2026 17:11:46 GMT",
+      "Date": "Sun, 19 Jul 2026 10:47:03 GMT",
       "ETag": "\"749414aa8075da1:0\"",
       "Last-Modified": "Wed, 13 Mar 2024 19:57:23 GMT"
     }
@@ -1012,7 +1012,7 @@
     "source_url": "https://www.bchydro.com/content/dam/BCHydro/customer-portal/documents/corporate/regulatory-planning-documents/service-plans/bchydro-service-plan-2026-27-2028-29.pdf",
     "local_path": "bc_hydro_planning_assumptions/8e/bchydro_service_plan_2026_27-8e28bb8b4b53512b.pdf",
     "content_type": "application/pdf",
-    "retrieved_at": "2026-07-15T17:13:05Z",
+    "retrieved_at": "2026-07-19T10:48:29Z",
     "sha256": "8e28bb8b4b53512b34af07ceffa070e19e8e8d735d01c6b2e680613682c027be",
     "size_bytes": 590591,
     "request_method": "GET",
@@ -1022,41 +1022,41 @@
     },
     "response_headers": {
       "Content-Type": "application/pdf",
-      "Date": "Wed, 15 Jul 2026 17:13:05 GMT",
+      "Date": "Sun, 19 Jul 2026 10:48:29 GMT",
       "ETag": "\"902ff-64b1b6fe8ec80\"",
       "Last-Modified": "Wed, 18 Feb 2026 16:11:14 GMT"
     }
   },
   {
-    "document_id": "doc_a0c22ec1600fd97b36078646",
+    "document_id": "doc_9a36223d108275eacd7498fd",
     "source_id": "statistics_canada_wds",
-    "source_url": "https://www150.statcan.gc.ca/t1/wds/rest/getDataFromVectorByReferencePeriodRange?vectorIds=%2241692462%22&startRefPeriod=2022-04-28&endReferencePeriod=2026-07-15",
-    "local_path": "statistics_canada_wds/a7/vector-41692462-a73a6f87bc580d66.json",
+    "source_url": "https://www150.statcan.gc.ca/t1/wds/rest/getDataFromVectorByReferencePeriodRange?vectorIds=%221617916980%22&startRefPeriod=2021-12-29&endReferencePeriod=2026-07-19",
+    "local_path": "statistics_canada_wds/4e/vector-1617916980-4e74afd1d243f4f0.json",
     "content_type": "application/json",
-    "retrieved_at": "2026-07-15T17:10:54Z",
-    "sha256": "a73a6f87bc580d66c279feeb235cfa7eb3520a86f7c5da3c18c7ba84ca9816c0",
-    "size_bytes": 11374,
+    "retrieved_at": "2026-07-19T10:46:16Z",
+    "sha256": "4e74afd1d243f4f05cc78bf188d8ae001bdc5a257e0f5e4516cc2c77e3428bc3",
+    "size_bytes": 4042,
     "request_method": "GET",
     "request_metadata": {
       "json_body_sha256": null,
       "params": [
         [
           "vectorIds",
-          "\"41692462\""
+          "\"1617916980\""
         ],
         [
           "startRefPeriod",
-          "2022-04-28"
+          "2021-12-29"
         ],
         [
           "endReferencePeriod",
-          "2026-07-15"
+          "2026-07-19"
         ]
       ]
     },
     "response_headers": {
       "Content-Type": "application/json",
-      "Date": "Wed, 15 Jul 2026 17:10:54 GMT"
+      "Date": "Sun, 19 Jul 2026 10:46:16 GMT"
     }
   },
   {
@@ -1065,7 +1065,7 @@
     "source_url": "https://www.bcbudget.gov.bc.ca/2026/pdf/2026_Budget_and_Fiscal_Plan.pdf",
     "local_path": "bc_budget_economic_forecasts/5b/bc_budget_2026-5b5194bf1e292dcb.pdf",
     "content_type": "application/pdf",
-    "retrieved_at": "2026-07-15T17:11:58Z",
+    "retrieved_at": "2026-07-19T10:47:14Z",
     "sha256": "5b5194bf1e292dcb6d440796e4808c00a5726318692597e6db0285b9d248407d",
     "size_bytes": 2687246,
     "request_method": "GET",
@@ -1075,7 +1075,7 @@
     },
     "response_headers": {
       "Content-Type": "application/pdf",
-      "Date": "Wed, 15 Jul 2026 17:11:57 GMT",
+      "Date": "Sun, 19 Jul 2026 10:47:14 GMT",
       "ETag": "\"93f3b0ea5dc0dc1:0\"",
       "Last-Modified": "Mon, 30 Mar 2026 15:57:31 GMT"
     }
@@ -1086,7 +1086,7 @@
     "source_url": "https://api.eia.gov/v2/petroleum/pri/spt/data/?api_key=REDACTED&frequency=monthly&data%5B0%5D=value&facets%5Bseries%5D%5B%5D=RWTC&start=2026-03&sort%5B0%5D%5Bcolumn%5D=period&sort%5B0%5D%5Bdirection%5D=asc&offset=0&length=5000",
     "local_path": "eia_open_data/84/RWTC-841ff8ae421cab16.json",
     "content_type": "application/json",
-    "retrieved_at": "2026-07-15T17:11:13Z",
+    "retrieved_at": "2026-07-19T10:46:31Z",
     "sha256": "841ff8ae421cab168ef83a82c2376cb29e4e014b53240788663836cca40157a7",
     "size_bytes": 1528,
     "request_method": "GET",
@@ -1133,7 +1133,39 @@
     },
     "response_headers": {
       "Content-Type": "application/json",
-      "Date": "Wed, 15 Jul 2026 17:11:13 GMT"
+      "Date": "Sun, 19 Jul 2026 10:46:31 GMT"
+    }
+  },
+  {
+    "document_id": "doc_b3f2fa798a9b2ab15f80ee31",
+    "source_id": "statistics_canada_wds",
+    "source_url": "https://www150.statcan.gc.ca/t1/wds/rest/getDataFromVectorByReferencePeriodRange?vectorIds=%222064705%22&startRefPeriod=2022-05-29&endReferencePeriod=2026-07-19",
+    "local_path": "statistics_canada_wds/f9/vector-2064705-f97c86339021c930.json",
+    "content_type": "application/json",
+    "retrieved_at": "2026-07-19T10:46:14Z",
+    "sha256": "f97c86339021c930250223220a3b3b09bc1261e70d770450511b904cdd3e1325",
+    "size_bytes": 11275,
+    "request_method": "GET",
+    "request_metadata": {
+      "json_body_sha256": null,
+      "params": [
+        [
+          "vectorIds",
+          "\"2064705\""
+        ],
+        [
+          "startRefPeriod",
+          "2022-05-29"
+        ],
+        [
+          "endReferencePeriod",
+          "2026-07-19"
+        ]
+      ]
+    },
+    "response_headers": {
+      "Content-Type": "application/json",
+      "Date": "Sun, 19 Jul 2026 10:46:14 GMT"
     }
   },
   {
@@ -1142,7 +1174,7 @@
     "source_url": "https://www.cdn.fortisbc.com/libraries/docs/default-source/about-us-documents/fbc-q4-2024-mdanda-ac-sedar.pdf?sfvrsn=65f9e6b8_1",
     "local_path": "fortisbc_quarterly_financials/62/fortis_fbc_2024_annual_mda-6213fcbd112953fd.pdf",
     "content_type": "application/pdf",
-    "retrieved_at": "2026-07-15T17:12:56Z",
+    "retrieved_at": "2026-07-19T10:48:15Z",
     "sha256": "6213fcbd112953fd47b3997bebca4fd757f030a8d6aa99780a35e8776943493c",
     "size_bytes": 266645,
     "request_method": "GET",
@@ -1152,7 +1184,7 @@
     },
     "response_headers": {
       "Content-Type": "application/pdf",
-      "Date": "Wed, 15 Jul 2026 17:12:56 GMT",
+      "Date": "Sun, 19 Jul 2026 10:48:15 GMT",
       "Last-Modified": "Fri, 14 Feb 2025 23:53:23 GMT"
     }
   },
@@ -1162,7 +1194,7 @@
     "source_url": "https://www.bcbudget.gov.bc.ca/2022/pdf/2022_Budget_and_Fiscal_Plan.pdf",
     "local_path": "bc_budget_economic_forecasts/be/bc_budget_2022-be39e05a37e16f8f.pdf",
     "content_type": "application/pdf",
-    "retrieved_at": "2026-07-15T17:11:33Z",
+    "retrieved_at": "2026-07-19T10:46:50Z",
     "sha256": "be39e05a37e16f8f1204cc5c2e1dea5f2765ad1fb40ea73d02d7382cdbc0ebc4",
     "size_bytes": 2181118,
     "request_method": "GET",
@@ -1172,7 +1204,7 @@
     },
     "response_headers": {
       "Content-Type": "application/pdf",
-      "Date": "Wed, 15 Jul 2026 17:11:33 GMT",
+      "Date": "Sun, 19 Jul 2026 10:46:49 GMT",
       "ETag": "\"7ba93fbcc4c7d81:0\"",
       "Last-Modified": "Tue, 13 Sep 2022 23:01:19 GMT"
     }
@@ -1202,45 +1234,13 @@
     }
   },
   {
-    "document_id": "doc_bba87f39aed55da5f034848e",
-    "source_id": "cmhc_via_statistics_canada",
-    "source_url": "https://www150.statcan.gc.ca/t1/wds/rest/getDataFromVectorByReferencePeriodRange?vectorIds=%22731930%22&startRefPeriod=2018-11-28&endReferencePeriod=2026-07-15",
-    "local_path": "cmhc_via_statistics_canada/31/vector-731930-31e9a32dbd3728cd.json",
-    "content_type": "application/json",
-    "retrieved_at": "2026-07-15T17:11:02Z",
-    "sha256": "31e9a32dbd3728cdb420ec74d9652bffa3b3342cb3c39884885bc55b7c63167a",
-    "size_bytes": 19629,
-    "request_method": "GET",
-    "request_metadata": {
-      "json_body_sha256": null,
-      "params": [
-        [
-          "vectorIds",
-          "\"731930\""
-        ],
-        [
-          "startRefPeriod",
-          "2018-11-28"
-        ],
-        [
-          "endReferencePeriod",
-          "2026-07-15"
-        ]
-      ]
-    },
-    "response_headers": {
-      "Content-Type": "application/json",
-      "Date": "Wed, 15 Jul 2026 17:11:02 GMT"
-    }
-  },
-  {
-    "document_id": "doc_c08b65ef6b78e6a6d210f260",
+    "document_id": "doc_b8b5339c172b339143796f80",
     "source_id": "statistics_canada_wds",
-    "source_url": "https://www150.statcan.gc.ca/t1/wds/rest/getDataFromVectorByReferencePeriodRange?vectorIds=%222064700%22&startRefPeriod=2022-05-29&endReferencePeriod=2026-07-15",
-    "local_path": "statistics_canada_wds/3e/vector-2064700-3e8f7cfbe211c2e3.json",
+    "source_url": "https://www150.statcan.gc.ca/t1/wds/rest/getDataFromVectorByReferencePeriodRange?vectorIds=%222064701%22&startRefPeriod=2022-05-29&endReferencePeriod=2026-07-19",
+    "local_path": "statistics_canada_wds/fd/vector-2064701-fd220616f4a18e38.json",
     "content_type": "application/json",
-    "retrieved_at": "2026-07-15T17:10:52Z",
-    "sha256": "3e8f7cfbe211c2e39a0600fda98ae029136d68ee458b42377baefb41243bfb1d",
+    "retrieved_at": "2026-07-19T10:46:13Z",
+    "sha256": "fd220616f4a18e385b5fd047146b401cce24c6d270137aea05cd2c7104c2f6ea",
     "size_bytes": 11422,
     "request_method": "GET",
     "request_metadata": {
@@ -1248,7 +1248,7 @@
       "params": [
         [
           "vectorIds",
-          "\"2064700\""
+          "\"2064701\""
         ],
         [
           "startRefPeriod",
@@ -1256,13 +1256,13 @@
         ],
         [
           "endReferencePeriod",
-          "2026-07-15"
+          "2026-07-19"
         ]
       ]
     },
     "response_headers": {
       "Content-Type": "application/json",
-      "Date": "Wed, 15 Jul 2026 17:10:52 GMT"
+      "Date": "Sun, 19 Jul 2026 10:46:13 GMT"
     }
   },
   {
@@ -1303,7 +1303,7 @@
     "source_url": "https://www.bchydro.com/content/dam/BCHydro/customer-portal/documents/corporate/regulatory-planning-documents/service-plans/bchydro-service-plan-2021-22-2023-24.pdf",
     "local_path": "bc_hydro_planning_assumptions/6b/bchydro_service_plan_2021_22-6bcd31293a176581.pdf",
     "content_type": "application/pdf",
-    "retrieved_at": "2026-07-15T17:13:00Z",
+    "retrieved_at": "2026-07-19T10:48:24Z",
     "sha256": "6bcd31293a1765810a22479417c11b34d60490dab1e8094c157922910db6e5de",
     "size_bytes": 463098,
     "request_method": "GET",
@@ -1313,41 +1313,41 @@
     },
     "response_headers": {
       "Content-Type": "application/pdf",
-      "Date": "Wed, 15 Jul 2026 17:13:00 GMT",
+      "Date": "Sun, 19 Jul 2026 10:48:24 GMT",
       "ETag": "\"710fa-5c06fae04b440\"",
       "Last-Modified": "Tue, 20 Apr 2021 23:19:37 GMT"
     }
   },
   {
-    "document_id": "doc_c417dd5050430be53859dedc",
+    "document_id": "doc_c4bc8a7c4acc232ea0a487de",
     "source_id": "statistics_canada_wds",
-    "source_url": "https://www150.statcan.gc.ca/t1/wds/rest/getDataFromVectorByReferencePeriodRange?vectorIds=%223%22&startRefPeriod=2022-03-29&endReferencePeriod=2026-07-15",
-    "local_path": "statistics_canada_wds/a8/vector-3-a86c49f192ee8777.json",
+    "source_url": "https://www150.statcan.gc.ca/t1/wds/rest/getDataFromVectorByReferencePeriodRange?vectorIds=%222064706%22&startRefPeriod=2022-05-29&endReferencePeriod=2026-07-19",
+    "local_path": "statistics_canada_wds/e6/vector-2064706-e631b6ec349b805c.json",
     "content_type": "application/json",
-    "retrieved_at": "2026-07-15T17:10:50Z",
-    "sha256": "a86c49f192ee877721b20f14b8ee008eb76762ec62fd4b5cda28372383d17e7f",
-    "size_bytes": 4107,
+    "retrieved_at": "2026-07-19T10:46:15Z",
+    "sha256": "e631b6ec349b805ce9ab618b4c4f5002e4e3ae94e3187dce1eb1a9cf237c02ea",
+    "size_bytes": 11324,
     "request_method": "GET",
     "request_metadata": {
       "json_body_sha256": null,
       "params": [
         [
           "vectorIds",
-          "\"3\""
+          "\"2064706\""
         ],
         [
           "startRefPeriod",
-          "2022-03-29"
+          "2022-05-29"
         ],
         [
           "endReferencePeriod",
-          "2026-07-15"
+          "2026-07-19"
         ]
       ]
     },
     "response_headers": {
       "Content-Type": "application/json",
-      "Date": "Wed, 15 Jul 2026 17:10:50 GMT"
+      "Date": "Sun, 19 Jul 2026 10:46:15 GMT"
     }
   },
   {
@@ -1420,7 +1420,7 @@
     "source_url": "https://www.bcbudget.gov.bc.ca/Annual_Reports/2020_2021/pdf/agency/bchydro.pdf",
     "local_path": "bc_hydro_planning_assumptions/40/bchydro_annual_service_plan_2020_21-404f2e3349b44862.pdf",
     "content_type": "application/pdf",
-    "retrieved_at": "2026-07-15T17:13:06Z",
+    "retrieved_at": "2026-07-19T10:48:30Z",
     "sha256": "404f2e3349b4486273c6d65d95be775d848f2df65feed9efd811cdf3109e22e7",
     "size_bytes": 1336843,
     "request_method": "GET",
@@ -1430,7 +1430,7 @@
     },
     "response_headers": {
       "Content-Type": "application/pdf",
-      "Date": "Wed, 15 Jul 2026 17:13:05 GMT",
+      "Date": "Sun, 19 Jul 2026 10:48:29 GMT",
       "ETag": "\"ac147d565f9bd71:0\"",
       "Last-Modified": "Fri, 27 Aug 2021 16:19:40 GMT"
     }
@@ -1441,7 +1441,7 @@
     "source_url": "https://www.bchydro.com/content/dam/BCHydro/customer-portal/documents/corporate/regulatory-planning-documents/service-plans/bchydro-service-plan-2025-26%E2%80%932027-28.pdf",
     "local_path": "bc_hydro_planning_assumptions/8f/bchydro_service_plan_2025_26-8fed82e240c296f2.pdf",
     "content_type": "application/pdf",
-    "retrieved_at": "2026-07-15T17:13:04Z",
+    "retrieved_at": "2026-07-19T10:48:28Z",
     "sha256": "8fed82e240c296f24383797002608807d202d9985d539b5617f49d822bbae92e",
     "size_bytes": 647931,
     "request_method": "GET",
@@ -1451,7 +1451,7 @@
     },
     "response_headers": {
       "Content-Type": "application/pdf",
-      "Date": "Wed, 15 Jul 2026 17:13:04 GMT",
+      "Date": "Sun, 19 Jul 2026 10:48:28 GMT",
       "ETag": "\"9e2fb-62f8c13e58600\"",
       "Last-Modified": "Tue, 04 Mar 2025 22:48:56 GMT"
     }
@@ -1513,12 +1513,44 @@
     }
   },
   {
+    "document_id": "doc_d20b24c89f3fe42a435f0aa5",
+    "source_id": "cmhc_via_statistics_canada",
+    "source_url": "https://www150.statcan.gc.ca/t1/wds/rest/getDataFromVectorByReferencePeriodRange?vectorIds=%22730995%22&startRefPeriod=1998-05-29&endReferencePeriod=2026-07-19",
+    "local_path": "cmhc_via_statistics_canada/38/vector-730995-38369fbbec63d790.json",
+    "content_type": "application/json",
+    "retrieved_at": "2026-07-19T10:46:27Z",
+    "sha256": "38369fbbec63d790f5960f83439d58a8d657f44628ba41021058d74f618e5ab5",
+    "size_bytes": 11453,
+    "request_method": "GET",
+    "request_metadata": {
+      "json_body_sha256": null,
+      "params": [
+        [
+          "vectorIds",
+          "\"730995\""
+        ],
+        [
+          "startRefPeriod",
+          "1998-05-29"
+        ],
+        [
+          "endReferencePeriod",
+          "2026-07-19"
+        ]
+      ]
+    },
+    "response_headers": {
+      "Content-Type": "application/json",
+      "Date": "Sun, 19 Jul 2026 10:46:27 GMT"
+    }
+  },
+  {
     "document_id": "doc_d8cd2f3faa22a15996c2c7e6",
     "source_id": "bc_budget_economic_forecasts",
     "source_url": "https://www.bcbudget.gov.bc.ca/2021/pdf/2021_Budget%20and%20Fiscal%20Plan.pdf",
     "local_path": "bc_budget_economic_forecasts/8f/bc_budget_2021-8f9eb306f4eeb2ac.pdf",
     "content_type": "application/pdf",
-    "retrieved_at": "2026-07-15T17:11:26Z",
+    "retrieved_at": "2026-07-19T10:46:43Z",
     "sha256": "8f9eb306f4eeb2ac2607cc254be867f088684def77c71e926576d02ccf3f66e1",
     "size_bytes": 2243484,
     "request_method": "GET",
@@ -1528,7 +1560,7 @@
     },
     "response_headers": {
       "Content-Type": "application/pdf",
-      "Date": "Wed, 15 Jul 2026 17:11:25 GMT",
+      "Date": "Sun, 19 Jul 2026 10:46:42 GMT",
       "ETag": "\"74d987504d3dd71:0\"",
       "Last-Modified": "Thu, 29 Apr 2021 23:13:50 GMT"
     }
@@ -1539,7 +1571,7 @@
     "source_url": "https://www.cdn.fortisbc.com/libraries/docs/default-source/about-us-documents/fei-q4-2024-mdanda-ac-sedar.pdf?sfvrsn=b7559eb2_1",
     "local_path": "fortisbc_quarterly_financials/33/fortis_fei_2024_annual_mda-3367c7f726f2074b.pdf",
     "content_type": "application/pdf",
-    "retrieved_at": "2026-07-15T17:12:57Z",
+    "retrieved_at": "2026-07-19T10:48:20Z",
     "sha256": "3367c7f726f2074b87724722a6092b1032e8a2e609e8b7389de45715379e4bb8",
     "size_bytes": 315160,
     "request_method": "GET",
@@ -1549,7 +1581,7 @@
     },
     "response_headers": {
       "Content-Type": "application/pdf",
-      "Date": "Wed, 15 Jul 2026 17:12:57 GMT",
+      "Date": "Sun, 19 Jul 2026 10:48:20 GMT",
       "Last-Modified": "Fri, 14 Feb 2025 23:53:23 GMT"
     }
   },
@@ -1643,7 +1675,7 @@
     "source_url": "https://www.cdn.fortisbc.com/libraries/docs/default-source/about-us-documents/fortisbc-gas_mda_q4-2022_d2_audit_sedar.pdf?sfvrsn=e95743f9_1",
     "local_path": "fortisbc_quarterly_financials/9e/fortis_fei_2022_annual_mda-9e351421e986ffe1.pdf",
     "content_type": "application/pdf",
-    "retrieved_at": "2026-07-15T17:12:57Z",
+    "retrieved_at": "2026-07-19T10:48:18Z",
     "sha256": "9e351421e986ffe1a21b6187110d478542c9e811b557416d548effcfffa2783e",
     "size_bytes": 496583,
     "request_method": "GET",
@@ -1653,7 +1685,7 @@
     },
     "response_headers": {
       "Content-Type": "application/pdf",
-      "Date": "Wed, 15 Jul 2026 17:12:57 GMT",
+      "Date": "Sun, 19 Jul 2026 10:48:18 GMT",
       "Last-Modified": "Fri, 10 Feb 2023 22:11:07 GMT"
     }
   },
@@ -1663,7 +1695,7 @@
     "source_url": "https://www.bchydro.com/content/dam/BCHydro/customer-portal/documents/corporate/regulatory-planning-documents/service-plans/bchydro-service-plan-2024-25-2026-27.pdf",
     "local_path": "bc_hydro_planning_assumptions/0e/bchydro_service_plan_2024_25-0e10454bba979c72.pdf",
     "content_type": "application/pdf",
-    "retrieved_at": "2026-07-15T17:13:03Z",
+    "retrieved_at": "2026-07-19T10:48:27Z",
     "sha256": "0e10454bba979c72e484aff5f6a1dd5cb6a874de3f995d186416a6b35cd87278",
     "size_bytes": 718296,
     "request_method": "GET",
@@ -1673,9 +1705,33 @@
     },
     "response_headers": {
       "Content-Type": "application/pdf",
-      "Date": "Wed, 15 Jul 2026 17:13:03 GMT",
+      "Date": "Sun, 19 Jul 2026 10:48:27 GMT",
       "ETag": "\"af5d8-6120e1dea4b40\"",
       "Last-Modified": "Fri, 23 Feb 2024 15:21:41 GMT"
+    }
+  },
+  {
+    "document_id": "doc_f8ab0ae59392c478fcb2b524",
+    "source_id": "bank_of_canada_valet",
+    "source_url": "https://www.bankofcanada.ca/valet/observations/V39079,BD.CDN.10YR.DQ.YLD,FXUSDCAD/json?start_date=2026-05-30",
+    "local_path": "bank_of_canada_valet/de/observations-dea4e15cba2d9507.json",
+    "content_type": "application/json",
+    "retrieved_at": "2026-07-19T10:46:10Z",
+    "sha256": "dea4e15cba2d9507073a958ae61b992cd07a23b03a0823fe975ddc2577d5f23d",
+    "size_bytes": 10141,
+    "request_method": "GET",
+    "request_metadata": {
+      "json_body_sha256": null,
+      "params": [
+        [
+          "start_date",
+          "2026-05-30"
+        ]
+      ]
+    },
+    "response_headers": {
+      "Content-Type": "application/json; charset=utf-8",
+      "Date": "Sun, 19 Jul 2026 10:46:10 GMT"
     }
   },
   {
@@ -1684,7 +1740,7 @@
     "source_url": "https://www.bcbudget.gov.bc.ca/Annual_Reports/2024_2025/pdf/agency/bchydro.pdf",
     "local_path": "bc_hydro_planning_assumptions/02/bchydro_annual_service_plan_2024_25-0261fc8c6ee2526b.pdf",
     "content_type": "application/pdf",
-    "retrieved_at": "2026-07-15T17:13:09Z",
+    "retrieved_at": "2026-07-19T10:48:33Z",
     "sha256": "0261fc8c6ee2526bc33ed9ed1bbac02a900c7431ca606353d4224efb56137545",
     "size_bytes": 1545980,
     "request_method": "GET",
@@ -1694,7 +1750,7 @@
     },
     "response_headers": {
       "Content-Type": "application/pdf",
-      "Date": "Wed, 15 Jul 2026 17:13:09 GMT",
+      "Date": "Sun, 19 Jul 2026 10:48:32 GMT",
       "ETag": "\"b61d393b9413dc1:0\"",
       "Last-Modified": "Fri, 22 Aug 2025 18:40:28 GMT"
     }

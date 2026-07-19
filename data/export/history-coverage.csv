@@ -1,0 +1,29 @@
+source_id,document_key,document_type,edition,publication_date,status,record_count,variable_count,forecast_count,observation_count,model_parameter_count
+bc_budget_economic_forecasts,bc_budget_2021,budget_and_fiscal_plan,Budget 2021,2021-04-20,parsed,60,12,60,0,0
+bc_budget_economic_forecasts,bc_budget_2022,budget_and_fiscal_plan,Budget 2022,2022-02-22,parsed,60,12,60,0,0
+bc_budget_economic_forecasts,bc_budget_2023,budget_and_fiscal_plan,Budget 2023,2023-02-28,parsed,60,12,60,0,0
+bc_budget_economic_forecasts,bc_budget_2024,budget_and_fiscal_plan,Budget 2024,2024-02-22,parsed,60,12,60,0,0
+bc_budget_economic_forecasts,bc_budget_2025,budget_and_fiscal_plan,Budget 2025,2025-03-04,parsed,60,12,60,0,0
+bc_budget_economic_forecasts,bc_budget_2026,budget_and_fiscal_plan,Budget 2026,2026-02-17,parsed,26,9,26,0,0
+bc_hydro_planning_assumptions,bchydro_service_plan_2021_22,service_plan,2021/22-2023/24,2021-04-01,parsed,56,14,56,0,0
+bc_hydro_planning_assumptions,bchydro_service_plan_2022_23,service_plan,2022/23-2024/25,2022-02-22,parsed,56,14,56,0,0
+bc_hydro_planning_assumptions,bchydro_service_plan_2023_24,service_plan,2023/24-2025/26,2023-02-28,parsed,60,15,60,0,0
+bc_hydro_planning_assumptions,bchydro_service_plan_2024_25,service_plan,2024/25-2026/27,2024-02-22,parsed,60,15,60,0,0
+bc_hydro_planning_assumptions,bchydro_service_plan_2025_26,service_plan,2025/26-2027/28,2025-03-04,parsed,60,15,60,0,0
+bc_hydro_planning_assumptions,bchydro_service_plan_2026_27,service_plan,2026/27-2028/29,2026-02-17,parsed,60,15,60,0,0
+bc_hydro_planning_assumptions,bchydro_annual_service_plan_2020_21,annual_service_plan_report,2020/21,2021-08-31,parsed,2,2,0,2,0
+bc_hydro_planning_assumptions,bchydro_annual_service_plan_2021_22,annual_service_plan_report,2021/22,2022-08-31,parsed,2,2,0,2,0
+bc_hydro_planning_assumptions,bchydro_annual_service_plan_2022_23,annual_service_plan_report,2022/23,2023-08-31,parsed,2,2,0,2,0
+bc_hydro_planning_assumptions,bchydro_annual_service_plan_2023_24,annual_service_plan_report,2023/24,2024-08-30,parsed,2,2,0,2,0
+bc_hydro_planning_assumptions,bchydro_annual_service_plan_2024_25,annual_service_plan_report,2024/25,2025-08-28,parsed,2,2,0,2,0
+fortisbc_quarterly_financials,fortis_fei_2021_annual_mda,annual_mda,2021,,parsed,11,9,4,4,3
+fortisbc_quarterly_financials,fortis_fei_2022_annual_mda,annual_mda,2022,,parsed,10,9,3,4,3
+fortisbc_quarterly_financials,fortis_fei_2023_annual_mda,annual_mda,2023,,parsed,10,9,3,4,3
+fortisbc_quarterly_financials,fortis_fei_2024_annual_mda,annual_mda,2024,,parsed,10,9,3,4,3
+fortisbc_quarterly_financials,fortis_fei_2025_annual_mda,annual_mda,2025,,parsed,10,9,3,4,3
+fortisbc_quarterly_financials,fortis_fbc_2021_annual_mda,annual_mda,2021,,parsed,11,9,4,4,3
+fortisbc_quarterly_financials,fortis_fbc_2022_annual_mda,annual_mda,2022,,parsed,10,9,3,4,3
+fortisbc_quarterly_financials,fortis_fbc_2023_annual_mda,annual_mda,2023,,parsed,10,9,3,4,3
+fortisbc_quarterly_financials,fortis_fbc_2024_annual_mda,annual_mda,2024,,parsed,10,9,3,4,3
+fortisbc_quarterly_financials,fortis_fbc_2025_annual_mda,annual_mda,2025,,parsed,10,9,3,4,3
+bc_moti_benefit_cost_parameters,bc_moti_default_values_bca_2018,government_guidance,2018,2018-05-07,parsed,1,1,0,0,1
